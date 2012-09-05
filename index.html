@@ -1,0 +1,237 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <!-- Use the .htaccess and remove these lines to avoid edge case issues. 
+         More info: h5bp.com/i/378 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title></title>
+    <meta name="description" content="">
+
+    <!-- Mobile viewport optimized: h5bp.com/viewport -->
+    <!-- <meta name="viewport" content="width=device-width"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+    
+    <link rel="stylesheet" href="css/libs/bootstrap.min.css">
+    <style type="text/css">
+        /*body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+        }
+        .sidebar-nav {
+        padding: 9px 0;
+        }*/
+    </style>
+    <link rel="stylesheet" href="css/libs/bootstrap-responsive.css">
+
+    <link rel="stylesheet" href="css/libs/font-awesome.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+
+    <!-- All JavaScript at the bottom, except this Modernizr build.
+         Modernizr enables HTML5 elements & feature detects for optimal performance.
+         Create your own custom Modernizr build: www.modernizr.com/download/ -->
+    <script src="js/libs/modernizr-2.5.3.min.js"></script>
+</head>
+<body>
+    <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+         chromium.org/developers/how-tos/chrome-frame-getting-started -->
+    <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+    
+    <header>
+        <div class="nav-wrapper">
+            <div id="logo">
+                <img src="img/logo.png">
+            </div>
+            <div id="vcard">
+                <h1>Carey Hinoki</h1>
+                <h2>Web Solutions Architect - Long Beach, CA</h2>
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li class="home">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="portfolio">
+                        <a href="#">Portfolio</a>
+                    </li>
+                    <li class="about">
+                        <a href="#">About</a>
+                    </li>
+                    <li class="contact">
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div role="main">
+        <div class="intro-wrapper">
+            <div id="intro" class="container">
+            </div>
+        </div>
+        <div class="separator">
+            <a href="#">Let's take a look!</a>
+        </div>
+        <div class="container">
+            <ul class="social-media">
+                <li>
+                    <a href="//www.twitter.com/chemoish"><i class="icon-twitter icon-large"></i></a>
+                </li>
+                <li>
+                    <a href="//www.facebook.com/carey.hinoki"><i class="icon-facebook icon-large"></i></a>
+                </li>
+                <li>
+                    <a href="//plus.google.com/118175933175383798803"><i class="icon-google-plus icon-large"></i></a>
+                </li>
+                <li>
+                    <a href="//www.linkedin.com/pub/carey-hinoki/8/396/345"><i class="icon-linkedin icon-large"></i></a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="featured_work" class="container">
+            <div class="row">
+                <div class="span12">
+                    <h2>Featured Work</h2>
+                    <h3>Work - Fun - Code</h3>
+
+                    <div class="stage">
+                        <ul class="slides"></ul>
+                        
+                        <div id="work"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="separator">
+            <a href="#">Back to the top</a>
+        </div>
+        <div id="about" class="container">
+            <div class="row">
+                <div class="span12">
+                    <h2>About Me</h2>
+                    <h3>Carey Hinoki - Web Solutions Architect - Long Beach, CA</h3>
+                </div>
+
+                <div class="span8">
+                    <section id="bio">
+                        <h1>The Introduction...</h1>
+
+                        <p>
+                            My name is Carey Hinoki.  I am a full stack web developer that focuses on non-functional requirements.  I strive for nothing less than pixel perfect applications that are backed by performant and maintainable architectures.
+                        </p>
+                        <p>
+                            I have extensive experience with backend/database driven development, but my passions lie in the front-end.  Usability and functionailty are the forefront of every one of my design decisions.
+                        </p>
+                        <p>
+                            I do not specialize in any particular language, but rather architect solutions that can be solved by any language.  However, if I had to pick one language that I love most of all I would have to pick Javascript.
+                        </p>
+                        <p>
+                            I love what I do and I especially love working with people who are as passionate about their work as I am.
+                        </p>
+                    </section>
+
+                    <section id="tidbits">
+                        <h1>Tiddlywinks & Curiosities</h1>
+
+                        <ul>
+                            <li>
+                                Ran the LA Marathon at the age of 12.
+                            </li>
+                            <li>
+                                I am 5th generation Chinese, 3rd generation Japanese, and more white than thou.
+                            </li>
+                            <li>
+                                At 16 I was drinking 72oz of 7-11 coffee by 3rd period.
+                            </li>
+                            <li>
+                                I won $5,000 of botox in 2008 from a Jamba Juice content my co-worker entered me in.
+                            </li>
+                            <li>
+                                My favorite beer is a Anaheim Hefeweizen from <a href="//www.anaheimbrew.com">Anaheim Brewery</a>.
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="span4">
+                    <section id="skills">
+                        <h1>Skills</h1>
+
+                        <ul class="skills"></ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="separator">
+            <a href="#">Back to the top</a>
+        </div>
+    </div>
+    <footer>
+        <ul>
+            <li>
+                <a href="//www.twitter.com/chemoish">Twitter</a>
+            </li>
+            <li>
+                <a href="//www.facebook.com/carey.hinoki">Facebook</a>
+            </li>
+            <li>
+                <a href="//plus.google.com/118175933175383798803">Google</a>
+            </li>
+            <li>
+                <a href="//www.linkedin.com/pub/carey-hinoki/8/396/345">LinkedIn</a>
+            </li>
+            <li>
+                <a href="//www.github.com/chemoish">GitHub</a>
+            </li>
+            <li>
+                <a href="//www.teamtreehouse.com/chemoish">Treehouse</a>
+            </li>
+            <li>
+                <a href="//www.stackoverflow.com/users/1438446/chemoish">Stackoverflow</a>
+            </li>
+            <li>
+                <a href="//www.codecademy.com/users/chemoish">Code Academy</a>
+            </li>
+            <li>
+                <a href="//hinoki.yelp.com">Yelp</a>
+            </li>
+        </ul>
+    </footer>
+
+
+    <!-- JavaScript at the bottom for fast page loading -->
+
+    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
+    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+    <!-- scripts concatenated and minified via build script -->
+    <script src="js/libs/bootstrap.min.js"></script>
+    <script src="js/libs/handlebars-1.0.0.beta.6.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/script.js"></script>
+    <!-- end scripts -->
+
+    <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+         mathiasbynens.be/notes/async-analytics-snippet -->
+    <script>
+        /*var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));*/
+    </script>
+</body>
+</html>
