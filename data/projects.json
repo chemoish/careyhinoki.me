@@ -1,204 +1,197 @@
 {
 	"projects": [{
-		"id": "usa",
-		"name": "United States Artists",
-		"img": "img/usa.png",
-		"description": "AddThis, CSS, HTML, Symfony 1.0",
-		"website": "//www.unitedstatesartists.org",
-		"projects": []
-	}, {
-		"id": "vintage-vantage",
-		"name": "Vintage Vantage",
-		"img": "img/vintage-vantage.png",
-		"description": "CSS, HTML, PSD",
-		"website": "//www.vintagevantage.com",
-		"projects": []
-	}, {
-		"id": "mycourthouse",
-		"name": "MyCourthouse",
-		"img": "img/mycourthouse.png",
-		"description": "AddThis, CSS, HTML, Symfony 1.0",
-		"website": "//www.mycourthouse.com",
-		"projects": [{
-			"title": "Javascript Driven",
-			"img": "img/mycourthouse.png",
-			"description": "The entire web application is strongly driven by Javascript.  Some of the Javascript driven components I built included: message board, infinite two-way scrolling, inline editing, rolodex searching, modal driven forms, user context switching, drag and drop sorting, Google Calendar API integration via Javascript, etc."
+        "id": "bidder-truth",
+        "name": "Bidder Truth",
+        "img": "img/bidder-truth.png",
+        "description": "",
+        "website": null,
+        "projects": []
+     }, {
+        "id": "contractor-access",
+        "name": "Contractor Access",
+        "img": "img/contractor-access.png",
+        "description": "",
+        "website": "",
+        "projects": []
+    }, {
+        "id": "curepals",
+        "name": "Cure Pals",
+        "img": "img/curepals.png",
+        "description": "",
+        "website": "",
+        "projects": []
+    }, {
+        "id": "dekotile",
+        "name": "Dekotile",
+        "img": "img/deko-tile.png",
+        "description": "",
+        "website": "",
+        "projects": []
+    }, {
+        "id": "dressage-online",
+        "name": "Dressage Online",
+        "img": "img/dressage-online.png",
+        "description": "",
+        "website": "",
+        "projects": []
+    }, {
+        "id": "ez-flo",
+        "name": "EZ-FLO",
+        "img": "img/ez-flow.png",
+        "description": "",
+        "website": "",
+        "projects": []
+    }, {
+        "id": "endertech",
+        "name": "Ender Technology",
+        "img": "img/endertech.png",
+        "description": "",
+        "website": "",
+        "projects": []
+    }, {
+        "id": "fastnote",
+        "name": "Fastnote",
+        "img": "img/fastnote.png",
+        "description": "",
+        "website": "",
+        "projects": []
+    }, {
+        "id": "giumarra",
+        "name": "Giumarra",
+        "img": "img/giumarra.png",
+        "description": "",
+        "website": "",
+        "projects": []
+    }, {
+        "id": "global-finoncial-data",
+        "name": "Global Financial Data",
+        "img": "img/global-finoncial-data.png",
+        "description": "",
+        "website": "",
+        "projects": []
+    }, {
+        "id": "idea-marketplace",
+        "name": "Idea Marketplace",
+        "img": "img/idea-marketplace.png",
+        "description": "",
+        "website": "",
+        "projects": []
+    }, {
+        "id": "meow",
+        "name": "Meow",
+        "img": "img/meow.png",
+        "description": "",
+        "website": "",
+        "projects": []
+    }, {
+        "id": "music-works-unlimited",
+        "name": "Music Works Unlimited",
+        "img": "img/music-works-unlimited.png",
+        "description": "",
+        "website": "",
+        "projects": []
+    }, {
+        "id": "mycourthouse",
+        "name": "MyCourthouse",
+        "img": "img/mycourthouse.png",
+        "description": "",
+        "website": "//www.mycourthouse.com",
+        "projects": [{
+            "title": "Javascript Driven",
+            "img": "img/mycourthouse.png",
+            "description": "The entire web application is strongly driven by Javascript.  Some of the Javascript driven components I built included:  message board, infinite two-way scrolling, inline editing, rolodex searching, modal driven forms, user context switching, drag and drop sorting, Google Calendar API integration via Javascript, etc."
 		}, {
-			"title": "Email Queue & Subscriptions",
-			"img": "img/mycourthouse.png",
-			"description": "Developed a throttled email queue that handles all of the site's email delivery. I also created a scheduling tool to add particular emails, such as feeds and blasts to be queued on reoccurring schedules. I was responsible for hand creating email templates for each feed and blast that was cross client compatible."
+            "title": "Email Queue & Subscriptions",
+            "img": "img/mycourthouse.png",
+            "description": "Developed a throttled email queue that handles all of the site's email delivery. I also created a scheduling tool to add particular emails, such as feeds and blasts to be queued on reoccurring schedules. I was responsible for hand creating email templates for each feed and blast that was cross client compatible."
 		}, {
-			"title": "Event Driven",
-			"img": "img/mycourthouse.png",
-			"description": "Developed a Google Calendar API wrapper to sync all MyCourthouse events to an individual's Google Calendar. An event tool needed to be developed to make law student life as easy as possible. Instead of having users come to \"another\" site to check on their event schedules I developed a tool to sync all of the events they are attending to their Google Calendars as well."
+            "title": "Event Driven",
+            "img": "img/mycourthouse.png",
+            "description": "Developed a Google Calendar API wrapper to sync all MyCourthouse events to an individual's Google Calendar. An event tool needed to be developed to make law student life as easy as possible. Instead of having users come to \"another\" site to check on their event schedules I developed a tool to sync all of the events they are attending to their Google Calendars as well."
 		}]
+    }, {
+        "id": "natures-partner",
+        "name": "Nature's Partner",
+        "img": "img/natures-partner.png",
+        "description": "",
+        "website": "",
+        "projects": []
+    }, {
+        "id": "oghead",
+        "name": "Oghead",
+        "img": "img/oghead.png",
+        "description": "",
+        "website": "//www.oghead.com",
+        "projects": []
+    }, {
+        "id": "popasmoke",
+        "name": "Popasmoke",
+        "img": "img/popasmoke.png",
+        "description": "",
+        "website": "",
+        "projects": []
+    }, {
+        "id": "sara-happ",
+        "name": "Sara Happ",
+        "img": "img/sara-happ.png",
+        "description": "",
+        "website": "//www.sarahapp.com",
+        "projects": []
+    }, {
+        "id": "staff-development-resources",
+        "name": "Staff Development Resources",
+        "img": "img/staff-development-resources.png",
+        "description": "",
+        "website": "//www.sdresources.org/",
+        "projects": []
+    }, {
+        "id": "hana-shirt-co",
+        "name": "The Hana Shirt Co.",
+        "img": "img/hana-shirt-co.png",
+        "description": "",
+        "website": "",
+        "projects": []
+    }, {
+        "id": "united-oil-co",
+        "name": "United Oil Co.",
+        "img": "img/united-oil-co.png",
+        "description": "",
+        "website": "",
+        "projects": []
+    }, {
+        "id": "united-states-artists",
+        "name": "United States Artists",
+        "img": "img/united-states-artists.png",
+        "description": "AddThis, CSS, HTML, Symfony 1.0",
+        "website": "//www.unitedstatesartists.org",
+        "projects": []
+    }, {
+        "id": "vintage-vantage",
+        "name": "Vintage Vantage",
+        "img": "img/vintage-vantage.png",
+        "description": "CSS, HTML, PSD",
+        "website": "//www.vintagevantage.com",
+        "projects": []
+    }, {
+    	"id": "wiki-grads",
+        "name": "WikiGrads",
+        "img": "img/wiki-grads.png",
+        "description": "",
+        "website": "//www.wikigrads.com",
+        "projects": []
 	}, {
-		"id": "oghead",
-		"name": "Oghead",
-		"img": "img/oghead.png",
-		"description": "CSS, HTML, jQuery, Joomla, JomSocial, PSD",
-		"website": "//www.oghead.com",
-		"projects": []
-	}, {
-		"id": "sara-happ",
-		"name": "Sara Happ",
-		"img": "img/sara-happ.png",
-		"description": "HTML, CSS",
-		"website": "//www.sarahapp.com",
-		"projects": []
-	}, {
-		"id": "bidder-truth",
-		"name": "Bidder Truth",
-		"img": "img/bidder-truth.png",
-		"description": "CSS, HTML, Symfony 1.3",
-		"website": null,
-		"projects": []
-	}, {
-		"id": "staff-development-resources",
-		"name": "Staff Development Resources",
-		"img": "img/usa.png",
-		"description": "",
-		"website": "//www.sdresources.org/",
-		"projects": []
-	}, {
-		"id": "contractor-access",
-		"name": "Contractor Access",
-		"img": "img/usa.png",
-		"description": "",
-		"website": "",
-		"projects": []
-	}, {
-		"id": "curepals",
-		"name": "Cure Pals",
-		"img": "img/usa.png",
-		"description": "",
-		"website": "",
-		"projects": []
-	}, {
-		"id": "dekotile",
-		"name": "Dekotile",
-		"img": "img/usa.png",
-		"description": "",
-		"website": "",
-		"projects": []
-	}, {
-		"id": "dressage-online",
-		"name": "Dressage Online",
-		"img": "img/usa.png",
-		"description": "",
-		"website": "",
-		"projects": []
-	}, {
-		"id": "endertech",
-		"name": "Ender Technology",
-		"img": "img/usa.png",
-		"description": "",
-		"website": "",
-		"projects": []
-	}, {
-		"id": "ez-flo",
-		"name": "EZ-FLO",
-		"img": "img/usa.png",
-		"description": "",
-		"website": "",
-		"projects": []
-	}, {
-		"id": "fastnote",
-		"name": "Fastnote",
-		"img": "img/usa.png",
-		"description": "",
-		"website": "",
-		"projects": []
-	}, {
-		"id": "giumarra",
-		"name": "Giumarra",
-		"img": "img/usa.png",
-		"description": "",
-		"website": "",
-		"projects": []
-	}, {
-		"id": "giumarra-portal",
-		"name": "Giumarra Portal",
-		"img": "img/usa.png",
-		"description": "",
-		"website": "",
-		"projects": []
-	}, {
-		"id": "global-finoncial-data",
-		"name": "Global Financial Data",
-		"img": "img/usa.png",
-		"description": "",
-		"website": "",
-		"projects": []
-	}, {
-		"id": "idea-marketplace",
-		"name": "Idea Marketplace",
-		"img": "img/usa.png",
-		"description": "",
-		"website": "",
-		"projects": []
-	}, {
-		"id": "meow",
-		"name": "Meow",
-		"img": "img/usa.png",
-		"description": "",
-		"website": "",
-		"projects": []
-	}, {
-		"id": "music-works-unlimited",
-		"name": "Music Works Unlimited",
-		"img": "img/usa.png",
-		"description": "",
-		"website": "",
-		"projects": []
-	}, {
-		"id": "natures-partner",
-		"name": "Nature's Partner",
-		"img": "img/usa.png",
-		"description": "",
-		"website": "",
-		"projects": []
-	}, {
-		"id": "popasmoke",
-		"name": "Popasmoke",
-		"img": "img/usa.png",
-		"description": "",
-		"website": "",
-		"projects": []
-	}, {
-		"id": "hana-shirt-co",
-		"name": "The Hana Shirt Co.",
-		"img": "img/usa.png",
-		"description": "",
-		"website": "",
-		"projects": []
-	}, {
-		"id": "united-oil-co",
-		"name": "United Oil Co.",
-		"img": "img/usa.png",
-		"description": "",
-		"website": "",
-		"projects": []
-	}, {
-		"id": "united-oil-igi-tv",
-		"name": "IGI TV",
-		"img": "img/usa.png",
-		"description": "",
-		"website": "",
-		"projects": []
-	}, {
-		"id": "united-oil-intranet",
-		"name": "United Oil Intranet",
-		"img": "img/usa.png",
-		"description": "",
-		"website": "",
-		"projects": []
-	}, {
-		"id": "yclipit",
-		"name": "Yclipit",
-		"img": "img/usa.png",
-		"description": "",
-		"website": "",
-		"projects": []
-	}]
+        "id": "yclipit",
+        "name": "Yclipit",
+        "img": "img/yclipit.png",
+        "description": "",
+        "website": "",
+        "projects": []
+    }, {
+        "id": "ymspa",
+        "name": "Marciena",
+        "img": "img/ymspa.png",
+        "description": "",
+        "website": "",
+        "projects": []
+    }]
 }
