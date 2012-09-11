@@ -186,11 +186,26 @@
         "projects": []
     }, {
         "id": "united-oil-igi-tv",
-        "name": "United Oil IGI TV",
+        "name": "United Oil - IGI TV",
         "img": "img/united-oil-igi-tv.png",
         "description": "Architected and developed a video training software system.  Users get a prioritized queue of videos that was a vehicle for announcements, entertainment, and learning.",
         "alt": "managed and architecturally designed the entire system, facilitated system reporting component, created a method to post videos, implementation of extensive prioritization queue, flowplayer integration, remote uploads on dedicated video server, created a quiz and survey creation wizard, created a quiz and survey component for quizzes, created video library, consistent maintenance, heavy html, css",
-        "website": "//www.unitedoilco.com/",
+        "website": null,
+        "projects": []
+    }, {
+        "id": "united-oil-intranet",
+        "name": "United Oil - Intranet",
+        "img": "img/united-oil-intranet.png",
+        "description": "In addition to general maintainence I deveoped miscellaneous subsystems that are used within the company.",
+        "alt": "created employee directory, created new hire subsystem, miscellaneous intranet development, pricebook modifications, consistent maintenance, ie6, ie7, ie8 integration, html, css",
+        "website": null,
+        "projects": []
+    }, {
+        "id": "united-oil-pricebook",
+        "name": "United Oil - Pricebook",
+        "img": "img/united-oil-pricebook.png",
+        "description": "Architected and facilitated United Oil's transition to an electronic product management system. Created a platform that manages products, vendors, and transactions. Headquarters can upload products, change prices, and create promotions for each of their stations.",
+        "website": null,
         "projects": []
     }, {
         "id": "united-states-artists",
@@ -204,7 +219,7 @@
         "id": "vintage-vantage",
         "name": "Vintage Vantage",
         "img": "img/vintage-vantage.png",
-        "description": "CSS, HTML, PSD",
+        "description": "Managed the maintenance work of this clothing platform.  Developed and designed custom components and 3rd party api integrations.",
         "alt": "created dynamic custom banner system, custom integration with blogspot feeds, inventory export mechanism development, checkout page modifications, feature system alterations, product page modifications with pagination system, product size, color changes, subdomain migrations, general maintenance, price break maintenance, cms, psd to html, heavy html, css",
         "website": "//www.vintagevantage.com",
         "projects": []
@@ -212,22 +227,23 @@
     	"id": "wiki-grads",
         "name": "WikiGrads",
         "img": "img/wiki-grads.png",
-        "description": "",
+        "description": "Architected and developed the MVP that created a social experience for students to interact with their classmates.",
         "website": "//www.wikigrads.com",
         "projects": []
 	}, {
         "id": "yclipit",
         "name": "Yclipit",
         "img": "img/yclipit.png",
-        "description": "",
-        "website": "",
+        "description": "Developed a search platform for users to search coupon based adventisements around a geographic location.",
+        "alt": "search, radial googlemaps search, html / css",
+        "website": "//www.yclipit.com",
         "projects": []
     }, {
         "id": "ymspa",
         "name": "Marciena",
         "img": "img/ymspa.png",
-        "description": "",
-        "website": "",
+        "description": "Executed typical content management updates as well as updating images and creating email blasts.",
+        "website": "//www.ymspa.com",
         "projects": []
     }]
 }
