@@ -7,58 +7,41 @@
         url: 'data/projects.json',
         dataType: 'json',
         success: function (data, textStatus, jqXHR) {
-            Handlebars.registerHelper('gallery', function (projects, options) {
-                var num_projects = projects.length;
-                var output = '';
-
-                while (projects.length) {
-                    var project_group = projects.splice(0, 6),
-                        html = options.fn({
-                            projects: project_group
-                        });
-
-                    output += '<li class="slide">' + html + '</li>';
-                }
-
-                return output;
-            });
-
             var source = [
-                '{{#gallery projects}}',
-                    '<ul class="gallery clearfix">',
-                        '{{#projects}}',
-                            '<li>',
-                                '<figure>',
-                                    '<div class="frame">',
+                '<ul class="projects clearfix">',
+                    '{{#projects}}',
+                        '<li>',
+                            '<figure class="project">',
+                                '<div class="frame">',
+                                    '<a href="#" alt="{{name}}" title="{{name}}">',
                                         '<img src="{{img}}">',
-                                    '</div>',
+                                    '</a>',
+                                '</div>',
 
-                                    '<figcaption class="caption">',
-                                        '<h3>{{name}} {{index}}</h3>',
-                                        '<p>{{description}}</p>',
-                                        '<a href="#"><i class="icon-eye-open"></i></a>',
-                                        
-                                        '{{#website}}',
-                                            '<a href="{{website}}"><i class="icon-link"></i></a>',
-                                        '{{/website}}',
-                                    '</figcaption>',
-                                '</figure>',
-                            '</li>',
-                        '{{/projects}}',
-                    '</ul>',
-                '{{/gallery}}'
+                                '<figcaption class="caption">',
+                                    '<h3>{{name}}</h3>',
+                                    '<p title="{{alt}}">{{description}}</p>',
+                                    
+                                    '{{#if website}}',
+                                        '<a href="{{website}}" class="website" target="_blank">Visit Website</a>',
+                                    '{{/if}}',
+                                '</figcaption>',
+                            '</figure>',
+                        '</li>',
+                    '{{/projects}}',
+                '</ul>',
             ].join('');
 
             var template = Handlebars.compile(source);
             var html = template(data);
 
-            $('#featured_work .slides').html(html);
+            $('#featured_work .stage').html(html);
 
-            $('.gallery li:nth-child(3n) figure').addClass('last');
+            $('.projects li:nth-child(3n)').addClass('last');
         }
     });
 
-    $.ajax({
+    /*$.ajax({
     	url: 'data/projects.json',
     	dataType: 'json',
     	success: function (data, textStatus, jqXHR) {
@@ -99,7 +82,7 @@
     	error: function (jqXHR, textStatus, errorThrown) {
     		console.log(errorThrown);
     	}
-    });
+    });*/
 
     $.ajax({
         url: 'data/skills.json',

@@ -216,7 +216,7 @@ td { vertical-align: top; }
 
 /* ==|== primary styles =====================================================
    Author: Carey Hinoki
-   http://kuler.adobe.com/#themeID/2022673
+   http://kuler.adobe.com/#themeID/95875
    ========================================================================== */
 
 body
@@ -228,6 +228,16 @@ h2,
 h3
 {
     text-align: center;
+}
+
+h2
+{
+    color: #332E33;
+}
+
+h3
+{
+    color: #4C414D;
 }
 
 header
@@ -329,6 +339,55 @@ nav
  * Work
  */
 
+.projects
+{
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.projects > li
+{
+    display: inline-block;
+    *display: inline;
+    margin: 0 4% 4% 0;
+    vertical-align: top;
+    width: 30%;
+}
+
+.project .frame
+{
+    border: 2px solid #4D4A4D;
+}
+
+.project .caption h3
+{
+    color: #4C414D;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 10px 0px 20px;
+    text-align: left;
+}
+
+.project .caption p
+{
+    color: #4D4A4D;
+    font-size: 14px;
+}
+
+.project .website
+{
+    color: #99939A;
+    font-size: 14px;
+}
+
+.projects > li.last
+{
+    margin-right: 0;
+}
+
+/*
+
 .stage
 {
     overflow: hidden;
@@ -349,46 +408,18 @@ nav
     width: 100%;
 }
 
-.gallery
-{
-    list-style: none;
-    margin: 0 auto;
-    padding: 0;
-}
-
-.gallery figure
-{
-    float: left;
-    margin: 0 2% 2% 0;
-    overflow: hidden;
-    padding: 0;
-    position: relative;
-    text-align: center;
-    width: 32%;
-}
-
-.gallery figure:hover .caption
+.projects figure:hover .caption
 {
     display: block;
     top: 0;
 }
 
-.gallery .frame
-{
-    border: 5px solid #4C646B;
-}
-
-.gallery .last
-{
-    margin-right: 0;
-}
-
-.gallery figure img
+.projects figure img
 {
     width: 100%;
 }
 
-.gallery .caption
+.projects .caption
 {
     background: #233138;
     color: #FFF7F5;
@@ -402,12 +433,12 @@ nav
     width: 100%;
 }
 
-.gallery .caption p
+.projects .caption p
 {
     margin-bottom: 20px;
 }
 
-.gallery .caption a
+.projects .caption a
 {
     background: #A84B3A;
     border-radius: 15px;
@@ -425,15 +456,19 @@ nav
     width: 30px;
 }
 
-.gallery .caption a:hover
+.projects .caption a:hover
 {
     background: #FFF7F5;
     color: #A84B3A;
 }
 
+*/
+
 /*
  * Featured Work
  */
+
+/*
 
 #featured_work .work
 {
@@ -486,6 +521,8 @@ nav
 {
     font-size: 13px;
 }
+
+*/
 
 /*
  * About

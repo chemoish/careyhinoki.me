@@ -3,98 +3,118 @@
         "id": "bidder-truth",
         "name": "Bidder Truth",
         "img": "img/bidder-truth.png",
-        "description": "",
+        "description": "Architected and developed a \"purchase experience\" platform backed by an advertisement component. Users could showcase how they achieved the \"best\" deal.",
         "website": null,
         "projects": []
      }, {
         "id": "contractor-access",
         "name": "Contractor Access",
         "img": "img/contractor-access.png",
-        "description": "",
-        "website": "",
+        "description": "Managed the maintenance phase of a home grown contractor ecommerce platform. Everything from updating product pages to exporting products to Excel.",
+        "alt": "modified credit account submission, modified product listing and detail pages, modified product export mechanism, access database import procedures, integrating with remote mysql server on a windows machine, product image alteration (scaling, thumbnails), cms, minor photoshop, css",
+        "website": "//www.contractoraccess.com",
         "projects": []
     }, {
         "id": "curepals",
         "name": "Cure Pals",
         "img": "img/curepals.png",
-        "description": "",
-        "website": "",
+        "description": "Architected and developed a social network for kids with disabilities. The platform revolved around cause awareness.  Subscriptions fees are donationed to organizations that support a user's associated cause.",
+        "alt": "entire site architecture, organization management, individual account management, subscription management using authorize.net cim, membership level management, plush doll code subscription management, forums, blogs, faq management, custom cms page creator / management, ajax paginator + filters, ajax login + modals, chat room management, chat room language filter, friends, blocking user, messaging system, interspire shop integration, interest group management, 3rd party flash game integration, profile theme integration",
+        "website": "//www.curepals.com/",
         "projects": []
     }, {
         "id": "dekotile",
         "name": "Dekotile",
         "img": "img/deko-tile.png",
-        "description": "",
-        "website": "",
+        "description": "Created a contest management system that hosted winners and runner-ups for their best tile submissions.  Tied together user photo submissions to a gallery and their respective product pages.",
+        "alt": "created a contest system, created a multi step contest submission process, created a gallery, created an admin interface to create / generate monthly contests, created cronjobs to advance monthly contests, created a contest winner system, created a contest runner-up system, created contest user accounts, created a voting system, integrated x-cart variable system, x-cart, css",
+        "website": "//www.dekotile.com/store/",
         "projects": []
     }, {
         "id": "dressage-online",
         "name": "Dressage Online",
         "img": "img/dressage-online.png",
-        "description": "",
-        "website": "",
-        "projects": []
-    }, {
-        "id": "ez-flo",
-        "name": "EZ-FLO",
-        "img": "img/ez-flow.png",
-        "description": "",
-        "website": "",
+        "description": "Maintained and enhanced the post a listing process. Modified both the PayPal and Constant Contact integrations.",
+        "alt": "modification for expiration cronjob, enhanced submission to post listings, modified paypal submissions, constant contact integration alteration, created advanced listing page, cms links, symfony 1.0, css",
+        "website": "//www.dressageonline.com/",
         "projects": []
     }, {
         "id": "endertech",
         "name": "Ender Technology",
         "img": "img/endertech.png",
-        "description": "",
-        "website": "",
+        "description": "Redesigned company website using Joomla 1.5. In addition, I created and designed their internal timecard application.",
+        "alt": "entire psd to template integration, joomla 1.5 integration, custom component creation, html, css",
+        "website": "//www.endertech.com/",
+        "projects": []
+    }, {
+        "id": "ez-flo",
+        "name": "EZ-FLO",
+        "img": "img/ez-flow.png",
+        "description": "Managed and maintained a plumbing ecommerce solution. Added product management along with custom components such as file uploading and captchas.",
+        "alt": "modified credit account submission, modified product listing and detail pages, modified product export mechanism, access database import procedures, integrating with remote mysql server on a windows machine, custom captcha implementation, pdf uploading, cms, minor photoshop, css",
+        "website": "//www.ez-flo.net/",
         "projects": []
     }, {
         "id": "fastnote",
         "name": "Fastnote",
         "img": "img/fastnote.png",
-        "description": "",
-        "website": "",
+        "description": "Architected and developed a reverse twitter-like application. A system where users can post \"notes\" about an individual. In addition, a rules system was created to extensively watch / manage user activity.",
+        "alt": "facilitated and architecturally designed entire system, managed team of developers, custom tooltip integration, created note components and listings, created address components and listings, created user registration and profile management, implemented addressee watch system, implemented extensive contact pages, jquery, symfony 1.4, cms, html",
+        "website": "//www.fastnote.com/",
         "projects": []
     }, {
         "id": "giumarra",
         "name": "Giumarra",
         "img": "img/giumarra.png",
-        "description": "",
-        "website": "",
+        "description": "Simple content management updates with a hint of flash.",
+        "alt": "flash map of current division locations, page content alterations, html, css",
+        "website": "//www.giumarra.com/",
+        "projects": []
+    }, {
+        "id": "giumarra-portal",
+        "name": "Giumarra Portal",
+        "img": "img/giumarra-portal.png",
+        "description": "Architected and designed an internal portal application for the Giumarra companies. The application included SSO with custom developed calendar and contact systems.",
+        "alt": "architectural designed the entire system, facilitated system creation, implemented single sign on methods with 8+ internal domains, implemented google calendar api, implemented contacts system mimicking google contacts, html, css, symfony 1.0",
+        "website": "//www.giumarra.com/",
         "projects": []
     }, {
         "id": "global-finoncial-data",
         "name": "Global Financial Data",
-        "img": "img/global-finoncial-data.png",
-        "description": "",
-        "website": "",
+        "img": "img/global-financial-data.png",
+        "description": "Redeveloped a specialized system that tracks historical financial data.  Developed charts to discribe splits, dividends, ema, inflation, and more. Also developed screen scrapers that have accounted for tracking 17,000+ stock/indices.",
+        "alt": "system was largely redeveloped.  anything not done was done.  anything broken was fixed., modified search functions, modified stock data display (splits, dividends, open - high - low - close - adjusted close), created a permission layer to segment access, hand built a charting system using stock trends / formulas (ema, comparison, inflation, and more), created an array of backend system tools and data uploaders, custom work for both frontend and backend use, created custom shopping cart, custom progress bar, custom zip tools and data download mechanisms, batch scripts for large data source loading, creating reads and parses of 3rd party data, dynamic creation of screen scrapping bots (17000+ bots), heavy html, css",
+        "website": "//www.globalfinancialdata.com/",
         "projects": []
     }, {
         "id": "idea-marketplace",
         "name": "Idea Marketplace",
         "img": "img/idea-marketplace.png",
-        "description": "",
-        "website": "",
+        "description": "Architected and developed a platform that manages the posting and purchasing of inventive ideas. Users can access three different sections of the application to solve or have their issues solved.",
+        "alt": "facilitated and executed entire system, re-architectured system, created a hub for 3 websites (marketplace, competition, community), created custom search system with demographic availability, segmented permissions (buyers, sellers, sponsors, etc), created custom rating system, created custom multi step idea submission system, created batch system, created invitation system, created email notification system, created internal notification system, created messaging system, created an initiative and competition contest system, including winner selection / ranking system, created idea compression and download tool., created comments system, top 10 algorithm integration, created global search system, created what's hot system, heavy html, css, cms, symfony 1.0",
+        "website": "//www.ideamarketplace.com/",
         "projects": []
     }, {
         "id": "meow",
         "name": "Meow",
         "img": "img/meow.png",
-        "description": "",
-        "website": "",
+        "description": "Created dozens of custom email blasts. Managed basic maintenance to product and checkout pages.",
+        "alt": "product content alterations, checkout modifications, shipping modifications, created numerous custom email blasts, minor html, css",
+        "website": "//www.meow.com/",
         "projects": []
     }, {
         "id": "music-works-unlimited",
         "name": "Music Works Unlimited",
         "img": "img/music-works-unlimited.png",
-        "description": "",
-        "website": "",
+        "description": "Basic design integration and maintenance for product pages and also created numerous email blasts.",
+        "alt": "created numerous custom email blasts, implemented custom contact uploader, modified product pages, heavy email html, css",
+        "website": "//www.musicworksunlimited.com/",
         "projects": []
     }, {
         "id": "mycourthouse",
         "name": "MyCourthouse",
         "img": "img/mycourthouse.png",
-        "description": "",
+        "description": "Architected and developed a social network for law students. The application connects students to their organizations by means of events and boards. Each organization is connected to a university or network.",
         "website": "//www.mycourthouse.com",
         "projects": [{
             "title": "Javascript Driven",
@@ -113,56 +133,71 @@
         "id": "natures-partner",
         "name": "Nature's Partner",
         "img": "img/natures-partner.png",
-        "description": "",
-        "website": "",
+        "description": "Managed site maintenance focused around managing company contacts and emails.",
+        "alt": "mass email creation, created contact list parsing of company mailboxes, created custom contact uploader, created custom captcha, modified miscellaneous forms, minor css",
+        "website": "//www.naturespartner.com/",
         "projects": []
     }, {
         "id": "oghead",
         "name": "Oghead",
         "img": "img/oghead.png",
-        "description": "",
+        "description": "A side business venture that I architected, designed, and developed. A video game social network that ties users together with flash games.",
+        "alt": "created and managed entire system development, custom component development to list and display flash games, integration with jomsocial, created cronjob to execute flash downloads via 3rd party json and xml feeds, joomla 1.5, heavy photoshop, heavy html, css",
         "website": "//www.oghead.com",
         "projects": []
     }, {
         "id": "popasmoke",
         "name": "Popasmoke",
         "img": "img/popasmoke.png",
-        "description": "",
-        "website": "",
+        "description": "Managed and maintained a listing system for veterans that feature photos, comments, and historical accounts that bring each of them closer together.",
+        "alt": "modifications to custom forms, image uploading and transformation integration, general debugging and site maintenance, php4 to php5 debugging, database alterations, custom captcha integration, minor html, minor css",
+        "website": "//popasmoke.com/",
         "projects": []
     }, {
         "id": "sara-happ",
         "name": "Sara Happ",
         "img": "img/sara-happ.png",
-        "description": "",
+        "description": "Simple content alterations and maintenance.",
+        "alt": "product detail modifications, product listing debugging, added a merchant seal, modified the sort order of all the products listings and image display, content alteration to featured article, minor html, minor css",
         "website": "//www.sarahapp.com",
         "projects": []
     }, {
         "id": "staff-development-resources",
         "name": "Staff Development Resources",
         "img": "img/staff-development-resources.png",
-        "description": "",
+        "description": "Architected and developed as system for finding and listing the highest quality staff development seminars and conferences.",
         "website": "//www.sdresources.org/",
         "projects": []
     }, {
         "id": "hana-shirt-co",
         "name": "The Hana Shirt Co.",
         "img": "img/hana-shirt-co.png",
-        "description": "",
-        "website": "",
+        "description": "Integrated a new product line and built a new shopping cart experience.",
+        "alt": "facilitation of system sale component, facilitation of dress component, browser compatibility modifications, addthis.com integration, symfony 1.0, html, minor css",
+        "website": "//www.thehanashirtco.com/",
         "projects": []
     }, {
         "id": "united-oil-co",
         "name": "United Oil Co.",
         "img": "img/united-oil-co.png",
-        "description": "",
-        "website": "",
+        "description": "Facilited the redevelopment of United Oil's marketing site from static html files to a CMS platform.  Managed the development of a gas station location finder.",
+        "alt": "facilitation of system conversion from static content into a cms, managed the creation of gas station - location system, custom page requests, database integration with mysql and the company's external data resources, image tranformation integration, browser compatibility checks, symfony 1.2, minor html, minor css",
+        "website": "//www.unitedoilco.com/",
+        "projects": []
+    }, {
+        "id": "united-oil-igi-tv",
+        "name": "United Oil IGI TV",
+        "img": "img/united-oil-igi-tv.png",
+        "description": "Architected and developed a video training software system.  Users get a prioritized queue of videos that was a vehicle for announcements, entertainment, and learning.",
+        "alt": "managed and architecturally designed the entire system, facilitated system reporting component, created a method to post videos, implementation of extensive prioritization queue, flowplayer integration, remote uploads on dedicated video server, created a quiz and survey creation wizard, created a quiz and survey component for quizzes, created video library, consistent maintenance, heavy html, css",
+        "website": "//www.unitedoilco.com/",
         "projects": []
     }, {
         "id": "united-states-artists",
         "name": "United States Artists",
         "img": "img/united-states-artists.png",
-        "description": "AddThis, CSS, HTML, Symfony 1.0",
+        "description": "Architected and facilitated the development a social platform that invests in America's finest artists. Users can list projects that can be funded by individuals as well as government grants.",
+        "alt": "system facilitation and architectural design, managed development process, created search system, created and maintained function stubs and skeletons, implementation of project profile, implementation of showcase profile, implementation of user profile, addthis.com integration and generalization, symfony 1.3, cms, heavy html, heavy css",
         "website": "//www.unitedstatesartists.org",
         "projects": []
     }, {
@@ -170,6 +205,7 @@
         "name": "Vintage Vantage",
         "img": "img/vintage-vantage.png",
         "description": "CSS, HTML, PSD",
+        "alt": "created dynamic custom banner system, custom integration with blogspot feeds, inventory export mechanism development, checkout page modifications, feature system alterations, product page modifications with pagination system, product size, color changes, subdomain migrations, general maintenance, price break maintenance, cms, psd to html, heavy html, css",
         "website": "//www.vintagevantage.com",
         "projects": []
     }, {
