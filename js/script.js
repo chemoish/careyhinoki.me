@@ -37,9 +37,37 @@
 
             $('#featured_work .stage').html(html);
 
-            $('.projects li:nth-child(3n)').addClass('last');
+            resizeProjects()
         }
     });
+
+    function resizeProjects(event) {
+        var projects_element = $('.projects');
+
+        projects_element.find('li').removeClass('last');
+
+        if (projects_element.width() > 724) {
+            projects_element.find('li:nth-child(3n)').addClass('last');
+        } else {
+            projects_element.find('li:nth-child(2n)').addClass('last');
+        }
+    }
+
+    $(window).resize(throttle(resizeProjects, 100));
+
+    function throttle(fn, delay) {
+        var timer;
+
+        return function () {
+            if (!timer) {
+                timer = setTimeout(function () {
+                    fn.apply(this, arguments);
+
+                    timer = null;
+                }, delay);
+            }
+        };
+    }
 
     /*$.ajax({
     	url: 'data/projects.json',

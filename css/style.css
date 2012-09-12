@@ -233,12 +233,23 @@ h3
 h2
 {
     color: #332E33;
+    font-size: 48px;
+    margin: 0 0 10px;
 }
 
 h3
 {
+    border: 1px dotted #4C414D;
+    border-width: 1px 0;
     color: #4C414D;
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 25px;
 }
+
+/*
+ * Header
+ */
 
 header
 {
@@ -289,6 +300,10 @@ nav
 {
     padding-right: 120px;
 }
+
+/*
+ * Introduction
+ */
 
 .intro-wrapper
 {
@@ -379,6 +394,15 @@ nav
 }
 
 /*
+ * Content
+ */
+
+.section
+{
+    padding: 50px 0;
+}
+
+/*
  * Work
  */
 
@@ -393,9 +417,9 @@ nav
 {
     display: inline-block;
     *display: inline;
-    margin: 0 4% 4% 0;
+    margin: 0 2% 2% 0;
     vertical-align: top;
-    width: 30%;
+    width: 32%;
 }
 
 .project .frame
@@ -405,6 +429,7 @@ nav
 
 .project .caption h3
 {
+    border: 0;
     color: #4C414D;
     font-size: 16px;
     line-height: 22px;
@@ -487,7 +512,19 @@ nav
    Modify as content requires.
    ========================================================================== */
 
+@media (max-width: 979px) and (min-width: 768px) {
+    .projects > li
+    {
+        margin: 0 2% 2% 0;
+        width: 49%;
+    }
+}
+
 @media (max-width: 767px) {
+    /*
+     * Header
+     */
+
     header
     {
         position: static;
@@ -501,6 +538,23 @@ nav
     #vcard
     {
         display: block;
+    }
+
+    #vcard h1,
+    #vcard h2
+    {
+        color: #fff;
+        line-height: 1;
+    }
+
+    #vcard h1
+    {
+        font-size: 16px;
+    }
+
+    #vcard h2
+    {
+        font-size: 14px;
     }
 
     nav
@@ -526,6 +580,16 @@ nav
     .nav .portfolio
     {
         padding: 0;
+    }
+
+    /*
+     * Work
+     */
+
+    .projects > li
+    {
+        margin: 0 0 2%;
+        width: 100%;
     }
 }
 
