@@ -221,7 +221,7 @@ td { vertical-align: top; }
 
 body
 {
-    background: #fff;
+    background: url(../img/bg.jpg);
 }
 
 h2,
@@ -239,9 +239,9 @@ h2
 
 h3
 {
-    border: 1px dotted #4C414D;
+    border: 1px dotted #99939A;
     border-width: 1px 0;
-    color: #4C414D;
+    color: #99939A;
     font-size: 16px;
     font-weight: normal;
     margin-bottom: 25px;
@@ -253,7 +253,7 @@ h3
 
 header
 {
-    background: #4D4A4D;
+    background: #332E33;
     height: 50px;
     position: fixed;
     text-align: center;
@@ -316,6 +316,7 @@ nav
 
 .intro-wrapper
 {
+    background: url(../img/section-bg.png);
     height: 375px;
 }
 
@@ -436,7 +437,7 @@ nav
 
 .featured-work-wrapper
 {
-    background: #99939A;
+    
 }
 
 .projects
@@ -493,6 +494,11 @@ nav
  * About
  */
 
+.about-wrapper
+{
+    background: url(../img/section-bg.png);
+}
+
 #bio h1,
 #tidbits h1
 {
@@ -542,7 +548,16 @@ nav
 
 .contact-wrapper
 {
-    background: #99939A;
+    
+}
+
+/*
+ * Footer
+ */
+
+footer
+{
+    background: url(../img/section-bg.png);
 }
 
 
