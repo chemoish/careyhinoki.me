@@ -253,11 +253,19 @@ h3
 
 header
 {
-    background: #332E33;
+    background: #4D4A4D;
+    height: 50px;
     position: fixed;
     text-align: center;
     width: 100%;
     z-index: 9999;
+}
+
+#logo img
+{
+    left: 50%;
+    margin-left: -42px;
+    position: absolute;
 }
 
 #vcard
@@ -282,6 +290,7 @@ nav
 .nav li
 {
     float: left;
+    line-height: 50px;
     padding: 0 15px;
 }
 
@@ -306,6 +315,25 @@ nav
  */
 
 .intro-wrapper
+{
+    height: 375px;
+}
+
+#intro
+{
+    padding-top: 75px;
+    position: relative;
+}
+
+#intro h2
+{
+    font-family: 'Candal', sans-serif;
+    font-size: 72px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+/*.intro-wrapper
 {
     background: url(../img/intro-background.png) repeat-x 0px 75px;
     height: 375px;
@@ -391,7 +419,7 @@ nav
 {
     background: url(../img/intro-cloud-4.png) no-repeat 22% 0;
     z-index: 7;
-}
+}*/
 
 /*
  * Content
@@ -405,6 +433,11 @@ nav
 /*
  * Work
  */
+
+.featured-work-wrapper
+{
+    background: #99939A;
+}
 
 .projects
 {
@@ -424,7 +457,9 @@ nav
 
 .project .frame
 {
-    border: 2px solid #4D4A4D;
+    background: #fff;
+    border: 1px solid #4C414D;
+    padding: 5px;
 }
 
 .project .caption h3
@@ -458,6 +493,22 @@ nav
  * About
  */
 
+#bio h1,
+#tidbits h1
+{
+    font-size: 15px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+#bio p,
+#tidbits p,
+#tidbits li
+{
+    font-size: 14px;
+    line-height: 1.5;
+}
+
 .skills
 {
     list-style: none;
@@ -486,22 +537,14 @@ nav
 }
  
 /*
- * Separator
+ * Contact
  */
 
- .separator
- {
-    background: #332E33;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
- }
+.contact-wrapper
+{
+    background: #99939A;
+}
 
- .separator a
- {
-    color: #fff;
-    text-decoration: none;
- }
 
 
 
@@ -586,9 +629,14 @@ nav
      * Work
      */
 
+    .projects
+    {
+        max-width: 460px;
+    }
+
     .projects > li
     {
-        margin: 0 0 2%;
+        margin: 0 0 4%;
         width: 100%;
     }
 }

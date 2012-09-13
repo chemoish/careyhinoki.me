@@ -32,6 +32,8 @@
                 '</ul>',
             ].join('');
 
+            data.projects = data.projects.splice(0, 6);
+
             var template = Handlebars.compile(source);
             var html = template(data);
 
