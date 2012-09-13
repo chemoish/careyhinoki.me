@@ -37,7 +37,7 @@
             var template = Handlebars.compile(source);
             var html = template(data);
 
-            $('#featured_work .stage').html(html);
+            $('#work .stage').html(html);
 
             resizeProjects()
         }
@@ -55,8 +55,6 @@
         }
     }
 
-    $(window).resize(throttle(resizeProjects, 100));
-
     function throttle(fn, delay) {
         var timer;
 
@@ -70,6 +68,44 @@
             }
         };
     }
+
+    $(window).on('resize', throttle(resizeProjects, 100));
+    $(window).on('scroll', throttle(function (event) {
+        var window_element = $(window),
+            scroll_top = window_element.scrollTop() + 20,
+            scroll_bottom = window_element.scrollTop() + window_element.height() - 50,
+            social_media_element = $('#social_media'),
+            to_top_button_element = $('#to_top_button');
+
+        social_media_element.stop(true);
+        social_media_element.animate({
+            top: scroll_top + 'px'
+        }, 400);
+
+        to_top_button_element.stop(true);
+        to_top_button_element.animate({
+            opacity: scroll_top > 20 ? 1 : 0,
+            top: scroll_bottom + 'px'
+        }, 400);
+    }, 100));
+
+    $('#to_top_button').on('click', function (event) {
+        $('body').animate({
+            scrollTop: 0
+        }, 800);
+    });
+
+    $('.nav a').on('click', function (event) {
+        var nav_element = $(this),
+            to_element = $(nav_element.attr('href')),
+            scroll_top = to_element.offset().top - 50; // minus menu
+
+        $('body').animate({
+            scrollTop: scroll_top
+        }, 800);
+
+        event.preventDefault();
+    });
 
     /*$.ajax({
     	url: 'data/projects.json',
