@@ -366,6 +366,7 @@ nav
     padding: 0;
     position: absolute;
     right: 20px;
+    top: -100px;
 }
 
 #utility li
@@ -479,6 +480,12 @@ nav
     margin: 0 2% 2% 0;
     vertical-align: top;
     width: 32%;
+    zoom: 1;
+}
+
+.lt-ie8 .projects > li
+{
+    margin: 0 1.9% 1.9% 0;
 }
 
 .projects > li.last
