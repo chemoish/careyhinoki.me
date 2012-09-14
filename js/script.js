@@ -8,61 +8,51 @@
         dataType: 'json',
         success: function (data, textStatus, jqXHR) {
             var source = [
-                '<ul class="projects clearfix">',
-                    '{{#projects}}',
-                        '<li>',
-                            '<figure class="project">',
-                                '<div class="frame">',
-                                    '<a href="#" alt="{{name}}" title="{{name}}">',
-                                        '<img src="{{img}}">',
-                                    '</a>',
-                                '</div>',
+                '{{#projects}}',
+                    '<li>',
+                        '<figure class="project">',
+                            '<div class="frame">',
+                                '<a href="#" alt="{{name}}" title="{{name}}">',
+                                    '<img src="{{img}}">',
+                                '</a>',
+                            '</div>',
 
+                            '<div class="mask">',
                                 '<figcaption class="caption">',
                                     '<h3>{{name}}</h3>',
                                     '<h4>{{tagify tags}}</h4>',
                                     '<p title="{{alt}}">{{description}}</p>',
                                     
-                                    '<a href="" class="view"><i class="icon-search"></i></a>',
+                                    '<a href="#" class="view"><i class="icon-search"></i></a>',
+
                                     '{{#if website}}',
                                         '<a href="{{website}}" class="website" target="_blank">',
                                             '<i class="icon-link"></i> <span>Visit Website</span>',
                                         '</a>',
                                     '{{/if}}',
                                 '</figcaption>',
-                            '</figure>',
-                        '</li>',
-                    '{{/projects}}',
-                '</ul>',
+                            '</div>',
+                        '</figure>',
+                    '</li>',
+                '{{/projects}}',
             ].join('');
 
             Handlebars.registerHelper('tagify', function (context, options) {
                 return this.tags.join(', ');
             });
 
-            data.projects = data.projects.splice(0, 6);
+            //data.projects = data.projects.splice(0, 6);
 
             var template = Handlebars.compile(source);
             var html = template(data);
 
-            $('#work .stage').html(html);
+            $('#work .projects').html(html);
 
-            resizeProjects()
+            var projects_element = $('.projects');
+
+            projects_element.find('li:nth-child(3n)').addClass('last');
         }
     });
-
-    function resizeProjects(event) {
-        var projects_element = $('.projects'),
-            body = $('body');
-
-        projects_element.find('li').removeClass('last');
-
-        if (body.width() > 1200) {
-            projects_element.find('li:nth-child(3n)').addClass('last');
-        } else {
-            projects_element.find('li:nth-child(2n)').addClass('last');
-        }
-    }
 
     function throttle(fn, delay) {
         var timer;
@@ -78,7 +68,6 @@
         };
     }
 
-    $(window).on('resize', throttle(resizeProjects, 100));
     $(window).on('scroll', throttle(function (event) {
         var window_element = $(window),
             scroll_top = window_element.scrollTop() + 20,
@@ -114,6 +103,45 @@
         $('body').animate({
             scrollTop: scroll_top
         }, 800);
+
+        event.preventDefault();
+    });
+
+    $('.projects').delegate('.project', 'mouseenter', function (event) {
+        var project = $(this),
+            mask = project.find('.mask'),
+            caption = project.find('.caption');
+
+        caption.removeClass('detail');
+
+        mask.css('top', 0);
+    });
+
+    $('.projects').delegate('.project', 'mouseleave', function (event) {
+        var project = $(this),
+            projects = project.closest('.projects'),
+            mask = project.find('.mask'),
+            view_all_mode = projects.hasClass('summary') || projects.hasClass('detail');
+
+        if (view_all_mode === false) {
+            mask.css('top', -305);
+        }
+    });
+
+    $('.projects').delegate('.project .view', 'click', function (event) {
+        var view_link = $(this),
+            caption = view_link.closest('.caption');
+
+        caption.animate({
+            left: 460
+        }, 250, function () {
+            caption.css('left', -460);
+            caption.addClass('detail');
+
+            caption.animate({
+                left: 0
+            }, 250);
+        });
 
         event.preventDefault();
     });

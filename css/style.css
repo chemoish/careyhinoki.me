@@ -15,7 +15,7 @@
    HTML5 display definitions
    ========================================================================== */
 
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+article, aside, view, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
 audio:not([controls]) { display: none; }
 [hidden] { display: none; }
@@ -486,29 +486,30 @@ nav
 .project .frame
 {
     background: #fff;
-    border: 1px solid #000;
     padding: 5px;
 }
 
-.project figcaption
+.project .mask
 {
     background: url(../img/section-bg.jpg);
-    display: none;
     height: 100%;
     left: 0;
     position: absolute;
     text-align: center;
-    top: 0;
+    transition: top 0.5s ease;
+    -webkit-transition: top 0.5s ease;
+    -moz-transition: top 0.5s ease;
+    -o-transition: top 0.5s ease;
+    top: -305px;
     width: 100%;
 }
 
-.project .summary,
-.project .detail
+.project .caption
 {
-    display: block;
+    position: relative;
 }
 
-.project .summary h3
+.project .caption h3
 {
     border: 0;
     color: #333;
@@ -517,7 +518,7 @@ nav
     margin: 15% 0 10px;
 }
 
-.project .summary h4
+.project .caption h4
 {
     color: #666;
     font-size: 16px;
@@ -525,37 +526,46 @@ nav
     padding: 0 20%;
 }
 
-.project .summary p
+.project .caption p
 {
     color: #ABACA5;
     display: none;
     font-size: 14px;
 }
 
-.project .summary .view,
-.project .summary .website
+.project .caption .view,
+.project .caption .website
 {
     color: #999;
     font-size: 18px;
 }
 
-.project .summary .view:hover,
-.project .summary .website:hover
+.project .caption .view:hover,
+.project .caption .website:hover
 {
     color: #333;
     text-decoration: none;
 }
 
-.project .summary .website span
+.project .caption .website span
 {
     display: none;
 }
 
+/* all projects */
+.projects.summary .project .mask,
+.projects.detail .project .mask
+{
+    top: 0 !important;
+}
+
+.projects.detail .project .caption, /* all projects */
 .project .detail
 {
     text-align: left;
 }
 
+.projects.detail .project .caption h3, /* all projects */
 .project .detail h3
 {
     border: 0;
@@ -567,6 +577,7 @@ nav
     text-align: left;
 }
 
+.projects.detail .project .caption h4, /* all projects */
 .project .detail h4
 {
     color: #666;
@@ -576,31 +587,45 @@ nav
     padding: 0 10px;
 }
 
+.projects.detail .project .caption p, /* all projects */
 .project .detail p
 {
     color: #ABACA5;
+    display: block;
     font-size: 14px;
+    line-height: 1.5;
     padding: 0 10px;
 }
 
+.projects.detail .project .caption .view, /* all projects */
 .project .detail .view
 {
     display: none;
 }
 
+.projects.detail .project .caption .website, /* all projects */
 .project .detail .website
 {
     color: #666;
+    display: block;
     font-size: 14px;
     padding: 0 10px;
 }
 
+.projects.detail .project .caption .website:hover, /* all projects */
 .project .detail .website:hover
 {
     color: #333;
     text-decoration: none;
 }
 
+.projects.detail .project .caption .website span, /* all projects */
+.project .detail .website span
+{
+    display: block;
+}
+
+.projects.detail .project .caption .website i, /* all projects */
 .project .detail .website i
 {
     display: none;
@@ -700,11 +725,61 @@ footer a
    Modify as content requires.
    ========================================================================== */
 
-@media (max-width: 1200px) and (min-width: 768px) {
+@media (max-width: 1200px) and (min-width: 960px) {
+    .projects.detail .project .caption h3, /* all projects */
+    .project .detail h3
+    {
+        font-size: 18px;
+    }
+
+    .projects.detail .project .caption h4, /* all projects */
+    .project .detail h4
+    {
+        font-size: 12px;
+    }
+
+    .projects.detail .project .caption p, /* all projects */
+    .project .detail p
+    {
+        font-size: 11px;
+    }
+
+    .projects.detail .project .caption .website, /* all projects */
+    .project .detail .website
+    {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 960px) and (min-width: 768px) {
     .projects > li
     {
-        margin: 0 2% 2% 0;
-        width: 49%;
+        margin: 2% !important;
+        width: 46%;
+    }
+
+    .projects.detail .project .caption h3, /* all projects */
+    .project .detail h3
+    {
+        font-size: 20px;
+    }
+
+    .projects.detail .project .caption h4, /* all projects */
+    .project .detail h4
+    {
+        font-size: 14px;
+    }
+
+    .projects.detail .project .caption p, /* all projects */
+    .project .detail p
+    {
+        font-size: 13px;
+    }
+
+    .projects.detail .project .caption .website, /* all projects */
+    .project .detail .website
+    {
+        font-size: 14px;
     }
 }
 
