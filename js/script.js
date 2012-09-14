@@ -23,7 +23,7 @@
                                     '<h4>{{tagify tags}}</h4>',
                                     '<p title="{{alt}}">{{description}}</p>',
                                     
-                                    '<a href="#" class="view"><i class="icon-search"></i></a>',
+                                    '<a href="javascript:;" class="view"><i class="icon-search"></i></a>',
 
                                     '{{#if website}}',
                                         '<a href="{{website}}" class="website" target="_blank">',
@@ -71,21 +71,35 @@
     $(window).on('scroll', throttle(function (event) {
         var window_element = $(window),
             scroll_top = window_element.scrollTop() + 20,
-            scroll_bottom = window_element.scrollTop() + window_element.height() - 50,
+            scroll_bottom = window_element.scrollTop() + window_element.height() - 100,
             social_media_element = $('#social_media'),
-            to_top_button_element = $('#to_top_button');
+            utility_element = $('#utility');
 
         social_media_element.stop(true);
         social_media_element.animate({
             top: scroll_top + 'px'
         }, 400);
 
-        to_top_button_element.stop(true);
-        to_top_button_element.animate({
+        utility_element.stop(true);
+        utility_element.animate({
             opacity: scroll_top > 20 ? 1 : 0,
             top: scroll_bottom + 'px'
         }, 400);
     }, 100));
+
+    $('#toggle_project_view').on('click', function (event) {
+        var projects = $('.projects'),
+            projects_summary_view = projects.hasClass('summary'),
+            projects_detail_view = projects.hasClass('detail');
+
+        if (!projects_summary_view && !projects_detail_view) {
+            projects.addClass('summary');
+        } else if (projects_summary_view) {
+            projects.toggleClass('summary detail');
+        } else if (projects_detail_view) {
+            projects.removeClass('detail');
+        }
+    });
 
     $('#to_top_button').on('click', function (event) {
         $('body').animate({
@@ -109,22 +123,25 @@
 
     $('.projects').delegate('.project', 'mouseenter', function (event) {
         var project = $(this),
-            mask = project.find('.mask'),
-            caption = project.find('.caption');
+            project_mask = project.find('.mask'),
+            project_caption = project.find('.caption'),
+            projects = project.closest('.projects'),
+            projects_view_all = projects.hasClass('summary') || projects.hasClass('detail');;
 
-        caption.removeClass('detail');
-
-        mask.css('top', 0);
+        if (projects_view_all === false) {
+            project_caption.removeClass('detail');
+            project_mask.css('top', 0);
+        }
     });
 
     $('.projects').delegate('.project', 'mouseleave', function (event) {
         var project = $(this),
+            project_mask = project.find('.mask'),
             projects = project.closest('.projects'),
-            mask = project.find('.mask'),
-            view_all_mode = projects.hasClass('summary') || projects.hasClass('detail');
+            projects_view_all = projects.hasClass('summary') || projects.hasClass('detail');
 
-        if (view_all_mode === false) {
-            mask.css('top', -305);
+        if (projects_view_all === false) {
+            project_mask.css('top', -305);
         }
     });
 
