@@ -20,10 +20,14 @@
 
                                 '<figcaption class="caption">',
                                     '<h3>{{name}}</h3>',
+                                    '<h4>{{tagify tags}}</h4>',
                                     '<p title="{{alt}}">{{description}}</p>',
                                     
+                                    '<a href="" class="view"><i class="icon-search"></i></a>',
                                     '{{#if website}}',
-                                        '<a href="{{website}}" class="website" target="_blank">Visit Website</a>',
+                                        '<a href="{{website}}" class="website" target="_blank">',
+                                            '<i class="icon-link"></i> <span>Visit Website</span>',
+                                        '</a>',
                                     '{{/if}}',
                                 '</figcaption>',
                             '</figure>',
@@ -31,6 +35,10 @@
                     '{{/projects}}',
                 '</ul>',
             ].join('');
+
+            Handlebars.registerHelper('tagify', function (context, options) {
+                return this.tags.join(', ');
+            });
 
             data.projects = data.projects.splice(0, 6);
 
@@ -44,11 +52,12 @@
     });
 
     function resizeProjects(event) {
-        var projects_element = $('.projects');
+        var projects_element = $('.projects'),
+            body = $('body');
 
         projects_element.find('li').removeClass('last');
 
-        if (projects_element.width() > 724) {
+        if (body.width() > 1200) {
             projects_element.find('li:nth-child(3n)').addClass('last');
         } else {
             projects_element.find('li:nth-child(2n)').addClass('last');
@@ -93,6 +102,8 @@
         $('body').animate({
             scrollTop: 0
         }, 800);
+
+        event.preventDefault();
     });
 
     $('.nav a').on('click', function (event) {

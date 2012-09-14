@@ -398,13 +398,39 @@ nav
 {
     padding-top: 75px;
     position: relative;
+    text-align: center;
 }
 
 #intro h2
 {
-    font-size: 72px;
-    line-height: 1;
+    display: inline-block;
+    *display: inline;
+    margin-top: 60px;
+    text-align: left;
     text-transform: uppercase;
+}
+
+#intro h2 .defy
+{
+    font-size: 60px;
+}
+
+#intro h2 .by
+{
+    float: left;
+    font-size: 120px;
+    line-height: 0.8;
+    text-indent: -5px;
+}
+
+#intro h2 .architect
+{
+    font-size: 26px;
+}
+
+#intro h2 .rich
+{
+    font-size: 42px;
 }
 
 /*
@@ -446,6 +472,17 @@ nav
     width: 32%;
 }
 
+.projects > li.last
+{
+    margin-right: 0;
+}
+
+.project
+{
+    overflow: hidden;
+    position: relative;
+}
+
 .project .frame
 {
     background: #fff;
@@ -453,31 +490,120 @@ nav
     padding: 5px;
 }
 
-.project .caption h3
+.project figcaption
+{
+    background: url(../img/section-bg.jpg);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+}
+
+.project .summary,
+.project .detail
+{
+    display: block;
+}
+
+.project .summary h3
 {
     border: 0;
-    color: #fff;
+    color: #333;
+    font-size: 24px;
+    line-height: 1;
+    margin: 15% 0 10px;
+}
+
+.project .summary h4
+{
+    color: #666;
     font-size: 16px;
-    line-height: 22px;
-    margin: 10px 0px 20px;
+    font-weight: normal;
+    padding: 0 20%;
+}
+
+.project .summary p
+{
+    color: #ABACA5;
+    display: none;
+    font-size: 14px;
+}
+
+.project .summary .view,
+.project .summary .website
+{
+    color: #999;
+    font-size: 18px;
+}
+
+.project .summary .view:hover,
+.project .summary .website:hover
+{
+    color: #333;
+    text-decoration: none;
+}
+
+.project .summary .website span
+{
+    display: none;
+}
+
+.project .detail
+{
     text-align: left;
 }
 
-.project .caption p
+.project .detail h3
+{
+    border: 0;
+    color: #333;
+    font-size: 24px;
+    line-height: 1;
+    margin: 10px 0;
+    padding: 0 10px;
+    text-align: left;
+}
+
+.project .detail h4
+{
+    color: #666;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 0 10px;
+    padding: 0 10px;
+}
+
+.project .detail p
 {
     color: #ABACA5;
     font-size: 14px;
+    padding: 0 10px;
 }
 
-.project .website
+.project .detail .view
 {
-    color: #fff;
+    display: none;
+}
+
+.project .detail .website
+{
+    color: #666;
     font-size: 14px;
+    padding: 0 10px;
 }
 
-.projects > li.last
+.project .detail .website:hover
 {
-    margin-right: 0;
+    color: #333;
+    text-decoration: none;
+}
+
+.project .detail .website i
+{
+    display: none;
 }
 
 /*
@@ -574,7 +700,7 @@ footer a
    Modify as content requires.
    ========================================================================== */
 
-@media (max-width: 979px) and (min-width: 768px) {
+@media (max-width: 1200px) and (min-width: 768px) {
     .projects > li
     {
         margin: 0 2% 2% 0;
