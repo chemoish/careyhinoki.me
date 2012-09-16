@@ -3,7 +3,7 @@
 */
 
 (function () {
-    $.ajax({
+    /*$.ajax({
         url: 'data/projects.json',
         dataType: 'json',
         success: function (data, textStatus, jqXHR) {
@@ -52,7 +52,7 @@
 
             projects_element.find('li:nth-child(3n)').addClass('last');
         }
-    });
+    });*/
 
     function throttle(fn, delay) {
         var timer;
@@ -206,7 +206,7 @@
     	}
     });*/
 
-    $.ajax({
+    /*$.ajax({
         url: 'data/skills.json',
         dataType: 'json',
         success: function (data, textStatus, jqXHR) {
@@ -228,5 +228,5 @@
         error: function (jqXHR, textStatus, errorThrown) {
             console.log(errorThrown);
         }
-    });
+    });*/
 }());

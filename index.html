@@ -4,7 +4,7 @@
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" ng-app="Portfolio"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
 
@@ -18,6 +18,10 @@
     <!-- Mobile viewport optimized: h5bp.com/viewport -->
     <!-- <meta name="viewport" content="width=device-width"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/filters.js"></script>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
     
@@ -77,24 +81,15 @@
         </div>
     </header>
 
-    <ul id="social_media">
-        <li>
-            <a href="//www.twitter.com/chemoish"><i class="icon-twitter icon-large"></i></a>
-        </li>
-        <li>
-            <a href="//www.facebook.com/carey.hinoki"><i class="icon-facebook icon-large"></i></a>
-        </li>
-        <li>
-            <a href="//www.linkedin.com/pub/carey-hinoki/8/396/345"><i class="icon-linkedin icon-large"></i></a>
+    <ul id="social_media" ng-controller="SocialMediaCtrl">
+        <li ng-repeat="social_media in social_medias">
+            <a href="{{social_media.url}}" target="_blank"><i class="{{social_media.icon}} icon-large"></i></a>
         </li>
     </ul>
 
-    <ul id="utility">
-        <li>
-            <a href="javascript:;" id="toggle_project_view"><i class="icon-adjust icon-large"></i></a>
-        </li>
-        <li>
-            <a href="#introduction" id="to_top_button"><i class="icon-arrow-up icon-large"></i></a>
+    <ul id="utility" ng-controller="UtilityCtrl">
+        <li ng-repeat="utility in utilities">
+            <a href="{{utility.url}}" id="{{utility.id}}"><i class="{{utility.icon}} icon-large"></i></a>
         </li>
     </ul>
 
@@ -110,13 +105,41 @@
             </div>
         </div>
         <div class="work-wrapper">
-            <div id="work" class="container section">
+            <div id="work" class="container section" ng-controller="ProjectsCtrl">
                 <div class="row">
                     <div class="span12">
                         <h2>Featured Work</h2>
                         <h3>Work - Fun - Code</h3>
 
-                        <ul class="projects clearfix"></ul>
+                        <ul class="projects clearfix">
+                            <li ng-repeat="project in projects | limit:limit" ng-class="{last : ($index + 1) % 3 == 0}">
+                                <figure class="project">
+                                    <div class="frame">
+                                        <a href="#" alt="{{project.name}}" title="{{project.name}}">
+                                            <img ng-src="{{project.img}}">
+                                        </a>
+                                    </div>
+
+                                    <div class="mask">
+                                        <figcaption class="caption">
+                                            <h3>{{project.name}}</h3>
+                                            <h4>{{project.tags | join}}</h4>
+                                            <p title="{{project.alt}}">{{project.description}}</p>
+                                           
+                                            <a href="#" class="view"><i class="icon-search"></i></a>
+
+                                            <span ng-switch on="!!project.website">
+                                                <a ng-switch-when="true" href="{{project.website}}" class="website" target="_blank">
+                                                    <i class="icon-link"></i> <span>Visit Website</span>
+                                                </a>
+                                            </span>
+                                        </figcaption>
+                                    </div>
+                                </figure>
+                            </li>
+                        </ul>
+
+                        <button id="show_next_projects" class="btn btn-primary" ng-click="next(6)" ng-hide="limit >= projects.length">Show More</button>
                     </div>
                 </div>
             </div>
@@ -150,27 +173,9 @@
                         <section id="tidbits">
                             <h1>Tiddlywinks & Curiosities</h1>
 
-                            <ul>
-                                <li>
-                                    Ran the LA Marathon at the age of 12.
-                                </li>
-                                <li>
-                                    I am 5th generation Chinese, 3rd generation Japanese.
-                                </li>
-                                <li>
-                                    At 16 I was drinking 72oz of 7-11 coffee by 3rd period.
-                                </li>
-                                <li>
-                                    I won $5,000 of botox in 2008 from a Jamba Juice contest my co-worker entered me in.
-                                </li>
-                                <li>
-                                    My favorite beer is a Anaheim Hefeweizen from <a href="//www.anaheimbrew.com">Anaheim Brewery</a>.
-                                </li>
-                                <li>
-                                    I am no longer a Qwerty user. I use the Dvorak Simplified Keyboard!
-                                </li>
-                                <li>
-                                    Won the Future Insights Live 2012 Hackathon in Las Vegas.
+                            <ul ng-controller="CuriosityCtrl">
+                                <li ng-repeat="curiosity in curiosities">
+                                    {{curiosity}}
                                 </li>
                             </ul>
                         </section>
@@ -179,7 +184,15 @@
                         <section id="skills">
                             <h1>Skills</h1>
 
-                            <ul class="skills"></ul>
+                            <ul class="skills" ng-controller="SkillsCtrl">
+                                <li ng-repeat="skill in skills">
+                                    <div class="progress progress-striped">
+                                        <div class="{{skill.id}} {{skill.focus}} bar" style="width: {{skill.level}};">
+                                            {{skill.name}}
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </section>
                     </div>
                 </div>
@@ -210,55 +223,16 @@
         <div class="container">
             <div class="row">
                 <div class="span4">
-                    <ul>
-                        <li>
-                            <a href="//www.twitter.com/chemoish">Twitter</a>
-                        </li>
-                        <li>
-                            <a href="//www.facebook.com/carey.hinoki">Facebook</a>
-                        </li>
-                        <li>
-                            <a href="//plus.google.com/118175933175383798803">Google</a>
-                        </li>
-                        <li>
-                            <a href="//www.linkedin.com/pub/carey-hinoki/8/396/345">LinkedIn</a>
-                        </li>
-                        <li>
-                            <a href="//www.github.com/chemoish">GitHub</a>
-                        </li>
-                        <li>
-                            <a href="//www.teamtreehouse.com/chemoish">Treehouse</a>
-                        </li>
-                        <li>
-                            <a href="//www.stackoverflow.com/users/1438446/chemoish">Stackoverflow</a>
-                        </li>
-                        <li>
-                            <a href="//www.codecademy.com/users/chemoish">Code Academy</a>
-                        </li>
-                        <li>
-                            <a href="//hinoki.yelp.com">Yelp</a>
+                    <ul ng-controller="SocialMediaListCtrl">
+                        <li ng-repeat="social_media in social_medias">
+                            <a href="{{social_media.url}}" target="_blank">{{social_media.name}}</a>
                         </li>
                     </ul>
                 </div>
                 <div class="span4">
-                    <ul>
-                        <li>
-                            <a href="//html5boilerplate.com/">HTML5 Boilerplate</a>
-                        </li>
-                        <li>
-                            <a href="//twitter.github.com/bootstrap/">Bootstrap</a>
-                        </li>
-                        <li>
-                            <a href="//fortawesome.github.com/Font-Awesome/">Font Awesome</a>
-                        </li>
-                        <li>
-                            <a href="//handlebarsjs.com/">handlebars</a>
-                        </li>
-                        <li>
-                            <a href="//jquery.com/">jQuery</a>
-                        </li>
-                        <li>
-                            <a href="//kuler.adobe.com/#themeID/95875">Monochromatic: The real spirit of the Ninja.</a>
+                    <ul ng-controller="TechnologyUsedCtrl">
+                        <li ng-repeat="technology in technologies">
+                            <a href="{{technology.url}}" target="_blank">{{technology.name}}</a>
                         </li>
                     </ul>
                 </div>

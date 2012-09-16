@@ -647,6 +647,13 @@ nav
     display: none;
 }
 
+#show_next_projects
+{
+    display: block;
+    margin: 20px auto 0;
+    width: 100px;
+}
+
 /*
  * About
  */
