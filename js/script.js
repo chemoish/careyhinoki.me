@@ -49,6 +49,8 @@
             projects.removeClass('detail');
         }
 
+        projects.find('.project .detail').removeClass('detail');
+
         event.preventDefault();
     });
 

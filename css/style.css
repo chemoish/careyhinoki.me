@@ -367,6 +367,7 @@ nav
     position: absolute;
     right: 20px;
     top: -100px;
+    z-index: 99999;
 }
 
 #utility li
@@ -488,7 +489,7 @@ nav
     margin: 0 1.9% 1.9% 0;
 }
 
-.projects > li.last
+.projects > li.third
 {
     margin-right: 0;
 }
@@ -748,7 +749,7 @@ footer a
    Modify as content requires.
    ========================================================================== */
 
-@media (max-width: 1200px) and (min-width: 960px) {
+@media (max-width: 1200px) and (min-width: 980px) {
     .projects.detail .project .caption h3, /* all projects */
     .project .detail h3
     {
@@ -774,11 +775,20 @@ footer a
     }
 }
 
-@media (max-width: 960px) and (min-width: 768px) {
+@media (max-width: 979px) and (min-width: 768px) {
+    .projects > li.third
+    {
+        margin-right: 2%;
+    }
+
+    .projects > li.second
+    {
+        margin-right: 0;
+    }
+
     .projects > li
     {
-        margin: 2% !important;
-        width: 46%;
+        width: 49%;
     }
 
     .projects.detail .project .caption h3, /* all projects */
