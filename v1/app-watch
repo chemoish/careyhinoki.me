@@ -1,0 +1,22 @@
+#!/bin/bash
+
+HR=\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+NEWLINE="
+"
+
+LESS="less"
+STYLE="css/style.css"
+STYLE_MIN="css/style.min.css"
+STYLE_LESS="less/style.less"
+
+echo "$NEWLINE"
+echo "$HR"
+echo "# Watching Application"
+echo "$HR"
+echo "$NEWLINE"
+
+echo "Watching $STYLE"
+recess $STYLE_LESS:$STYLE --watch $LESS &
+
+echo "Watching $STYLE_MIN"
+recess $STYLE_LESS:$STYLE_MIN --compress --watch $LESS &

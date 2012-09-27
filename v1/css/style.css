@@ -15,12 +15,12 @@ button,
 input,
 select,
 textarea {
-    color: #222;
+  color: #222;
 }
 
 body {
-    font-size: 1em;
-    line-height: 1.4;
+  font-size: 1em;
+  line-height: 1.4;
 }
 
 /*
@@ -30,13 +30,13 @@ body {
  */
 
 ::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
+  text-shadow: none;
+  background: #b3d4fc;
 }
 
 ::selection {
-    background: #b3d4fc;
-    text-shadow: none;
+  text-shadow: none;
+  background: #b3d4fc;
 }
 
 /*
@@ -44,12 +44,12 @@ body {
  */
 
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+  display: block;
+  height: 1px;
+  padding: 0;
+  margin: 1em 0;
+  border: 0;
+  border-top: 1px solid #ccc;
 }
 
 /*
@@ -57,7 +57,7 @@ hr {
  */
 
 img {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 /*
@@ -65,9 +65,9 @@ img {
  */
 
 fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
 
 /*
@@ -75,7 +75,7 @@ fieldset {
  */
 
 textarea {
-    resize: vertical;
+  resize: vertical;
 }
 
 /* ==========================================================================
@@ -83,20 +83,21 @@ textarea {
    ========================================================================== */
 
 .chromeframe {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+  padding: 0.2em 0;
+  margin: 0.2em 0;
+  color: #000;
+  background: #ccc;
 }
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
-@import "general/general";
-@import "header/header";
-@import "content/content";
-@import "footer/footer";
+body {
+  font-family: "Open Sans", "Helvetica", "Arial";
+  font-size: 16px;
+  color: blue;
+}
 
 /* ==========================================================================
    Helper classes
@@ -107,18 +108,17 @@ textarea {
  */
 
 .ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-    /* IE 6/7 fallback */
-    *text-indent: -9999px;
+  overflow: hidden;
+  *text-indent: -9999px;
+  background-color: transparent;
+  border: 0;
 }
 
 .ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 100%;
+  display: block;
+  width: 0;
+  height: 100%;
+  content: "";
 }
 
 /*
@@ -126,8 +126,8 @@ textarea {
  */
 
 .hidden {
-    display: none !important;
-    visibility: hidden;
+  display: none !important;
+  visibility: hidden;
 }
 
 /*
@@ -135,14 +135,14 @@ textarea {
  */
 
 .visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
 }
 
 /*
@@ -152,12 +152,12 @@ textarea {
 
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
 }
 
 /*
@@ -165,7 +165,7 @@ textarea {
  */
 
 .invisible {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 /*
@@ -182,12 +182,12 @@ textarea {
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+  display: table;
+  content: " ";
 }
 
 .clearfix:after {
-    clear: both;
+  clear: both;
 }
 
 /*
@@ -196,7 +196,7 @@ textarea {
  */
 
 .clearfix {
-    *zoom: 1;
+  *zoom: 1;
 }
 
 /* ==========================================================================
@@ -205,15 +205,18 @@ textarea {
    Modify as content requires.
    ========================================================================== */
 
-@highresolution: ~"only screen and (-webkit-min-device-pixel-ratio: 2)",
-                 ~"only screen and (min-device-pixel-ratio: 2)";
-                 
 @media only screen and (min-width: 35em) {
+  {
     /* Style adjustments for viewports that meet the condition */
+  
+  }
 }
 
-@media @highresolution {
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  {
     /* Style adjustments for high resolution devices */
+  
+  }
 }
 
 /* ==========================================================================
@@ -222,68 +225,61 @@ textarea {
    ========================================================================== */
 
 @media print {
-    * {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow:none !important;
-        text-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
+  {
     /*
-     * Don't show links for images, or javascript/internal links
-     */
-
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    @page {
-        margin: 0.5cm;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+         * Don't show links for images, or javascript/internal links
+         */
+  
+  }
+  * {
+    color: #000 !important;
+    text-shadow: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  @page  {
+    margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+    widows: 3;
+    orphans: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }
