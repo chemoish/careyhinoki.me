@@ -206,17 +206,11 @@ body {
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
-  {
-    /* Style adjustments for viewports that meet the condition */
   
-  }
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
-  {
-    /* Style adjustments for high resolution devices */
   
-  }
 }
 
 /* ==========================================================================
@@ -225,12 +219,6 @@ body {
    ========================================================================== */
 
 @media print {
-  {
-    /*
-         * Don't show links for images, or javascript/internal links
-         */
-  
-  }
   * {
     color: #000 !important;
     text-shadow: none !important;

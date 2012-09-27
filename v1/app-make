@@ -4,6 +4,10 @@ HR=\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\
 NEWLINE="
 "
 
+APP="./css/app.css"
+BOOTSTRAP="./css/vendor/bootstrap.css"
+BOOTSTRAP_RESPONSIVE="./css/vendor/bootstrap-responsive.css"
+FONTAWESOME="./css/vendor/font-awesome.css"
 STYLE="./css/style.css"
 STYLE_MIN="./css/style.min.css"
 STYLE_LESS="./less/style.less"
@@ -15,7 +19,10 @@ echo "$HR"
 echo "$NEWLINE"
 
 echo "Compiling $STYLE_LESS to $STYLE"
-recess less/style.less --compile > css/style.css
+recess $STYLE_LESS --compile > $STYLE
 
 echo "Compiling $STYLE_LESS to $STYLE_MIN"
-recess less/style.less --compress > css/style.min.css
+recess $STYLE_LESS --compress > $STYLE_MIN
+
+echo "Compiling application CSS to $APP";
+recess $STYLE $FONTAWESOME $BOOTSTRAP_RESPONSIVE $BOOTSTRAP --compress > $APP
