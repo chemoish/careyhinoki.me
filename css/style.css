@@ -1,4 +1,4 @@
-/*
+im/*
  * HTML5 Boilerplate
  *
  * What follows is the result of much research on cross-browser styling.
@@ -222,6 +222,8 @@ td { vertical-align: top; }
 body
 {
     background: url(../img/bg.jpg);
+    font-family: "Open Sans","Helvetica","Arial";
+    font-size: 16px;
 }
 
 h2,
@@ -253,7 +255,7 @@ h3
 
 header
 {
-    background: url(../img/bg.jpg);
+    background: #333;
     height: 50px;
     position: fixed;
     text-align: center;
@@ -263,8 +265,9 @@ header
 
 #logo img
 {
+    height: 50px;
     left: 50%;
-    margin-left: -42px;
+    margin-left: -28px;
     position: absolute;
 }
 
@@ -284,7 +287,7 @@ nav
     list-style: none;
     margin: 25px auto 0;
     padding: 0 0 0 10px;
-    width: 390px;
+    width: 361px;
 }
 
 .nav li
@@ -307,7 +310,7 @@ nav
 
 .nav .about
 {
-    padding-right: 115px;
+    padding-right: 80px;
 }
 
 /*
@@ -665,7 +668,8 @@ nav
 }
 
 #bio h1,
-#tidbits h1
+#tidbits h1,
+#technology h1
 {
     font-size: 15px;
     line-height: 1;
@@ -673,38 +677,28 @@ nav
 }
 
 #bio p,
-#tidbits p,
-#tidbits li
+#tidbits li,
+#technology li
 {
-    font-size: 14px;
     line-height: 1.5;
 }
 
-.skills
+#technology .technologies
 {
     list-style: none;
+    margin: 0;
     padding: 0;
 }
 
-.skills .bar
+#technology .technology
 {
-    text-align: left;
-    text-indent: 5px;
+    float: left;
+    margin-right: 5px;
 }
 
-.skills .primary
+#skills img
 {
-    opacity: 0.95;
-}
-
-.skills .secondary
-{
-    opacity: 0.65;
-}
-
-.skills .tertiary
-{
-    opacity: 0.35;
+    width: 100%;
 }
 
 /*
@@ -720,6 +714,94 @@ nav
 {
     color: #fff;
 }
+
+.plays
+{
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.plays > li
+{
+    display: inline-block;
+    *display: inline;
+    margin: 0 2% 2% 0;
+    vertical-align: top;
+    width: 32%;
+    zoom: 1;
+}
+
+.lt-ie8 .plays > li
+{
+    margin: 0 1.9% 1.9% 0;
+}
+
+.plays > li.third
+{
+    margin-right: 0;
+}
+
+.play
+{
+    overflow: hidden;
+    position: relative;
+}
+
+.play .frame
+{
+    background: #fff;
+    padding: 5px;
+}
+
+.play .mask
+{
+    background: url(../img/section-bg.jpg);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    transition: top 0.5s ease;
+    -webkit-transition: top 0.5s ease;
+    -moz-transition: top 0.5s ease;
+    -o-transition: top 0.5s ease;
+    top: -305px;
+    width: 100%;
+}
+
+.play .caption
+{
+    position: relative;
+}
+
+.play .caption h3
+{
+    border: 0;
+    color: #333;
+    font-size: 24px;
+    line-height: 1;
+    margin: 15% 0 10px;
+}
+
+.play .caption h4
+{
+    color: #666;
+    font-size: 16px;
+    font-weight: normal;
+    padding: 0 20%;
+}
+
+.play .caption .website
+{
+    color: #999;
+    font-size: 18px;
+}
+
+.play .caption .website:hover
+{
+    color: #333;
+    text-decoration: none;
+}
  
 /*
  * Contact
@@ -728,6 +810,60 @@ nav
 .contact-wrapper
 {
     background: url(../img/section-bg.jpg);
+}
+
+.contact-info-container
+{
+    margin: 100px auto;
+    width: 350px;
+}
+
+.contact-info-label,
+.contact-info
+{
+    float: left;
+    list-style: none;
+    margin: 0;
+}
+
+.contact-info-label li,
+.contact-info li
+{
+    line-height: 50px;
+}
+
+.contact-info-label
+{
+    padding: 0;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.contact-info
+{
+    border-left: 1px solid #333;
+    font-size: 14px;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+.contact-info .social-media
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.contact-info .social-media li
+{
+    display: inline;
+}
+
+.contact-photo-container
+{
+    margin: 75px 0;
+    text-align: center;
 }
 
 /*
@@ -889,8 +1025,65 @@ footer a
 
     .projects > li
     {
-        margin: 0 0 4%;
+        margin: 0 0 10%;
         width: 100%;
+    }
+
+    .project .mask
+    {
+        background: none;
+        position: static;
+        text-align: left;
+        transition: none;
+        -webkit-transition: none;
+        -moz-transition: none;
+        -o-transition: none;
+    }
+
+    .project .caption h3
+    {
+        color: #fff;
+        margin: 10px 0;
+        text-align: left;
+    }
+
+    .project .caption h4
+    {
+        color: #fff;
+        padding: 0;
+        text-align: left;
+    }
+
+    .project .caption p
+    {
+        display: block;
+    }
+
+    .project .caption .view
+    {
+        display: none;
+    }
+
+    .project .caption .website
+    {
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .project .caption .website:hover
+    {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    .project .caption .website i
+    {
+        display: none;
+    }
+
+    .project .caption .website span
+    {
+        display: block;
     }
 }
 

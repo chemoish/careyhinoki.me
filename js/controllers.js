@@ -32,30 +32,29 @@ function ProjectsCtrl($scope, $http) {
 	$scope.limit = 6;
 
 	$http.get('data/projects.json').success(function (data) {
-		$scope.projects = data;
+		$scope.projects = data.sort(function () { return 0.5 - Math.random()});
 	});
 
-	$scope.next = function (limit) {
-		return $scope.limit += limit;
+	$scope.showAll = function () {
+		$scope.limit = $scope.projects.length;
 	};
+}
+
+function TechnologyCtrl($scope, $http) {
+	$http.get('data/technologies.json').success(function (data) {
+		$scope.technologies = data;
+	});
 }
 
 function CuriosityCtrl($scope) {
 	$scope.curiosities = [
+		'I am 5th generation Chinese, 3rd generation Japanese.',
         'Ran the LA Marathon at the age of 12.',
-        'I am 5th generation Chinese, 3rd generation Japanese.',
         'At 16 I was drinking 72oz of 7-11 coffee by 3rd period.',
-        'I won $5,000 of botox in 2008 from a Jamba Juice contest my co-worker entered me in.',
         'My favorite beer is a Anaheim Hefeweizen from <a href="//www.anaheimbrew.com">Anaheim Brewery</a>.',
         'I am no longer a Qwerty user. I use the Dvorak Simplified Keyboard!',
         'Won the Future Insights Live 2012 Hackathon in Las Vegas.'
 	];
-}
-
-function SkillsCtrl($scope, $http) {
-	$http.get('data/skills.json').success(function (data) {
-		$scope.skills = data;
-	});
 }
 
 function SocialMediaListCtrl($scope) {
@@ -106,4 +105,10 @@ function TechnologyUsedCtrl($scope) {
 	    name: 'jQuery',
         url: '//jquery.com/'
 	}];
+}
+
+function PlayCtrl($scope, $http) {
+	$http.get('data/plays.json').success(function (data) {
+		$scope.plays = data;
+	});
 }

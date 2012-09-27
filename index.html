@@ -40,6 +40,8 @@
     <link rel="stylesheet" href="css/libs/font-awesome.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300italic,600italic,400,600,700,800' rel='stylesheet' type='text/css'>
+
     <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
     <!-- All JavaScript at the bottom, except this Modernizr build.
@@ -140,7 +142,7 @@
                             </li>
                         </ul>
 
-                        <button id="show_next_projects" class="btn btn-primary" ng-click="next(6)" ng-hide="limit >= projects.length">Show More</button>
+                        <button id="show_next_projects" class="btn btn-primary" ng-click="showAll()" ng-hide="limit >= projects.length">Show All</button>
                     </div>
                 </div>
             </div>
@@ -172,30 +174,34 @@
                             </p>
                         </section>
 
-                        <section id="tidbits">
-                            <h1>Tiddlywinks & Curiosities</h1>
+                        <div class="row">
+                            <div class="span4">
+                                <section id="technology" ng-controller="TechnologyCtrl">
+                                    <h1>Technologies used</h1>
+                                    
+                                    <ul class="technologies clearfix">
+                                        <li ng-repeat="technology in technologies" class="technology"><span class="label">{{technology.name}}</span></li>
+                                    </ul>
+                                </section>
+                            </div>
 
-                            <ul ng-controller="CuriosityCtrl">
-                                <li ng-repeat="curiosity in curiosities" ng-bind-html-unsafe="curiosity">
-                                    {{curiosity}}
-                                </li>
-                            </ul>
-                        </section>
+                            <div class="span4">
+                                <section id="tidbits" ng-controller="CuriosityCtrl">
+                                    <h1>Tiddlywinks & Curiosities</h1>
+
+                                    <ul>
+                                        <li ng-repeat="curiosity in curiosities" ng-bind-html-unsafe="curiosity">
+                                            {{curiosity}}
+                                        </li>
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="span4">
                         <section id="skills">
-                            <h1>Skills</h1>
-
-                            <ul class="skills" ng-controller="SkillsCtrl">
-                                <li ng-repeat="skill in skills">
-                                    <div class="progress progress-striped">
-                                        <div class="{{skill.id}} {{skill.focus}} bar" style="width: {{skill.level}};">
-                                            {{skill.name}}
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
+                            <img src="img/skills.jpg" />
                         </section>
                     </div>
                 </div>
@@ -203,11 +209,36 @@
         </div>
 
         <div class="play-wrapper">
-            <div id="play" class="container section">
+            <div id="play" class="container section" ng-controller="PlayCtrl">
                 <div class="row">
                     <div class="span12">
                         <h2>Play</h2>
                         <h3>You know, gists and stuff</h3>
+
+                        <ul class="plays clearfix">
+                            <li ng-repeat="play in plays | limit:limit" ng-class="{second : ($index + 1) % 2 == 0, third : ($index + 1) % 3 == 0}">
+                                <figure class="play">
+                                    <div class="frame">
+                                        <a href="#" alt="{{play.name}}" title="{{play.name}}">
+                                            <img ng-src="{{play.img}}">
+                                        </a>
+                                    </div>
+
+                                    <div class="mask">
+                                        <figcaption class="caption">
+                                            <h3>{{play.name}}</h3>
+                                            <h4>{{play.tags | join}}</h4>
+                                           
+                                            <span ng-switch on="!!play.website">
+                                                <a ng-switch-when="true" href="{{play.website}}" class="website" target="_blank">
+                                                    <i class="icon-link"></i>
+                                                </a>
+                                            </span>
+                                        </figcaption>
+                                    </div>
+                                </figure>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -215,10 +246,57 @@
 
         <div class="contact-wrapper">
             <div id="contact" class="container section">
+                <h2>Contact</h2>
+                <h3>No...You're awesome</h3>
+
                 <div class="row">
-                    <div class="span12">
-                        <h2>Contact</h2>
-                        <h3>No...You're awesome</h3>
+                    <div class="span6">
+                        <div class="contact-info-container clearfix">
+                            <ul class="contact-info-label">
+                                <li>
+                                    I'm
+                                </li>
+                                <li>
+                                    Living in
+                                </li>
+                                <li>
+                                    Interested in
+                                </li>
+                                <li>
+                                    Contact
+                                </li>
+                                <li>
+                                    Follow
+                                </li>
+                            </ul>
+
+                            <ul class="contact-info">
+                                <li>
+                                    Carey HInoki
+                                </li>
+                                <li>
+                                    Long Beach, CA
+                                </li>
+                                <li>
+                                    Networking
+                                </li>
+                                <li>
+                                    <a href="mailto:carey.hinoki@gmail.com">carey.hinoki@gmail.com</a>
+                                </li>
+                                <li>
+                                    <ul ng-controller="SocialMediaListCtrl" class="social-media">
+                                        <li ng-repeat="social_media in social_medias">
+                                            <a href="{{social_media.url}}" target="_blank"><i class="icon-twitter"></i></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="span6">
+                        <div class="contact-photo-container">
+                            <img src="img/ninja.png" />
+                        </div>
                     </div>
                 </div>
             </div>

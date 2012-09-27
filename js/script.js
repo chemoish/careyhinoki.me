@@ -115,4 +115,18 @@
 
         event.preventDefault();
     });
+
+    $('#play').delegate('.play', 'mouseenter', function (event) {
+        var play = $(this),
+            play_mask = play.find('.mask');
+
+        play_mask.css('top', 0);
+    });
+
+    $('#play').delegate('.play', 'mouseleave', function (event) {
+        var play = $(this),
+            play_mask = play.find('.mask');
+
+        play_mask.css('top', -305);
+    });
 }());
