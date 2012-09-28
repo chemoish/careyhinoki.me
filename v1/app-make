@@ -21,8 +21,5 @@ echo "$NEWLINE"
 echo "Compiling $STYLE_LESS to $STYLE"
 recess $STYLE_LESS --compile > $STYLE
 
-echo "Compiling $STYLE_LESS to $STYLE_MIN"
-recess $STYLE_LESS --compress > $STYLE_MIN
-
 echo "Compiling application CSS to $APP";
 recess $STYLE $FONTAWESOME $BOOTSTRAP_RESPONSIVE $BOOTSTRAP --compress > $APP
