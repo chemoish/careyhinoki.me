@@ -4,6 +4,10 @@ HR=\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\
 NEWLINE="
 "
 
+APP="css/app.css"
+BOOTSTRAP="css/vendor/bootstrap.css"
+BOOTSTRAP_RESPONSIVE="css/vendor/bootstrap-responsive.css"
+FONTAWESOME="css/vendor/font-awesome.css"
 LESS="less"
 STYLE="css/style.css"
 STYLE_MIN="css/style.min.css"
@@ -20,3 +24,6 @@ recess $STYLE_LESS:$STYLE --watch $LESS &
 
 echo "Watching $STYLE_MIN"
 recess $STYLE_LESS:$STYLE_MIN --compress --watch $LESS &
+
+echo "Watching $APP"
+nwatch --file $STYLE_MIN --run "recess $STYLE $FONTAWESOME $BOOTSTRAP_RESPONSIVE $BOOTSTRAP --compress > $APP" &
