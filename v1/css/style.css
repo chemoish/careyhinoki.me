@@ -96,7 +96,7 @@ textarea {
 body {
   font-family: "Open Sans", "Helvetica", "Arial";
   font-size: 16px;
-  color: red;
+  color: pink;
 }
 
 /* ==========================================================================
@@ -263,8 +263,8 @@ body {
   p,
   h2,
   h3 {
-    widows: 3;
     orphans: 3;
+    widows: 3;
   }
   h2,
   h3 {
