@@ -21,19 +21,22 @@ module.exports = function(grunt) {
     },
     
     concat: {
-        'js/app.js': [
+        'js/script.js': [
             '<banner:meta.banner>',
-            'js/plugins.js'
+            'js/plugins.js',
+            'js/app.js',
+            'js/controller/*.js',
+            'js/filter/*.js'
         ],
     },
     
     min: {
-        'js/app.min.js': [
-            '<banner:meta.banner>',
-            'js/plugins.js'
-        ]
+        dist: {
+            src: ['js/script.js'],
+            dest: 'js/script.min.js'
+        }
     },
-    
+
     recess: {
         debug: {
             src: [
@@ -43,7 +46,7 @@ module.exports = function(grunt) {
                 'css/vendor/google-font-open-sans.css',
                 'less/style.less'
             ],
-            dest: 'css/app.css',
+            dest: 'css/style.css',
             options: {
                 compile: true
             }
@@ -56,7 +59,7 @@ module.exports = function(grunt) {
                 'css/vendor/google-font-open-sans.css',
                 'less/style.less'
             ],
-            dest: 'css/app.min.css',
+            dest: 'css/style.min.css',
             options: {
                 compile: true,
                 compress: true
