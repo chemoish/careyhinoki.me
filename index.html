@@ -1,354 +1,56 @@
-<!doctype html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" ng-app="Portfolio"> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="CareyHinoki"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
 
-    <!-- Use the .htaccess and remove these lines to avoid edge case issues. 
-         More info: h5bp.com/i/378 -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
 
-    <title></title>
-    <meta name="description" content="">
+        <link rel="stylesheet" href="css/style.min.css">
 
-    <!-- Mobile viewport optimized: h5bp.com/viewport -->
-    <!-- <meta name="viewport" content="width=device-width"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/vendor/modernizr-2.6.1.min.js"></script>
+    </head>
+    <body window-scroll>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
 
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/filters.js"></script>
+        <div ng-include src="'partials/header.html'"></div>
 
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-    
-    <link rel="stylesheet" href="css/libs/bootstrap.min.css">
-    <style type="text/css">
-        /*body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-        }
-        .sidebar-nav {
-        padding: 9px 0;
-        }*/
-    </style>
-    <link rel="stylesheet" href="css/libs/bootstrap-responsive.css">
+        <div role="main">
+            <div ng-include src="'partials/introduction.html'"></div>
 
-    <link rel="stylesheet" href="css/libs/font-awesome.css">
-    <link rel="stylesheet" href="css/style.css">
+            <div ng-include src="'partials/work.html'"></div>
 
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300italic,600italic,400,600,700,800' rel='stylesheet' type='text/css'>
+            <div ng-include src="'partials/about.html'"></div>
 
-    <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+            <div ng-include src="'partials/play.html'"></div>
 
-    <!-- All JavaScript at the bottom, except this Modernizr build.
-         Modernizr enables HTML5 elements & feature detects for optimal performance.
-         Create your own custom Modernizr build: www.modernizr.com/download/ -->
-    <script src="js/libs/modernizr-2.5.3.min.js"></script>
-</head>
-<body>
-    <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
-         chromium.org/developers/how-tos/chrome-frame-getting-started -->
-    <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-
-    
-    <header>
-        <div class="nav-wrapper">
-            <div id="logo">
-                <a href="/"><img src="img/logo.png" alt="Carey Hinoki"></a>
-            </div>
-            <div id="vcard">
-                <h1>Carey Hinoki</h1>
-                <h2>Web Solutions Architect - Long Beach, CA</h2>
-            </div>
-            <nav>
-                <ul class="nav">
-                    <li class="work">
-                        <a href="#work">Work</a>
-                    </li>
-                    <li class="about">
-                        <a href="#about">About</a>
-                    </li>
-                    <li class="play">
-                        <a href="#play">Play</a>
-                    </li>
-                    <li class="contact">
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <ul id="social_media" ng-controller="SocialMediaCtrl">
-        <li ng-repeat="social_media in social_medias">
-            <a href="{{social_media.url}}" target="_blank"><i class="{{social_media.icon}} icon-large"></i></a>
-        </li>
-    </ul>
-
-    <ul id="utility" ng-controller="UtilityCtrl">
-        <li ng-repeat="utility in utilities">
-            <a href="{{utility.url}}" id="{{utility.id}}"><i class="{{utility.icon}} icon-large"></i></a>
-        </li>
-    </ul>
-
-    <div role="main">
-        <div class="intro-wrapper">
-            <div id="intro" class="container">
-                <h2>
-                    <span class="defy">Defying convention</span><br />
-                    <span class="by">by</span>
-                    <span class="architect">architecting quality-attribute</span><br />
-                    <span class="rich">rich web experiences</span>
-                </h2>
-            </div>
+            <div ng-include src="'partials/contact.html'"></div>
+            
+            <div ng-include src="'partials/utility.html'"></div>
         </div>
 
-        <div class="work-wrapper">
-            <div id="work" class="container section" ng-controller="ProjectsCtrl">
-                <div class="row">
-                    <div class="span12">
-                        <h2>Featured Work</h2>
-                        <h3>Work - Fun - Code</h3>
+        <div ng-include src="'partials/footer.html'"></div>
 
-                        <ul class="projects clearfix">
-                            <li ng-repeat="project in projects | limit:limit" ng-class="{second : ($index + 1) % 2 == 0, third : ($index + 1) % 3 == 0}">
-                                <figure class="project">
-                                    <div class="frame">
-                                        <a href="#" alt="{{project.name}}" title="{{project.name}}">
-                                            <img ng-src="{{project.img}}">
-                                        </a>
-                                    </div>
+        <script src="js/script.min.js"></script>
 
-                                    <div class="mask">
-                                        <figcaption class="caption">
-                                            <h3>{{project.name}}</h3>
-                                            <h4>{{project.tags | join}}</h4>
-                                            <p title="{{project.alt}}">{{project.description}}</p>
-                                           
-                                            <a href="#" class="view"><i class="icon-search"></i></a>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
 
-                                            <span ng-switch on="!!project.website">
-                                                <a ng-switch-when="true" href="{{project.website}}" class="website" target="_blank">
-                                                    <i class="icon-link"></i> <span>Visit Website</span>
-                                                </a>
-                                            </span>
-                                        </figcaption>
-                                    </div>
-                                </figure>
-                            </li>
-                        </ul>
-
-                        <button id="show_next_projects" class="btn btn-primary" ng-click="showAll()" ng-hide="limit >= projects.length">Show All</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="about-wrapper">
-            <div id="about" class="container section">
-                <div class="row">
-                    <div class="span12">
-                        <h2>About Me</h2>
-                        <h3>Carey Hinoki - Web Solutions Architect - Long Beach, CA</h3>
-                    </div>
-
-                    <div class="span8">
-                        <section id="bio">
-                            <h1>The Introduction...</h1>
-
-                            <p>
-                                My name is Carey Hinoki.  I am a full stack web developer that focuses on non-functional requirements.  I strive for nothing less than pixel perfect applications that are backed by performant and maintainable architectures.
-                            </p>
-                            <p>
-                                I have extensive experience with backend/database driven development, but my passions lie in the front-end.  Usability and functionailty are the forefront of every one of my design decisions.
-                            </p>
-                            <p>
-                                I do not specialize in any particular language, but rather architect solutions that can be solved by any language.  However, if I had to pick one language that I love most of all I would have to pick Javascript.
-                            </p>
-                            <p>
-                                I love what I do and I especially love working with people who are as passionate about their work as I am.
-                            </p>
-                        </section>
-
-                        <div class="row">
-                            <div class="span4">
-                                <section id="technology" ng-controller="TechnologyCtrl">
-                                    <h1>Technologies used</h1>
-                                    
-                                    <ul class="technologies clearfix">
-                                        <li ng-repeat="technology in technologies" class="technology"><span class="label">{{technology.name}}</span></li>
-                                    </ul>
-                                </section>
-                            </div>
-
-                            <div class="span4">
-                                <section id="tidbits" ng-controller="CuriosityCtrl">
-                                    <h1>Tiddlywinks & Curiosities</h1>
-
-                                    <ul>
-                                        <li ng-repeat="curiosity in curiosities" ng-bind-html-unsafe="curiosity">
-                                            {{curiosity}}
-                                        </li>
-                                    </ul>
-                                </section>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="span4">
-                        <section id="skills">
-                            <img src="img/skills.jpg" />
-                        </section>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="play-wrapper">
-            <div id="play" class="container section" ng-controller="PlayCtrl">
-                <div class="row">
-                    <div class="span12">
-                        <h2>Play</h2>
-                        <h3>You know, gists and stuff</h3>
-
-                        <ul class="plays clearfix">
-                            <li ng-repeat="play in plays | limit:limit" ng-class="{second : ($index + 1) % 2 == 0, third : ($index + 1) % 3 == 0}">
-                                <figure class="play">
-                                    <div class="frame">
-                                        <a href="#" alt="{{play.name}}" title="{{play.name}}">
-                                            <img ng-src="{{play.img}}">
-                                        </a>
-                                    </div>
-
-                                    <div class="mask">
-                                        <figcaption class="caption">
-                                            <h3>{{play.name}}</h3>
-                                            <h4>{{play.tags | join}}</h4>
-                                           
-                                            <span ng-switch on="!!play.website">
-                                                <a ng-switch-when="true" href="{{play.website}}" class="website" target="_blank">
-                                                    <i class="icon-link"></i>
-                                                </a>
-                                            </span>
-                                        </figcaption>
-                                    </div>
-                                </figure>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="contact-wrapper">
-            <div id="contact" class="container section">
-                <h2>Contact</h2>
-                <h3>No...You're awesome</h3>
-
-                <div class="row">
-                    <div class="span6">
-                        <div class="contact-info-container clearfix">
-                            <ul class="contact-info-label">
-                                <li>
-                                    I'm
-                                </li>
-                                <li>
-                                    Living in
-                                </li>
-                                <li>
-                                    Interested in
-                                </li>
-                                <li>
-                                    Contact
-                                </li>
-                                <li>
-                                    Follow
-                                </li>
-                            </ul>
-
-                            <ul class="contact-info">
-                                <li>
-                                    Carey HInoki
-                                </li>
-                                <li>
-                                    Long Beach, CA
-                                </li>
-                                <li>
-                                    Networking
-                                </li>
-                                <li>
-                                    <a href="mailto:carey.hinoki@gmail.com">carey.hinoki@gmail.com</a>
-                                </li>
-                                <li>
-                                    <ul ng-controller="SocialMediaListCtrl" class="social-media">
-                                        <li ng-repeat="social_media in social_medias">
-                                            <a href="{{social_media.url}}" target="_blank"><i class="icon-twitter"></i></a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="span6">
-                        <div class="contact-photo-container">
-                            <img src="img/ninja.png" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="span4">
-                    <ul ng-controller="SocialMediaListCtrl">
-                        <li ng-repeat="social_media in social_medias">
-                            <a href="{{social_media.url}}" target="_blank">{{social_media.name}}</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="span4">
-                    <ul ng-controller="TechnologyUsedCtrl">
-                        <li ng-repeat="technology in technologies">
-                            <a href="{{technology.url}}" target="_blank">{{technology.name}}</a>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="span4">
-                    tweets
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-    <!-- JavaScript at the bottom for fast page loading -->
-
-    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
-    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
-
-    <!-- scripts concatenated and minified via build script -->
-    <script src="js/libs/bootstrap.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/script.js"></script>
-    <!-- end scripts -->
-
-    <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
-         mathiasbynens.be/notes/async-analytics-snippet -->
-    <script>
-        /*var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)}(document,'script'));*/
-    </script>
-</body>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
 </html>

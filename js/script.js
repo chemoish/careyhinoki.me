@@ -1,132 +1,312 @@
-/* Author: Carey Hinoki
+/*! Carey Hinoki Portfolio - v0.1.0 - 2012-10-03
+* http://www.careyhinoki.me/
+* Copyright (c) 2012 Carey Hinoki; Licensed MIT */
 
-*/
-
-(function () {
-    function throttle(fn, delay) {
-        var timer;
-
-        return function () {
-            if (!timer) {
-                timer = setTimeout(function () {
-                    fn.apply(this, arguments);
-
-                    timer = null;
-                }, delay);
-            }
-        };
-    }
-
-    $(window).on('scroll', throttle(function (event) {
-        var window_element = $(window),
-            scroll_top = window_element.scrollTop() + 20,
-            scroll_bottom = window_element.scrollTop() + window_element.height() - 100,
-            social_media_element = $('#social_media'),
-            utility_element = $('#utility');
-
-        social_media_element.stop(true);
-        social_media_element.animate({
-            top: scroll_top + 'px'
-        }, 400);
-
-        utility_element.stop(true);
-        utility_element.animate({
-            opacity: scroll_top > 20 ? 1 : 0,
-            top: scroll_bottom + 'px'
-        }, 400);
-    }, 100));
-
-    $('#utility').delegate('#toggle_project_view', 'click', function (event) {
-        var projects = $('.projects'),
-            projects_summary_view = projects.hasClass('summary'),
-            projects_detail_view = projects.hasClass('detail');
-
-        if (!projects_summary_view && !projects_detail_view) {
-            projects.addClass('summary');
-        } else if (projects_summary_view) {
-            projects.toggleClass('summary detail');
-        } else if (projects_detail_view) {
-            projects.removeClass('detail');
+// Avoid `console` errors in browsers that lack a console.
+if (!(window.console && console.log)) {
+    (function() {
+        var noop = function() {};
+        var methods = ['assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error', 'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log', 'markTimeline', 'profile', 'profileEnd', 'markTimeline', 'table', 'time', 'timeEnd', 'timeStamp', 'trace', 'warn'];
+        var length = methods.length;
+        var console = window.console = {};
+        while (length--) {
+            console[methods[length]] = noop;
         }
+    }());
+}
 
-        projects.find('.project .detail').removeClass('detail');
+// Place any jQuery/helper plugins in here.
 
-        event.preventDefault();
-    });
+'use strict';
 
-    $('#utility').delegate('#to_top_button', 'click', function (event) {
-        $('body').animate({
-            scrollTop: 0
-        }, 800);
+angular.module('CareyHinoki', []);
+angular.module('CareyHinoki').
+	controller('CuriosityCtrl', ['$scope', function ($scope) {
+		$scope.curiosities = [
+			'I am 5th generation Chinese, 3rd generation Japanese.',
+	        'Ran the LA Marathon at the age of 12.',
+	        'At 16 I was drinking 72oz of 7-11 coffee by 3rd period.',
+	        'My favorite beer is a Anaheim Hefeweizen from <a href="//www.anaheimbrew.com">Anaheim Brewery</a>.',
+	        'I am no longer a Qwerty user. I use the Dvorak Simplified Keyboard!',
+	        'Won the Future Insights Live 2012 Hackathon in Las Vegas.'
+		];
+	}]);
+angular.module('CareyHinoki').
+	controller('PlayCtrl', ['$scope', '$http', function ($scope, $http) {
+		$http.get('data/plays.json').success(function (data) {
+			$scope.plays = data;
+		});
+	}]);
+angular.module('CareyHinoki').
+	controller('SocialMediaListCtrl', ['$scope', function ($scope) {
+		$scope.social_medias = [{
+			name: 'Twitter',
+			url: '//www.twitter.com/chemoish'
+		}, {
+			name: 'Facebook',
+	        url: '//www.facebook.com/carey.hinoki'
+		}, {
+	        name: 'Google',
+	        url: '//plus.google.com/118175933175383798803'
+		}, {
+	        name: 'LinkedIn',
+	        url: '//www.linkedin.com/pub/carey-hinoki/8/396/345'
+		}, {
+	        name: 'GitHub',
+	        url: '//www.github.com/chemoish'
+		}, {
+	        name: 'Treehouse',
+	        url: '//www.teamtreehouse.com/chemoish'
+		}, {
+	        name: 'Stackoverflow',
+	        url: '//www.stackoverflow.com/users/1438446/chemoish'
+		}, {
+	        name: 'Code Academy',
+	        url: '//www.codecademy.com/users/chemoish'
+		}, {
+	        name: 'Yelp',
+	        url: '//hinoki.yelp.com'
+		}];
+	}]);
+angular.module('CareyHinoki').
+	controller('TechnologyCtrl', ['$scope', '$http', function ($scope, $http) {
+		$http.get('data/technologies.json').success(function (data) {
+			$scope.technologies = data;
+		});
+	}]);
+angular.module('CareyHinoki').
+	controller('TechnologyUsedCtrl', ['$scope', function ($scope) {
+		$scope.technologies = [{
+		    name: 'HTML5 Boilerplate',
+	        url: '//html5boilerplate.com/'
+		}, {
+		    name: 'Bootstrap',
+	        url: '//twitter.github.com/bootstrap/'
+		}, {
+		    name: 'Font Awesome',
+	        url: '//fortawesome.github.com/Font-Awesome/'
+		}, {
+		    name: 'handlebars',
+	        url: '//handlebarsjs.com/'
+		}, {
+		    name: 'jQuery',
+	        url: '//jquery.com/'
+		}];
+	}]);
+angular.module('CareyHinoki').
+	controller('WorkCtrl', ['$scope', '$http', function ($scope, $http) {
+		$scope.limit = 6;
 
-        event.preventDefault();
-    });
+		$http.get('data/works.json').success(function (data) {
+			$scope.works = data.sort(function () { return 0.5 - Math.random()});
+		});
 
-    $('.nav a').on('click', function (event) {
-        var nav_element = $(this),
-            to_element = $(nav_element.attr('href')),
-            scroll_top = to_element.offset().top - 50; // minus menu
+		$scope.showAll = function () {
+			$scope.limit = $scope.works.length;
+		};
+	}]);
+angular.module('CareyHinoki').
+	directive('navigateToSection', function () {
+		return {
+			link: function (scope, element, attrs) {
+				var element = $(element);
 
-        $('body').animate({
-            scrollTop: scroll_top
-        }, 800);
+				element.delegate('a', 'click', function (event) {
+			        var nav_element = $(this),
+			            to_element = $(nav_element.attr('href')),
+			            scroll_top = to_element.offset().top - 50; // minus menu
 
-        event.preventDefault();
-    });
+			        $('body').animate({
+			            scrollTop: scroll_top
+			        }, 800);
 
-    $('#work').delegate('.project', 'mouseenter', function (event) {
-        var project = $(this),
-            project_mask = project.find('.mask'),
-            project_caption = project.find('.caption'),
-            projects = project.closest('.projects'),
-            projects_view_all = projects.hasClass('summary') || projects.hasClass('detail');;
+			        event.preventDefault();
+			    });
+			}
+		};
+	});
+angular.module('CareyHinoki').
+	directive('navigateToTop', function () {
+		return {
+			link: function (scope, element, attrs) {
+				var element = $(element);
 
-        if (projects_view_all === false) {
-            project_caption.removeClass('detail');
-            project_mask.css('top', 0);
-        }
-    });
+				element.on('click', function (event) {
+					$('body').animate({
+			            scrollTop: 0
+			        }, 800);
 
-    $('#work').delegate('.project', 'mouseleave', function (event) {
-        var project = $(this),
-            project_mask = project.find('.mask'),
-            projects = project.closest('.projects'),
-            projects_view_all = projects.hasClass('summary') || projects.hasClass('detail');
+			        event.preventDefault();
+				});
+			}
+		}
+	});
+angular.module('CareyHinoki').
+	directive('playPreview', function () {
+		return {
+			link: function (scope, element, attrs) {
+				var element = $(element);
 
-        if (projects_view_all === false) {
-            project_mask.css('top', -305);
-        }
-    });
+				element.delegate('.play', 'mouseenter', function (event) {
+					var play = $(this),
+			            play_mask = play.find('.mask'),
+			            play_caption = play.find('.caption'),
+			            plays = play.closest('.plays'),
+			            plays_view_all = plays.hasClass('summary') || plays.hasClass('detail');;
 
-    $('#work').delegate('.project .view', 'click', function (event) {
-        var view_link = $(this),
-            caption = view_link.closest('.caption');
+			        if (plays_view_all === false) {
+			            play_caption.removeClass('detail');
+			            play_mask.css('top', 0);
+			        }
+				});
 
-        caption.animate({
-            left: 460
-        }, 250, function () {
-            caption.css('left', -460);
-            caption.addClass('detail');
+				element.delegate('.play', 'mouseleave', function (event) {
+					var play = $(this),
+			            play_mask = play.find('.mask'),
+			            plays = play.closest('.plays'),
+			            plays_view_all = plays.hasClass('summary') || plays.hasClass('detail');
 
-            caption.animate({
-                left: 0
-            }, 250);
-        });
+			        if (plays_view_all === false) {
+			            play_mask.css('top', -305);
+			        }
+				});
+			}
+		};
+	});
+angular.module('CareyHinoki').
+	directive('windowScroll', function () {
+		return {
+			link: function (scope, element, attrs) {
+				function throttle(fn, delay) {
+			        var timer;
 
-        event.preventDefault();
-    });
+			        return function () {
+			            if (!timer) {
+			                timer = setTimeout(function () {
+			                    fn.apply(this, arguments);
 
-    $('#play').delegate('.play', 'mouseenter', function (event) {
-        var play = $(this),
-            play_mask = play.find('.mask');
+			                    timer = null;
+			                }, delay);
+			            }
+			        };
+			    }
 
-        play_mask.css('top', 0);
-    });
+			    function onScroll(event) {
+			        var window_element = $(window),
+			            scroll_top = window_element.scrollTop() + 20,
+			            scroll_bottom = window_element.scrollTop() + window_element.height() - 100,
+			            utility_element = $('#utility');
 
-    $('#play').delegate('.play', 'mouseleave', function (event) {
-        var play = $(this),
-            play_mask = play.find('.mask');
+			        utility_element.stop(true);
+			        utility_element.animate({
+			            opacity: scroll_top > 20 ? 1 : 0,
+			            top: scroll_bottom + 'px'
+			        }, 400);
+			    }
 
-        play_mask.css('top', -305);
-    });
-}());
+				$(window).on('scroll', throttle(onScroll, 100));
+			}
+		};
+	});
+angular.module('CareyHinoki').
+	directive('workPreview', function () {
+		return {
+			link: function (scope, element, attrs) {
+				var element = $(element);
+
+				element.delegate('.work', 'mouseenter', function (event) {
+					var work = $(this),
+			            work_mask = work.find('.mask'),
+			            work_caption = work.find('.caption'),
+			            works = work.closest('.works'),
+			            works_view_all = works.hasClass('summary') || works.hasClass('detail');;
+
+			        if (works_view_all === false) {
+			            work_caption.removeClass('detail');
+			            work_mask.css('top', 0);
+			        }
+				});
+
+				element.delegate('.work', 'mouseleave', function (event) {
+					var work = $(this),
+			            work_mask = work.find('.mask'),
+			            works = work.closest('.works'),
+			            works_view_all = works.hasClass('summary') || works.hasClass('detail');
+
+			        if (works_view_all === false) {
+			            work_mask.css('top', -305);
+			        }
+				});
+			}
+		};
+	});
+angular.module('CareyHinoki').
+	directive('workView', function () {
+		return {
+			link: function (scope, element, attrs) {
+				var element = $(element);
+
+				element.delegate('.work .view', 'click', function (event) {
+					var view_link = $(this),
+			            caption = view_link.closest('.caption');
+
+			        caption.animate({
+			            left: 460
+			        }, 250, function () {
+			            caption.css('left', -460);
+			            caption.addClass('detail');
+
+			            caption.animate({
+			                left: 0
+			            }, 250);
+			        });
+
+			        event.preventDefault();
+				});
+			}
+		};
+	});
+angular.module('CareyHinoki').
+	directive('workViewToggle', function () {
+		return {
+			link: function (scope, element, attrs) {
+				var element = $(element);
+
+				element.on('click', function (event) {
+					var works = $('.works'),
+			            works_summary_view = works.hasClass('summary'),
+			            works_detail_view = works.hasClass('detail');
+
+			        if (!works_summary_view && !works_detail_view) {
+			            works.addClass('summary');
+			        } else if (works_summary_view) {
+			            works.toggleClass('summary detail');
+			        } else if (works_detail_view) {
+			            works.removeClass('detail');
+			        }
+
+			        works.find('.work .detail').removeClass('detail');
+
+		        	event.preventDefault();
+				})
+			}
+		};
+	});
+angular.module('CareyHinoki')
+	.filter('join', function () {
+		return function (input) {
+			if (typeof input == 'object' && input.length) {
+				return input.join(', ');
+			}
+
+			return;
+		}
+	});
+angular.module('CareyHinoki')
+	.filter('limit', function () {
+		return function (input, limit) {
+			if (typeof input == 'object' && input.length) {
+				return input.slice(0, limit);
+			}
+		}
+	});

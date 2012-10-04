@@ -1,0 +1,25 @@
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <ul ng-controller="SocialMediaListCtrl">
+                    <li ng-repeat="social_media in social_medias">
+                        <a href="{{social_media.url}}" target="_blank">{{social_media.name}}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="span4">
+                <ul ng-controller="TechnologyUsedCtrl">
+                    <li ng-repeat="technology in technologies">
+                        <a href="{{technology.url}}" target="_blank">{{technology.name}}</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="span4">
+                tweets
+            </div>
+        </div>
+    </div>
+</footer>

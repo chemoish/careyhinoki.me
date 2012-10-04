@@ -1,0 +1,57 @@
+<div class="contact-wrapper">
+    <div id="contact" class="container section">
+        <h2>Contact</h2>
+        <h3>No...You're awesome</h3>
+
+        <div class="row">
+            <div class="span6">
+                <div class="contact-info-container clearfix">
+                    <ul class="contact-info-label">
+                        <li>
+                            I'm
+                        </li>
+                        <li>
+                            Living in
+                        </li>
+                        <li>
+                            Interested in
+                        </li>
+                        <li>
+                            Contact
+                        </li>
+                        <li>
+                            Follow
+                        </li>
+                    </ul>
+
+                    <ul class="contact-info">
+                        <li>
+                            Carey HInoki
+                        </li>
+                        <li>
+                            Long Beach, CA
+                        </li>
+                        <li>
+                            Networking
+                        </li>
+                        <li>
+                            <a href="mailto:carey.hinoki@gmail.com">carey.hinoki@gmail.com</a>
+                        </li>
+                        <li>
+                            <ul ng-controller="SocialMediaListCtrl" class="social-media">
+                                <li ng-repeat="social_media in social_medias">
+                                    <a href="{{social_media.url}}" target="_blank"><i class="icon-twitter"></i></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="span6">
+                <div class="contact-photo-container">
+                    <img src="img/ninja.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
