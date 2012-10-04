@@ -13,7 +13,13 @@ module.exports = function(grunt) {
     },
     
     lint: {
-
+        files: [
+            'js/plugins.js',
+            'js/app.js',
+            'js/controller/*.js',
+            'js/directive/*.js',
+            'js/filter/*.js'
+        ]
     },
     
     qunit: {
@@ -21,19 +27,18 @@ module.exports = function(grunt) {
     },
     
     concat: {
-        'js/script.js': [
-            '<banner:meta.banner>',
-            'js/plugins.js',
-            'js/app.js',
-            'js/controller/*.js',
-            'js/directive/*.js',
-            'js/filter/*.js'
-        ],
+        dist: {
+            src: [
+                '<banner:meta.banner>',
+                '<config:lint.files>'
+            ],
+            dest: 'js/script.js'
+        }
     },
     
     min: {
         dist: {
-            src: ['js/script.js'],
+            src: ['<config:concat.dist.dest>'],
             dest: 'js/script.min.js'
         }
     },
@@ -54,29 +59,37 @@ module.exports = function(grunt) {
         },
         dist: {
             src: [
-                'css/vendor/bootstrap.css',
-                'css/vendor/bootstrap-responsive.css',
-                'css/vendor/font-awesome.css',
-                'css/vendor/google-font-open-sans.css',
-                'less/style.less'
+                '<config:recess.debug.dest>'
             ],
             dest: 'css/style.min.css',
             options: {
-                compile: true,
                 compress: true
             }
         }
     },
 
     watch: {
-        files: [
-            'js/controller/*.js',
-            'js/directive/*.js',
-            'js/filter/*.js',
-            'js/plugins.js',
-            'less/**/*.less'
-        ],
-        tasks: 'concat min recess:debug recess:dist'
+        all: {
+            files: [
+                '<config:lint.files>',
+                '<config:watch.less.files>'
+            ],
+            tasks: 'concat min recess:debug recess:dist'
+        },
+
+        js: {
+            files: [
+                '<config:lint.files>'
+            ],
+            tasks: 'concat min'
+        },
+
+        less: {
+            files: [
+                'less/**/*.less'
+            ],
+            tasks: 'recess:debug recess:dist'
+        }
     },
 
     jshint: {
@@ -105,4 +118,10 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', 'concat min recess:debug recess:dist');
+
+  grunt.registerTask('watch-all', 'watch:all');
+
+  grunt.registerTask('watch-js', 'watch:js');
+
+  grunt.registerTask('watch-less', 'watch:less');
 };
