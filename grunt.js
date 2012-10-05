@@ -14,6 +14,7 @@ module.exports = function(grunt) {
     
     lint: {
         files: [
+            'js/vendor/bootstrap.js',
             'js/plugins.js',
             'js/app.js',
             'js/controller/*.js',
