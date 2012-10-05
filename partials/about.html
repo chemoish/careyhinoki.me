@@ -30,7 +30,7 @@
                             <h1>Technologies used</h1>
                             
                             <ul class="technologies clearfix">
-                                <li ng-repeat="technology in technologies" class="technology"><span class="label">{{technology.name}}</span></li>
+                                <li ng-repeat="technology in technologies" class="technology"><span class="label" ng-class="{'label-inverse': technology.primary}">{{technology.name}}</span></li>
                             </ul>
                         </section>
                     </div>

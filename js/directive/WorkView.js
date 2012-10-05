@@ -9,13 +9,13 @@ angular.module('CareyHinoki').
 			            caption = view_link.closest('.caption');
 
 			        caption.animate({
-			            left: 460
+			            top: 305
 			        }, 250, function () {
-			            caption.css('left', -460);
+			            caption.css('top', -305);
 			            caption.addClass('detail');
 
 			            caption.animate({
-			                left: 0
+			                top: 0
 			            }, 250);
 			        });
 

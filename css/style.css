@@ -8331,8 +8331,7 @@ textarea {
 body {
   font-family: "Open Sans", "Helvetica", "Arial";
   font-size: 16px;
-  color: pink;
-  background: url(../img/bg.jpg);
+  background: url(../img/bg.png);
 }
 
 h2,
@@ -8342,21 +8341,22 @@ h3 {
 
 h2 {
   margin: 0 0 10px;
-  font-size: 48px;
+  font-size: 62px;
+  line-height: 62px;
   color: #332E33;
+  text-transform: uppercase;
 }
 
 h3 {
-  margin-bottom: 25px;
-  font-size: 16px;
+  margin-bottom: 75px;
+  font-size: 18px;
   font-weight: normal;
-  color: #ABACA5;
-  border: 1px dotted #ABACA5;
-  border-width: 1px 0;
+  line-height: 18px;
 }
 
 figure {
   margin: 0;
+  box-shadow: 0 0 0 1px #111111, 2px 2px 2px rgba(0, 0, 0, 0.1);
 }
 
 /*
@@ -8370,6 +8370,7 @@ header {
   height: 50px;
   text-align: center;
   background: #333;
+  border-bottom: 1px solid #222;
 }
 
 #logo img {
@@ -8389,7 +8390,7 @@ nav {
 }
 
 .nav {
-  width: 361px;
+  width: 407px;
   padding: 0 0 0 10px;
   margin: 25px auto 0;
   list-style: none;
@@ -8397,21 +8398,23 @@ nav {
 
 .nav li {
   float: left;
-  padding: 0 15px;
+  padding: 0 20px;
   line-height: 50px;
 }
 
 .nav a {
+  font-size: 12px;
   color: #fff;
+  text-transform: uppercase;
 }
 
 .nav > li > a:hover {
-  color: #A84B3A;
+  color: pink;
   background: transparent;
 }
 
 .nav .about {
-  padding-right: 80px;
+  padding-right: 108px;
 }
 
 @media (max-width: 767px) {
@@ -8455,7 +8458,7 @@ nav {
 }
 
 .section {
-  padding: 50px 0;
+  padding: 100px 0;
 }
 
 /*
@@ -8464,7 +8467,7 @@ nav {
 
 .intro-wrapper {
   height: 375px;
-  background: url(../img/section-bg.jpg);
+  background: url(../img/section-bg.png);
 }
 
 #intro {
@@ -8504,7 +8507,8 @@ nav {
  * Work
  */
 
-#work h2 {
+#work h2,
+#work h3 {
   color: #fff;
 }
 
@@ -8548,7 +8552,7 @@ nav {
   width: 100%;
   height: 100%;
   text-align: center;
-  background: url(../img/section-bg.jpg);
+  background: url(../img/section-bg.png);
   -webkit-transition: top 0.5s ease;
      -moz-transition: top 0.5s ease;
        -o-transition: top 0.5s ease;
@@ -8563,7 +8567,7 @@ nav {
   margin: 15% 0 10px;
   font-size: 24px;
   line-height: 1;
-  color: #333;
+  color: #333 !important;
   border: 0;
 }
 
@@ -8773,7 +8777,7 @@ nav {
  */
 
 .about-wrapper {
-  background: url(../img/section-bg.jpg);
+  background: url(../img/section-bg.png);
 }
 
 #bio h1,
@@ -8809,7 +8813,8 @@ nav {
  * Play
  */
 
-#play h2 {
+#play h2,
+#play h3 {
   color: #fff;
 }
 
@@ -8853,7 +8858,7 @@ nav {
   width: 100%;
   height: 100%;
   text-align: center;
-  background: url(../img/section-bg.jpg);
+  background: url(../img/section-bg.png);
   -webkit-transition: top 0.5s ease;
      -moz-transition: top 0.5s ease;
        -o-transition: top 0.5s ease;
@@ -8894,7 +8899,7 @@ nav {
  */
 
 .contact-wrapper {
-  background: url(../img/section-bg.jpg);
+  background: url(../img/section-bg.png);
 }
 
 .contact-info-container {

@@ -1,4 +1,4 @@
-/*! Carey Hinoki Portfolio - v0.1.0 - 2012-10-03
+/*! Carey Hinoki Portfolio - v0.1.0 - 2012-10-04
 * http://www.careyhinoki.me/
 * Copyright (c) 2012 Carey Hinoki; Licensed MIT */
 
@@ -73,25 +73,6 @@ angular.module('CareyHinoki').
 		$http.get('data/technologies.json').success(function (data) {
 			$scope.technologies = data;
 		});
-	}]);
-angular.module('CareyHinoki').
-	controller('TechnologyUsedCtrl', ['$scope', function ($scope) {
-		$scope.technologies = [{
-		    name: 'HTML5 Boilerplate',
-	        url: '//html5boilerplate.com/'
-		}, {
-		    name: 'Bootstrap',
-	        url: '//twitter.github.com/bootstrap/'
-		}, {
-		    name: 'Font Awesome',
-	        url: '//fortawesome.github.com/Font-Awesome/'
-		}, {
-		    name: 'handlebars',
-	        url: '//handlebarsjs.com/'
-		}, {
-		    name: 'jQuery',
-	        url: '//jquery.com/'
-		}];
 	}]);
 angular.module('CareyHinoki').
 	controller('WorkCtrl', ['$scope', '$http', function ($scope, $http) {
@@ -251,13 +232,13 @@ angular.module('CareyHinoki').
 			            caption = view_link.closest('.caption');
 
 			        caption.animate({
-			            left: 460
+			            top: 305
 			        }, 250, function () {
-			            caption.css('left', -460);
+			            caption.css('top', -305);
 			            caption.addClass('detail');
 
 			            caption.animate({
-			                left: 0
+			                top: 0
 			            }, 250);
 			        });
 
