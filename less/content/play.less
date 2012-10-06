@@ -2,13 +2,8 @@
  * Play
  */
 
-.play-wrapper
-{
-
-}
-
-#play h2,
-#play h3
+#play .span12 > h2,
+#play .span12 > h3
 {
     color: #fff;
 }
@@ -24,15 +19,15 @@
 {
     display: inline-block;
     *display: inline;
-    margin: 0 2% 2% 0;
+    margin: 0 3.5% 3.5% 0;
     vertical-align: top;
-    width: 32%;
+    width: 31%;
     zoom: 1;
 }
 
 .lt-ie8 .plays > li
 {
-    margin: 0 1.9% 1.9% 0;
+    margin: 0 3.4% 3.4% 0;
 }
 
 .plays > li.third
@@ -101,6 +96,11 @@
     text-decoration: none;
 }
 
+.play .caption .website span
+{
+    display: none;
+}
+
 @media (max-width: 1200px) and (min-width: 980px) {
     .plays.detail .play .caption h3, /* all plays */
     .play .detail h3
@@ -130,7 +130,7 @@
 @media (max-width: 979px) and (min-width: 768px) {
     .plays > li.third
     {
-        margin-right: 2%;
+        margin-right: 3.5%;
     }
 
     .plays > li.second
@@ -180,6 +180,16 @@
         width: 100%;
     }
 
+    .play
+    {
+        box-shadow: none;
+    }
+
+    .play .frame
+    {
+        box-shadow: 0 1px 1px #111, 2px 2px 2px rgba(0, 0, 0, .1);
+    }
+
     .play .mask
     {
         background: none;
@@ -200,7 +210,7 @@
 
     .play .caption h4
     {
-        color: #fff;
+        color: #dedede;
         padding: 0;
         text-align: left;
     }
@@ -217,14 +227,13 @@
 
     .play .caption .website
     {
-        color: #fff;
+        color: #dedede;
         font-size: 14px;
     }
 
     .play .caption .website:hover
     {
         color: #fff;
-        text-decoration: underline;
     }
 
     .play .caption .website i
@@ -234,6 +243,6 @@
 
     .play .caption .website span
     {
-        display: block;
+        display: inline;
     }
 }

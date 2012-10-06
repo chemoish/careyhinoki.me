@@ -216,6 +216,20 @@
     "website": "//www.oghead.com",
     "projects": []
 }, {
+    "id": "pics-org",
+    "name": "PICS",
+    "img": "img/project/pics-org.png",
+    "description": "Architected and maintained an enterprise level application that handles contractor prequalification. Focusing efforts on secure stable architectures through tech talks and culture change.",
+    "alt": "revamped registration, revamped I18N, wrote javascript core architecture, integrated twitter bootstrap, sass, compass, extjs 4",
+    "tags": [
+        "HTML & CSS",
+        "Javascript",
+        "Java",
+        "Struts 2"
+    ],
+    "website": "//www.picsorganizer.com",
+    "projects": []
+}, {
     "id": "popasmoke",
     "name": "Popasmoke",
     "img": "img/project/popasmoke.png",

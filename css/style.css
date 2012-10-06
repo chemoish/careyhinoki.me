@@ -8334,29 +8334,30 @@ body {
   background: url(../img/bg.png);
 }
 
-h2,
-h3 {
+.span12 > h2,
+.span12 > h3 {
   text-align: center;
 }
 
-h2 {
+.span12 > h2 {
   margin: 0 0 10px;
   font-size: 62px;
-  line-height: 62px;
+  line-height: 1;
   color: #332E33;
+  text-shadow: 0 2px 1px #111111, 2px 2px 2px rgba(0, 0, 0, 0.1);
   text-transform: uppercase;
 }
 
-h3 {
+.span12 > h3 {
   margin-bottom: 75px;
   font-size: 18px;
   font-weight: normal;
-  line-height: 18px;
+  line-height: 1;
 }
 
 figure {
   margin: 0;
-  box-shadow: 0 0 0 1px #111111, 2px 2px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 1px #111111, 2px 2px 2px rgba(0, 0, 0, 0.1);
 }
 
 /*
@@ -8420,9 +8421,17 @@ nav {
 @media (max-width: 767px) {
   header {
     position: static;
+    width: auto;
+    height: auto;
+    margin: 0 -20px;
+  }
+  .nav-wrapper {
+    padding: 30px 20px;
   }
   #logo img {
-    margin: 20px 0 0;
+    position: static;
+    left: 0;
+    margin: 0 0 20px;
   }
   #vcard {
     display: block;
@@ -8433,17 +8442,22 @@ nav {
     color: #fff;
   }
   #vcard h1 {
-    font-size: 16px;
+    margin: 0 0 10px;
+    font-size: 62px;
+    text-transform: uppercase;
   }
   #vcard h2 {
-    font-size: 14px;
+    margin-bottom: 50px;
+    font-size: 18px;
+    font-weight: normal;
   }
   nav {
     margin: 0;
   }
   .nav {
     width: auto;
-    margin: 0 20px;
+    padding: 0;
+    margin: 0;
   }
   .nav li {
     float: none;
@@ -8452,7 +8466,7 @@ nav {
     background: #333;
     border-bottom: 1px solid #fff;
   }
-  .nav .portfolio {
+  .nav .about {
     padding: 0;
   }
 }
@@ -8466,49 +8480,31 @@ nav {
  */
 
 .intro-wrapper {
-  height: 375px;
   background: url(../img/section-bg.png);
 }
 
-#intro {
-  position: relative;
-  padding-top: 75px;
-  text-align: center;
-}
-
 #intro h2 {
-  display: inline-block;
-  *display: inline;
-  margin-top: 60px;
-  text-align: left;
+  font-size: 60px;
+  line-height: 1.2;
+  text-align: center;
   text-transform: uppercase;
 }
 
-#intro h2 .defy {
-  font-size: 60px;
-}
-
-#intro h2 .by {
-  float: left;
-  font-size: 120px;
-  line-height: 0.8;
-  text-indent: -5px;
-}
-
-#intro h2 .architect {
-  font-size: 26px;
-}
-
-#intro h2 .rich {
-  font-size: 42px;
+@media (max-width: 767px) {
+  .intro-wrapper {
+    margin: 0 -20px;
+  }
+  #intro {
+    padding: 0 20px;
+  }
 }
 
 /*
  * Work
  */
 
-#work h2,
-#work h3 {
+#work .span12 > h2,
+#work .span12 > h3 {
   color: #fff;
 }
 
@@ -8521,14 +8517,14 @@ nav {
 .works > li {
   display: inline-block;
   *display: inline;
-  width: 32%;
-  margin: 0 2% 2% 0;
+  width: 31%;
+  margin: 0 3.5% 3.5% 0;
   vertical-align: top;
   zoom: 1;
 }
 
 .lt-ie8 .works > li {
-  margin: 0 1.9% 1.9% 0;
+  margin: 0 3.4% 3.4% 0;
 }
 
 .works > li.third {
@@ -8567,7 +8563,7 @@ nav {
   margin: 15% 0 10px;
   font-size: 24px;
   line-height: 1;
-  color: #333 !important;
+  color: #333;
   border: 0;
 }
 
@@ -8697,13 +8693,13 @@ nav {
 
 @media (max-width: 979px) and (min-width: 768px) {
   .works > li.third {
-    margin-right: 2%;
+    margin-right: 3.5%;
   }
   .works > li.second {
     margin-right: 0;
   }
   .works > li {
-    width: 49%;
+    width: 48.25%;
   }
   .works.detail .work .caption h3,
   .work .detail h3 {
@@ -8731,6 +8727,12 @@ nav {
     width: 100%;
     margin: 0 0 10%;
   }
+  .work {
+    box-shadow: none;
+  }
+  .work .frame {
+    box-shadow: 0 1px 1px #111111, 2px 2px 2px rgba(0, 0, 0, 0.1);
+  }
   .work .mask {
     position: static;
     text-align: left;
@@ -8747,7 +8749,7 @@ nav {
   }
   .work .caption h4 {
     padding: 0;
-    color: #fff;
+    color: #dedede;
     text-align: left;
   }
   .work .caption p {
@@ -8758,17 +8760,16 @@ nav {
   }
   .work .caption .website {
     font-size: 14px;
-    color: #fff;
+    color: #dedede;
   }
   .work .caption .website:hover {
     color: #fff;
-    text-decoration: underline;
   }
   .work .caption .website i {
     display: none;
   }
   .work .caption .website span {
-    display: block;
+    display: inline;
   }
 }
 
@@ -8780,9 +8781,17 @@ nav {
   background: url(../img/section-bg.png);
 }
 
+#bio,
+#tidbits,
+#skills,
+#technology {
+  margin-bottom: 20px;
+}
+
 #bio h1,
 #tidbits h1,
 #technology h1 {
+  margin: 0 0 10px;
   font-size: 15px;
   line-height: 1;
   text-transform: uppercase;
@@ -8809,12 +8818,21 @@ nav {
   width: 100%;
 }
 
+@media (max-width: 767px) {
+  .about-wrapper {
+    margin: 0 -20px;
+  }
+  #about {
+    padding: 100px 20px;
+  }
+}
+
 /*
  * Play
  */
 
-#play h2,
-#play h3 {
+#play .span12 > h2,
+#play .span12 > h3 {
   color: #fff;
 }
 
@@ -8827,14 +8845,14 @@ nav {
 .plays > li {
   display: inline-block;
   *display: inline;
-  width: 32%;
-  margin: 0 2% 2% 0;
+  width: 31%;
+  margin: 0 3.5% 3.5% 0;
   vertical-align: top;
   zoom: 1;
 }
 
 .lt-ie8 .plays > li {
-  margin: 0 1.9% 1.9% 0;
+  margin: 0 3.4% 3.4% 0;
 }
 
 .plays > li.third {
@@ -8894,6 +8912,10 @@ nav {
   text-decoration: none;
 }
 
+.play .caption .website span {
+  display: none;
+}
+
 @media (max-width: 1200px) and (min-width: 980px) {
   .plays.detail .play .caption h3,
   .play .detail h3 {
@@ -8915,7 +8937,7 @@ nav {
 
 @media (max-width: 979px) and (min-width: 768px) {
   .plays > li.third {
-    margin-right: 2%;
+    margin-right: 3.5%;
   }
   .plays > li.second {
     margin-right: 0;
@@ -8949,6 +8971,12 @@ nav {
     width: 100%;
     margin: 0 0 10%;
   }
+  .play {
+    box-shadow: none;
+  }
+  .play .frame {
+    box-shadow: 0 1px 1px #111111, 2px 2px 2px rgba(0, 0, 0, 0.1);
+  }
   .play .mask {
     position: static;
     text-align: left;
@@ -8965,7 +8993,7 @@ nav {
   }
   .play .caption h4 {
     padding: 0;
-    color: #fff;
+    color: #dedede;
     text-align: left;
   }
   .play .caption p {
@@ -8976,17 +9004,16 @@ nav {
   }
   .play .caption .website {
     font-size: 14px;
-    color: #fff;
+    color: #dedede;
   }
   .play .caption .website:hover {
     color: #fff;
-    text-decoration: underline;
   }
   .play .caption .website i {
     display: none;
   }
   .play .caption .website span {
-    display: block;
+    display: inline;
   }
 }
 
@@ -9041,6 +9068,15 @@ nav {
 .contact-photo-container {
   margin: 75px 0;
   text-align: center;
+}
+
+@media (max-width: 767px) {
+  .contact-wrapper {
+    margin: 0 -20px;
+  }
+  #contact {
+    padding: 100px 20px;
+  }
 }
 
 /*
