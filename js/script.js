@@ -1,4 +1,4 @@
-/*! Carey Hinoki Portfolio - v0.1.0 - 2012-10-05
+/*! Carey Hinoki Portfolio - v0.1.0 - 2012-10-08
 * http://www.careyhinoki.me/
 * Copyright (c) 2012 Carey Hinoki; Licensed MIT */
 
@@ -2265,28 +2265,65 @@ angular.module('CareyHinoki').
 			link: function (scope, element, attrs) {
 				var element = $(element);
 
-				element.delegate('.work', 'mouseenter', function (event) {
-					var work = $(this),
-			            work_mask = work.find('.mask'),
-			            work_caption = work.find('.caption'),
-			            works = work.closest('.works'),
-			            works_view_all = works.hasClass('summary') || works.hasClass('detail');;
+				function getDirection(d) {
+					var direction;
 
-			        if (works_view_all === false) {
-			            work_caption.removeClass('detail');
-			            work_mask.css('top', 0);
-			        }
-				});
+					switch (d) {
+						case 0:
+							direction = 'top';
+							break;
+						case 1:
+							direction = 'right';
+							break;
+						case 2:
+							direction = 'bottom';
+							break;
+						case 3:
+							direction = 'left';
+							break;
+					}
 
-				element.delegate('.work', 'mouseleave', function (event) {
-					var work = $(this),
-			            work_mask = work.find('.mask'),
-			            works = work.closest('.works'),
-			            works_view_all = works.hasClass('summary') || works.hasClass('detail');
+					return direction;
+				}
 
-			        if (works_view_all === false) {
-			            work_mask.css('top', -305);
-			        }
+				element.delegate('.work:not(.freeze)', 'mouseenter mouseleave', function (event) {
+					// http://tympanus.net/TipsTricks/DirectionAwareHoverEffect/index.html
+					// http://stackoverflow.com/questions/3627042
+					var element = $(this),
+						caption = element.find('.caption'),
+						event_type = event.type,
+						w = $(this).width(),
+						h = $(this).height(),
+						x = (event.pageX - this.offsetLeft - (w/2)) * ( w > h ? (h/w) : 1 ),
+						y = (event.pageY - this.offsetTop  - (h/2)) * ( h > w ? (w/h) : 1 ),
+						d = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180 ) / 90 ) + 3 )  % 4,
+						direction = getDirection(d);
+
+					if (event_type == 'mouseenter') {
+						if (caption.hasClass('over')) {
+							return false;
+						}
+
+						element.removeClass('detail');
+
+						caption.attr('class', [
+							'caption',
+							direction + '-enter',
+							'over'
+						].join(' ')).hide();
+
+						caption.show(0, function () {
+							caption.addClass(direction + '-hover');
+						});
+					} else {
+						caption.attr('class', [
+							'caption',
+							direction + '-enter',
+							'out'
+						].join(' '));
+
+						caption.removeClass(direction + '-hover');
+					}
 				});
 			}
 		};
@@ -2298,19 +2335,20 @@ angular.module('CareyHinoki').
 				var element = $(element);
 
 				element.delegate('.work .view', 'click', function (event) {
-					var view_link = $(this),
-			            caption = view_link.closest('.caption');
+					var element = $(this),
+						work = element.closest('.work'),
+						caption = element.closest('.caption');
 
-			        caption.animate({
-			            top: 305
-			        }, 250, function () {
-			            caption.css('top', -305);
-			            caption.addClass('detail');
+					var caption_content = caption.html();
+					caption.html($('<div>').html(caption_content));
 
-			            caption.animate({
-			                top: 0
-			            }, 250);
-			        });
+					caption.find('div').fadeOut(300, function () {
+						work.addClass('detail');
+
+						$(this).fadeIn(300, function () {
+							caption.html($(this).html());
+						});
+					});
 
 			        event.preventDefault();
 				});

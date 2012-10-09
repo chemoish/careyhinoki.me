@@ -5,19 +5,20 @@ angular.module('CareyHinoki').
 				var element = $(element);
 
 				element.delegate('.work .view', 'click', function (event) {
-					var view_link = $(this),
-			            caption = view_link.closest('.caption');
+					var element = $(this),
+						work = element.closest('.work'),
+						caption = element.closest('.caption');
 
-			        caption.animate({
-			            top: 305
-			        }, 250, function () {
-			            caption.css('top', -305);
-			            caption.addClass('detail');
+					var caption_content = caption.html();
+					caption.html($('<div>').html(caption_content));
 
-			            caption.animate({
-			                top: 0
-			            }, 250);
-			        });
+					caption.find('div').fadeOut(300, function () {
+						work.addClass('detail');
+
+						$(this).fadeIn(300, function () {
+							caption.html($(this).html());
+						});
+					});
 
 			        event.preventDefault();
 				});

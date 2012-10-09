@@ -47,24 +47,56 @@
     padding: 5px;
 }
 
-.work .mask
+.work .caption.top-enter
 {
-    background: url(../img/section-bg.png);
-    height: 100%;
+    top: -100%;
+}
+
+.work .caption.top-hover
+{
+    top: 0;
+}
+
+.work .caption.right-enter
+{
+    right: -100%;
+    top: 0;
+}
+
+.work .caption.right-hover
+{
+    right: 0;
+}
+
+.work .caption.bottom-enter
+{
+    top: 100%;
+}
+
+.work .caption.bottom-hover
+{
+    top: 0;
+}
+
+.work .caption.left-enter
+{
+    left: -100%;
+    top: 0;
+}
+
+.work .caption.left-hover
+{
     left: 0;
-    position: absolute;
-    text-align: center;
-    transition: top 0.5s ease;
-    -webkit-transition: top 0.5s ease;
-    -moz-transition: top 0.5s ease;
-    -o-transition: top 0.5s ease;
-    top: -305px;
-    width: 100%;
 }
 
 .work .caption
 {
-    position: relative;
+    background: url(../img/section-bg.png);
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    .transition(all 0.3s ease-in-out);
+    width: 100%;
 }
 
 .work .caption h3
@@ -74,6 +106,7 @@
     font-size: 24px;
     line-height: 1;
     margin: 15% 0 10px;
+    padding: 0 10px;
 }
 
 .work .caption h4
@@ -111,20 +144,14 @@
 }
 
 /* all works */
-.works.summary .work .mask,
-.works.detail .work .mask
+.works.summary .work .caption,
+.works.detail .work .caption
 {
     top: 0 !important;
 }
 
-.works.detail .work .caption, /* all works */
-.work .detail
-{
-    text-align: left;
-}
-
 .works.detail .work .caption h3, /* all works */
-.work .detail h3
+.work.detail h3
 {
     border: 0;
     color: #333;
@@ -136,55 +163,58 @@
 }
 
 .works.detail .work .caption h4, /* all works */
-.work .detail h4
+.work.detail h4
 {
     color: #666;
     font-size: 16px;
     font-weight: normal;
     margin: 0 0 10px;
     padding: 0 10px;
+    text-align: left;
 }
 
 .works.detail .work .caption p, /* all works */
-.work .detail p
+.work.detail p
 {
     color: #ABACA5;
     display: block;
     font-size: 14px;
     line-height: 1.5;
     padding: 0 10px;
+    text-align: left;
 }
 
 .works.detail .work .caption .view, /* all works */
-.work .detail .view
+.work.detail .view
 {
     display: none;
 }
 
 .works.detail .work .caption .website, /* all works */
-.work .detail .website
+.work.detail .website
 {
     color: #666;
     display: block;
     font-size: 14px;
     padding: 0 10px;
+    text-align: left;
 }
 
 .works.detail .work .caption .website:hover, /* all works */
-.work .detail .website:hover
+.work.detail .website:hover
 {
     color: #333;
     text-decoration: none;
 }
 
 .works.detail .work .caption .website span, /* all works */
-.work .detail .website span
+.work.detail .website span
 {
     display: block;
 }
 
 .works.detail .work .caption .website i, /* all works */
-.work .detail .website i
+.work.detail .website i
 {
     display: none;
 }
@@ -198,25 +228,25 @@
 
 @media (max-width: 1200px) and (min-width: 980px) {
     .works.detail .work .caption h3, /* all works */
-    .work .detail h3
+    .work.detail h3
     {
         font-size: 18px;
     }
 
     .works.detail .work .caption h4, /* all works */
-    .work .detail h4
+    .work.detail h4
     {
         font-size: 12px;
     }
 
     .works.detail .work .caption p, /* all works */
-    .work .detail p
+    .work.detail p
     {
         font-size: 11px;
     }
 
     .works.detail .work .caption .website, /* all works */
-    .work .detail .website
+    .work.detail .website
     {
         font-size: 12px;
     }
@@ -239,25 +269,25 @@
     }
 
     .works.detail .work .caption h3, /* all works */
-    .work .detail h3
+    .work.detail h3
     {
         font-size: 20px;
     }
 
     .works.detail .work .caption h4, /* all works */
-    .work .detail h4
+    .work.detail h4
     {
         font-size: 14px;
     }
 
     .works.detail .work .caption p, /* all works */
-    .work .detail p
+    .work.detail p
     {
         font-size: 13px;
     }
 
     .works.detail .work .caption .website, /* all works */
-    .work .detail .website
+    .work.detail .website
     {
         font-size: 14px;
     }
@@ -285,15 +315,12 @@
         box-shadow: 0 1px 1px #111, 2px 2px 2px rgba(0, 0, 0, .1);
     }
 
-    .work .mask
+    .work .caption
     {
         background: none;
         position: static;
         text-align: left;
-        transition: none;
-        -webkit-transition: none;
-        -moz-transition: none;
-        -o-transition: none;
+        .transition(none);
     }
 
     .work .caption h3

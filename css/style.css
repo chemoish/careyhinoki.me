@@ -8541,25 +8541,54 @@ nav {
   background: #fff;
 }
 
-.work .mask {
-  position: absolute;
-  top: -305px;
+.work .caption.top-enter {
+  top: -100%;
+}
+
+.work .caption.top-hover {
+  top: 0;
+}
+
+.work .caption.right-enter {
+  top: 0;
+  right: -100%;
+}
+
+.work .caption.right-hover {
+  right: 0;
+}
+
+.work .caption.bottom-enter {
+  top: 100%;
+}
+
+.work .caption.bottom-hover {
+  top: 0;
+}
+
+.work .caption.left-enter {
+  top: 0;
+  left: -100%;
+}
+
+.work .caption.left-hover {
   left: 0;
+}
+
+.work .caption {
+  position: absolute;
   width: 100%;
   height: 100%;
   text-align: center;
   background: url(../img/section-bg.png);
-  -webkit-transition: top 0.5s ease;
-     -moz-transition: top 0.5s ease;
-       -o-transition: top 0.5s ease;
-          transition: top 0.5s ease;
-}
-
-.work .caption {
-  position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+     -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+       -o-transition: all 0.3s ease-in-out;
 }
 
 .work .caption h3 {
+  padding: 0 10px;
   margin: 15% 0 10px;
   font-size: 24px;
   line-height: 1;
@@ -8598,18 +8627,13 @@ nav {
 
 /* all works */
 
-.works.summary .work .mask,
-.works.detail .work .mask {
+.works.summary .work .caption,
+.works.detail .work .caption {
   top: 0 !important;
 }
 
-.works.detail .work .caption,
-.work .detail {
-  text-align: left;
-}
-
 .works.detail .work .caption h3,
-.work .detail h3 {
+.work.detail h3 {
   padding: 0 10px;
   margin: 10px 0;
   font-size: 24px;
@@ -8620,49 +8644,52 @@ nav {
 }
 
 .works.detail .work .caption h4,
-.work .detail h4 {
+.work.detail h4 {
   padding: 0 10px;
   margin: 0 0 10px;
   font-size: 16px;
   font-weight: normal;
   color: #666;
+  text-align: left;
 }
 
 .works.detail .work .caption p,
-.work .detail p {
+.work.detail p {
   display: block;
   padding: 0 10px;
   font-size: 14px;
   line-height: 1.5;
   color: #ABACA5;
+  text-align: left;
 }
 
 .works.detail .work .caption .view,
-.work .detail .view {
+.work.detail .view {
   display: none;
 }
 
 .works.detail .work .caption .website,
-.work .detail .website {
+.work.detail .website {
   display: block;
   padding: 0 10px;
   font-size: 14px;
   color: #666;
+  text-align: left;
 }
 
 .works.detail .work .caption .website:hover,
-.work .detail .website:hover {
+.work.detail .website:hover {
   color: #333;
   text-decoration: none;
 }
 
 .works.detail .work .caption .website span,
-.work .detail .website span {
+.work.detail .website span {
   display: block;
 }
 
 .works.detail .work .caption .website i,
-.work .detail .website i {
+.work.detail .website i {
   display: none;
 }
 
@@ -8674,19 +8701,19 @@ nav {
 
 @media (max-width: 1200px) and (min-width: 980px) {
   .works.detail .work .caption h3,
-  .work .detail h3 {
+  .work.detail h3 {
     font-size: 18px;
   }
   .works.detail .work .caption h4,
-  .work .detail h4 {
+  .work.detail h4 {
     font-size: 12px;
   }
   .works.detail .work .caption p,
-  .work .detail p {
+  .work.detail p {
     font-size: 11px;
   }
   .works.detail .work .caption .website,
-  .work .detail .website {
+  .work.detail .website {
     font-size: 12px;
   }
 }
@@ -8702,19 +8729,19 @@ nav {
     width: 48.25%;
   }
   .works.detail .work .caption h3,
-  .work .detail h3 {
+  .work.detail h3 {
     font-size: 20px;
   }
   .works.detail .work .caption h4,
-  .work .detail h4 {
+  .work.detail h4 {
     font-size: 14px;
   }
   .works.detail .work .caption p,
-  .work .detail p {
+  .work.detail p {
     font-size: 13px;
   }
   .works.detail .work .caption .website,
-  .work .detail .website {
+  .work.detail .website {
     font-size: 14px;
   }
 }
@@ -8733,14 +8760,14 @@ nav {
   .work .frame {
     box-shadow: 0 1px 1px #111111, 2px 2px 2px rgba(0, 0, 0, 0.1);
   }
-  .work .mask {
+  .work .caption {
     position: static;
     text-align: left;
     background: none;
     -webkit-transition: none;
        -moz-transition: none;
+        -ms-transition: none;
          -o-transition: none;
-            transition: none;
   }
   .work .caption h3 {
     margin: 10px 0;

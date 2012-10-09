@@ -14,21 +14,19 @@
                                 </a>
                             </div>
 
-                            <div class="mask">
-                                <figcaption class="caption">
-                                    <h3>{{work.name}}</h3>
-                                    <h4>{{work.tags | join}}</h4>
-                                    <p title="{{work.alt}}">{{work.description}}</p>
-                                   
-                                    <a href="#" class="view"><i class="icon-search"></i></a>
+                            <figcaption class="caption">
+                                <h3>{{work.name}}</h3>
+                                <h4>{{work.tags | join}}</h4>
+                                <p title="{{work.alt}}">{{work.description}}</p>
+                               
+                                <a href="#" class="view"><i class="icon-search"></i></a>
 
-                                    <span ng-switch on="!!work.website">
-                                        <a ng-switch-when="true" href="{{work.website}}" class="website" target="_blank">
-                                            <i class="icon-link"></i> <span>Visit Website</span>
-                                        </a>
-                                    </span>
-                                </figcaption>
-                            </div>
+                                <span ng-switch on="!!work.website">
+                                    <a ng-switch-when="true" href="{{work.website}}" class="website" target="_blank">
+                                        <i class="icon-link"></i> <span>Visit Website</span>
+                                    </a>
+                                </span>
+                            </figcaption>
                         </figure>
                     </li>
                 </ul>
