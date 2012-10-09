@@ -1,0 +1,369 @@
+/*
+ * Gallery
+ */
+
+.gallery
+{
+    margin: 0;
+
+    > li
+    {
+        display: inline-block;
+        margin: 0 3.5% 3.5% 0;
+        vertical-align: top;
+        width: 31%;
+        zoom: 1;
+    }
+
+    > .third
+    {
+        margin-right: 0;
+    }
+}
+
+.ie-lt8 .gallery > li
+{
+    display: inline;
+}
+
+.gallery-item
+{
+    border: 5px solid #fff;
+    box-shadow: 0 1px 1px #111, 2px 2px 2px rgba(0, 0, 0, .1);
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+
+    .caption
+    {
+        background: url(../img/section-bg.png);
+        height: 100%;
+        position: absolute;
+        text-align: center;
+        .transition(all 0.3s ease);
+        width: 100%;
+
+        h3
+        {
+            color: #333;
+            margin: 15% 0 5px;
+            padding: 0 10%;
+        }
+
+        h4
+        {
+            color: #666;
+            font-size: 15px;
+            font-weight: normal;
+            padding: 0 15%;
+        }
+
+        p
+        {
+            color: #ABACA5;
+            display: none;
+            font-size: 14px;
+        }
+
+        .view,
+        .website
+        {
+            color: #999;
+            font-size: 18px;
+        }
+
+        .view:hover,
+        .website:hover
+        {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .website span
+        {
+            display: none;
+        }
+    }
+
+    .caption.top-enter
+    {
+        top: -100%;
+    }
+
+    .caption.top-hover
+    {
+        top: 0;
+    }
+
+    .caption.right-enter
+    {
+        right: -100%;
+        top: 0;
+    }
+
+    .caption.right-hover
+    {
+        right: 0;
+    }
+
+    .caption.bottom-enter
+    {
+        top: 100%;
+    }
+
+    .caption.bottom-hover
+    {
+        top: 0;
+    }
+
+    .caption.left-enter
+    {
+        left: -100%;
+        top: 0;
+    }
+
+    .caption.left-hover
+    {
+        left: 0;
+    }
+}
+
+.gallery-item.detail
+{
+    .caption
+    {
+        h3
+        {
+            line-height: 1;
+            margin: 10px 0;
+            padding: 0 10px;
+            text-align: left;
+        }
+
+        h4
+        {
+            margin: 0 0 10px;
+            padding: 0 10px;
+            text-align: left;
+        }
+
+        p
+        {
+            display: block;
+            line-height: 1.5;
+            padding: 0 10px;
+            text-align: left;
+        }
+
+        .view
+        {
+            display: none;
+        }
+
+        .website
+        {
+            color: #666;
+            display: block;
+            font-size: 14px;
+            padding: 0 10px;
+            text-align: left;
+        }
+
+        .website:hover
+        {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .website i
+        {
+            display: none;
+        }
+
+        .website span
+        {
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 980px) {
+    .gallery-item
+    {
+        .caption
+        {
+            h3
+            {
+                font-size: 20px;
+                margin: 10% 0 5px;
+            }
+
+            h4
+            {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .gallery-item.detail
+    {
+        .caption
+        {
+            h3,
+            h4,
+            p
+            {
+                margin-bottom: 5px;
+            }
+
+            h3
+            {
+                font-size: 16px;
+            }
+
+            h4
+            {
+                font-size: 12px;
+            }
+
+            p
+            {
+                font-size: 11px;
+            }
+
+            .website
+            {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media (max-width: 979px) and (min-width: 768px) {
+    .gallery
+    {
+        > li
+        {
+            width: 48.25%;
+        }
+
+        > .third
+        {
+            margin-right: 3.5%;
+        }
+
+        > .second
+        {
+            margin-right: 0;
+        }
+    }
+
+    .gallery-item.detail
+    {
+        .caption
+        {
+            h3
+            {
+                font-size: 20px;
+            }
+
+            h4
+            {
+                font-size: 14px;
+            }
+
+            p
+            {
+                font-size: 13px;
+            }
+
+            .website
+            {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .gallery
+    {
+        margin: 0 auto;
+        max-width: 460px;
+
+        > li
+        {
+            margin: 0 0 10%;
+            width: 100%;
+        }
+    }
+
+    .gallery-item
+    {
+        border: 0;
+        .box-shadow(none);
+
+        > a
+        {
+            @box-shadow: 0 1px 2px #111, 2px 2px 2px rgba(0, 0, 0, .1);
+
+            border: 5px solid #fff;
+            .box-shadow(@box-shadow);
+            display: block;
+        }
+
+        .caption
+        {
+            background: none;
+            position: static;
+            text-align: left;
+            .transition(none);
+
+            h3
+            {
+                color: #fff;
+                margin: 10px 0;
+                padding: 0;
+                text-align: left;
+            }
+
+            h4
+            {
+                color: #dedede;
+                padding: 0;
+                text-align: left;
+            }
+
+            p
+            {
+                display: block;
+            }
+
+            .view
+            {
+                display: none;
+            }
+
+            .website
+            {
+                color: #dedede;
+                font-size: 14px;
+            }
+
+            .website:hover
+            {
+                color: #fff;
+            }
+
+            .website i
+            {
+                display: none;
+            }
+
+            .website span
+            {
+                display: inline;
+            }
+        }
+    }
+}

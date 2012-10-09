@@ -5,14 +5,10 @@
                 <h2>Featured Work</h2>
                 <h3>Work - Fun - Code</h3>
 
-                <ul class="works clearfix" work-preview work-view>
+                <ul class="gallery works clearfix" gallery-preview gallery-view>
                     <li ng-repeat="work in works | limit:limit" ng-class="{second : ($index + 1) % 2 == 0, third : ($index + 1) % 3 == 0}">
-                        <figure class="work">
-                            <div class="frame">
-                                <a href="#" alt="{{work.name}}" title="{{work.name}}">
-                                    <img ng-src="{{work.img}}">
-                                </a>
-                            </div>
+                        <figure class="gallery-item work">
+                            <a alt="{{work.name}}" title="{{work.name}}"><img ng-src="{{work.img}}"></a>
 
                             <figcaption class="caption">
                                 <h3>{{work.name}}</h3>

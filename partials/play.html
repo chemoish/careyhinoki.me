@@ -5,9 +5,9 @@
                 <h2>Play</h2>
                 <h3>You know, gists and stuff</h3>
 
-                <ul class="plays clearfix" play-preview>
+                <ul class="gallery plays clearfix" gallery-preview>
                     <li ng-repeat="play in plays | limit:limit" ng-class="{second : ($index + 1) % 2 == 0, third : ($index + 1) % 3 == 0}">
-                        <figure class="play">
+                        <figure class="gallery-item play">
                             <div class="frame">
                                 <a href="#" alt="{{play.name}}" title="{{play.name}}">
                                     <img ng-src="{{play.img}}">

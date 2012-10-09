@@ -1,4 +1,4 @@
-/*! Carey Hinoki Portfolio - v0.1.0 - 2012-10-08
+/*! Carey Hinoki Portfolio - v0.1.0 - 2012-10-09
 * http://www.careyhinoki.me/
 * Copyright (c) 2012 Carey Hinoki; Licensed MIT */
 
@@ -2048,354 +2048,296 @@ if (!(window.console && console.log)) {
 
 angular.module('CareyHinoki', []);
 angular.module('CareyHinoki').
-	controller('CuriosityCtrl', ['$scope', function ($scope) {
-		$scope.curiosities = [
-			'I am 5th generation Chinese, 3rd generation Japanese.',
-	        'Ran the LA Marathon at the age of 12.',
-	        'At 16 I was drinking 72oz of 7-11 coffee by 3rd period.',
-	        'My favorite beer is a Anaheim Hefeweizen from <a href="//www.anaheimbrew.com">Anaheim Brewery</a>.',
-	        'I am no longer a Qwerty user. I use the Dvorak Simplified Keyboard!',
-	        'Won the Future Insights Live 2012 Hackathon in Las Vegas.'
-		];
-	}]);
+    controller('CuriosityCtrl', ['$scope', function ($scope) {
+        $scope.curiosities = [
+            'I am 5th generation Chinese, 3rd generation Japanese.',
+            'Ran the LA Marathon at the age of 12.',
+            'At 16 I was drinking 72oz of 7-11 coffee by 3rd period.',
+            'My favorite beer is a Anaheim Hefeweizen from <a href="//www.anaheimbrew.com">Anaheim Brewery</a>.',
+            'I am no longer a Qwerty user. I use the Dvorak Simplified Keyboard!',
+            'Won the Future Insights Live 2012 Hackathon in Las Vegas.'
+        ];
+    }]);
 angular.module('CareyHinoki').
-	controller('PlayCtrl', ['$scope', '$http', function ($scope, $http) {
-		$http.get('data/plays.json').success(function (data) {
-			$scope.plays = data;
-		});
-	}]);
+    controller('PlayCtrl', ['$scope', '$http', function ($scope, $http) {
+        $http.get('data/plays.json').success(function (data) {
+            $scope.plays = data;
+        });
+    }]);
 angular.module('CareyHinoki').
-	controller('SocialMediaListCtrl', ['$scope', function ($scope) {
-		$scope.social_medias = [{
-			name: 'Twitter',
-			url: '//www.twitter.com/chemoish'
-		}, {
-			name: 'Facebook',
-	        url: '//www.facebook.com/carey.hinoki'
-		}, {
-	        name: 'Google',
-	        url: '//plus.google.com/118175933175383798803'
-		}, {
-	        name: 'LinkedIn',
-	        url: '//www.linkedin.com/pub/carey-hinoki/8/396/345'
-		}, {
-	        name: 'GitHub',
-	        url: '//www.github.com/chemoish'
-		}, {
-	        name: 'Treehouse',
-	        url: '//www.teamtreehouse.com/chemoish'
-		}, {
-	        name: 'Stackoverflow',
-	        url: '//www.stackoverflow.com/users/1438446/chemoish'
-		}, {
-	        name: 'Code Academy',
-	        url: '//www.codecademy.com/users/chemoish'
-		}, {
-	        name: 'Yelp',
-	        url: '//hinoki.yelp.com'
-		}];
-	}]);
+    controller('SocialMediaListCtrl', ['$scope', function ($scope) {
+        $scope.social_medias = [{
+            name: 'Twitter',
+            url: '//www.twitter.com/chemoish'
+        }, {
+            name: 'Facebook',
+            url: '//www.facebook.com/carey.hinoki'
+        }, {
+            name: 'Google',
+            url: '//plus.google.com/118175933175383798803'
+        }, {
+            name: 'LinkedIn',
+            url: '//www.linkedin.com/pub/carey-hinoki/8/396/345'
+        }, {
+            name: 'GitHub',
+            url: '//www.github.com/chemoish'
+        }, {
+            name: 'Treehouse',
+            url: '//www.teamtreehouse.com/chemoish'
+        }, {
+            name: 'Stackoverflow',
+            url: '//www.stackoverflow.com/users/1438446/chemoish'
+        }, {
+            name: 'Code Academy',
+            url: '//www.codecademy.com/users/chemoish'
+        }, {
+            name: 'Yelp',
+            url: '//hinoki.yelp.com'
+        }];
+    }]);
 angular.module('CareyHinoki').
-	controller('TechnologyCtrl', ['$scope', '$http', function ($scope, $http) {
-		$http.get('data/technologies.json').success(function (data) {
-			$scope.technologies = data;
-		});
-	}]);
+    controller('TechnologyCtrl', ['$scope', '$http', function ($scope, $http) {
+        $http.get('data/technologies.json').success(function (data) {
+            $scope.technologies = data;
+        });
+    }]);
 angular.module('CareyHinoki').
-	controller('WorkCtrl', ['$scope', '$http', function ($scope, $http) {
-		$scope.limit = 6;
+    controller('WorkCtrl', ['$scope', '$http', function ($scope, $http) {
+        $scope.limit = 6;
 
-		$http.get('data/works.json').success(function (data) {
-			$scope.works = data.sort(function () { return 0.5 - Math.random()});
-		});
+        $http.get('data/works.json').success(function (data) {
+            $scope.works = data.sort(function () { return 0.5 - Math.random()});
+        });
 
-		$scope.showAll = function () {
-			$scope.limit = $scope.works.length;
-		};
-	}]);
+        $scope.showAll = function () {
+            $scope.limit = $scope.works.length;
+        };
+    }]);
 angular.module('CareyHinoki').
-	directive('navigateToSection', function () {
-		return {
-			link: function (scope, element, attrs) {
-				var element = $(element);
+    directive('galleryPreview', function () {
+        return {
+            link: function (scope, element, attrs) {
+                var element = $(element);
 
-				element.delegate('a', 'click', function (event) {
-			        var nav_element = $(this),
-			            to_element = $(nav_element.attr('href')),
-			            scroll_top = to_element.offset().top - 50; // minus menu
+                function getDirection(d) {
+                    var direction;
 
-			        $('body').animate({
-			            scrollTop: scroll_top
-			        }, 800);
+                    switch (d) {
+                        case 0:
+                            direction = 'top';
+                            break;
+                        case 1:
+                            direction = 'right';
+                            break;
+                        case 2:
+                            direction = 'bottom';
+                            break;
+                        case 3:
+                            direction = 'left';
+                            break;
+                    }
 
-			        event.preventDefault();
-			    });
-			}
-		};
-	});
+                    return direction;
+                }
+
+                element.delegate('.gallery-item:not(.freeze)', 'mouseenter mouseleave', function (event) {
+                    // http://tympanus.net/TipsTricks/DirectionAwareHoverEffect/index.html
+                    // http://stackoverflow.com/questions/3627042
+                    var element = $(this),
+                        caption = element.find('.caption'),
+                        event_type = event.type,
+                        w = $(this).width(),
+                        h = $(this).height(),
+                        x = (event.pageX - this.offsetLeft - (w/2)) * ( w > h ? (h/w) : 1 ),
+                        y = (event.pageY - this.offsetTop  - (h/2)) * ( h > w ? (w/h) : 1 ),
+                        d = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180 ) / 90 ) + 3 )  % 4,
+                        direction = getDirection(d);
+
+                    if (event_type == 'mouseenter') {
+                        if (caption.hasClass('over')) {
+                            return false;
+                        }
+
+                        element.removeClass('detail');
+
+                        caption.attr('class', [
+                            'caption',
+                            direction + '-enter',
+                            'over'
+                        ].join(' ')).hide();
+
+                        caption.show(0, function () {
+                            caption.addClass(direction + '-hover');
+                        });
+                    } else {
+                        caption.attr('class', [
+                            'caption',
+                            direction + '-enter',
+                            'out'
+                        ].join(' '));
+
+                        caption.removeClass(direction + '-hover');
+                    }
+                });
+            }
+        };
+    });
 angular.module('CareyHinoki').
-	directive('navigateToTop', function () {
-		return {
-			link: function (scope, element, attrs) {
-				var element = $(element);
+    directive('galleryView', function () {
+        return {
+            link: function (scope, element, attrs) {
+                var element = $(element);
 
-				element.on('click', function (event) {
-					$('body').animate({
-			            scrollTop: 0
-			        }, 800);
+                element.delegate('.gallery-item .view', 'click', function (event) {
+                    var element = $(this),
+                        gallery_item = element.closest('.gallery-item'),
+                        caption = element.closest('.caption');
 
-			        event.preventDefault();
-				});
-			}
-		}
-	});
+                    var caption_content = caption.html();
+                    caption.html($('<div>').html(caption_content));
+
+                    caption.find('div').fadeOut(300, function () {
+                        gallery_item.addClass('detail');
+
+                        $(this).fadeIn(300, function () {
+                            caption.html($(this).html());
+                        });
+                    });
+
+                    event.preventDefault();
+                });
+            }
+        };
+    });
 angular.module('CareyHinoki').
-	directive('playPreview', function () {
-		return {
-			link: function (scope, element, attrs) {
-				var element = $(element);
+    directive('navigateToSection', function () {
+        return {
+            link: function (scope, element, attrs) {
+                var element = $(element);
 
-				element.delegate('.play', 'mouseenter', function (event) {
-					var play = $(this),
-			            play_mask = play.find('.mask'),
-			            play_caption = play.find('.caption'),
-			            plays = play.closest('.plays'),
-			            plays_view_all = plays.hasClass('summary') || plays.hasClass('detail');;
+                element.delegate('a', 'click', function (event) {
+                    var nav_element = $(this),
+                        to_element = $(nav_element.attr('href')),
+                        scroll_top = to_element.offset().top - 50; // minus menu
 
-			        if (plays_view_all === false) {
-			            play_caption.removeClass('detail');
-			            play_mask.css('top', 0);
-			        }
-				});
+                    $('body').animate({
+                        scrollTop: scroll_top
+                    }, 800);
 
-				element.delegate('.play', 'mouseleave', function (event) {
-					var play = $(this),
-			            play_mask = play.find('.mask'),
-			            plays = play.closest('.plays'),
-			            plays_view_all = plays.hasClass('summary') || plays.hasClass('detail');
-
-			        if (plays_view_all === false) {
-			            play_mask.css('top', -305);
-			        }
-				});
-			}
-		};
-	});
+                    event.preventDefault();
+                });
+            }
+        };
+    });
 angular.module('CareyHinoki').
-	directive('technologyUsedTooltip', function () {
-		return {
-			link: function (scope, element, attrs) {
-				var element = $(element);
+    directive('navigateToTop', function () {
+        return {
+            link: function (scope, element, attrs) {
+                var element = $(element);
 
-				element.tooltip();
-			}
-		};
-	});
+                element.on('click', function (event) {
+                    $('body').animate({
+                        scrollTop: 0
+                    }, 800);
+
+                    event.preventDefault();
+                });
+            }
+        }
+    });
 angular.module('CareyHinoki').
-	directive('windowResize', function () {
-		return {
-			link: function (scope, element, attrs) {
-				function debounce(func, threshold) {
-	                var timeout;
-	                
-	                return function () {
-	                    var obj = this,
-	                    	args = arguments;
+    directive('technologyUsedTooltip', function () {
+        return {
+            link: function (scope, element, attrs) {
+                var element = $(element);
 
-	                    $('#utility').hide();
-
-	                    if (timeout) {
-	                        clearTimeout(timeout);
-	                    }
-	                    
-	                    timeout = setTimeout(function() {
-	                        func.apply(obj, args);
-	                        
-	                        timeout = null;
-	                    }, threshold || 250);
-	                };
-	            }
-
-			    function onResize(event) {
-			    	$('#utility').fadeIn(400);
-			    }
-
-				$(window).on('resize', debounce(onResize, 800));
-			}
-		};
-	});
+                element.tooltip();
+            }
+        };
+    });
 angular.module('CareyHinoki').
-	directive('windowScroll', function () {
-		return {
-			link: function (scope, element, attrs) {
-				function throttle(fn, delay) {
-			        var timer;
+    directive('windowResize', function () {
+        return {
+            link: function (scope, element, attrs) {
+                function debounce(func, threshold) {
+                    var timeout;
+                    
+                    return function () {
+                        var obj = this,
+                            args = arguments;
 
-			        return function () {
-			            if (!timer) {
-			                timer = setTimeout(function () {
-			                    fn.apply(this, arguments);
+                        $('#utility').hide();
 
-			                    timer = null;
-			                }, delay);
-			            }
-			        };
-			    }
+                        if (timeout) {
+                            clearTimeout(timeout);
+                        }
+                        
+                        timeout = setTimeout(function() {
+                            func.apply(obj, args);
+                            
+                            timeout = null;
+                        }, threshold || 250);
+                    };
+                }
 
-			    function onScroll(event) {
-			        var window_element = $(window),
-			            scroll_top = window_element.scrollTop() + 20,
-			            scroll_bottom = window_element.scrollTop() + window_element.height() - 100,
-			            utility_element = $('#utility');
+                function onResize(event) {
+                    $('#utility').fadeIn(400);
+                }
 
-			        utility_element.stop(true);
-			        utility_element.animate({
-			            opacity: scroll_top > 20 ? 1 : 0,
-			            top: scroll_bottom + 'px'
-			        }, 400);
-			    }
-
-				$(window).on('scroll', throttle(onScroll, 100));
-			}
-		};
-	});
+                $(window).on('resize', debounce(onResize, 800));
+            }
+        };
+    });
 angular.module('CareyHinoki').
-	directive('workPreview', function () {
-		return {
-			link: function (scope, element, attrs) {
-				var element = $(element);
+    directive('windowScroll', function () {
+        return {
+            link: function (scope, element, attrs) {
+                function throttle(fn, delay) {
+                    var timer;
 
-				function getDirection(d) {
-					var direction;
+                    return function () {
+                        if (!timer) {
+                            timer = setTimeout(function () {
+                                fn.apply(this, arguments);
 
-					switch (d) {
-						case 0:
-							direction = 'top';
-							break;
-						case 1:
-							direction = 'right';
-							break;
-						case 2:
-							direction = 'bottom';
-							break;
-						case 3:
-							direction = 'left';
-							break;
-					}
+                                timer = null;
+                            }, delay);
+                        }
+                    };
+                }
 
-					return direction;
-				}
+                function onScroll(event) {
+                    var window_element = $(window),
+                        scroll_top = window_element.scrollTop() + 20,
+                        scroll_bottom = window_element.scrollTop() + window_element.height() - 100,
+                        utility_element = $('#utility');
 
-				element.delegate('.work:not(.freeze)', 'mouseenter mouseleave', function (event) {
-					// http://tympanus.net/TipsTricks/DirectionAwareHoverEffect/index.html
-					// http://stackoverflow.com/questions/3627042
-					var element = $(this),
-						caption = element.find('.caption'),
-						event_type = event.type,
-						w = $(this).width(),
-						h = $(this).height(),
-						x = (event.pageX - this.offsetLeft - (w/2)) * ( w > h ? (h/w) : 1 ),
-						y = (event.pageY - this.offsetTop  - (h/2)) * ( h > w ? (w/h) : 1 ),
-						d = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180 ) / 90 ) + 3 )  % 4,
-						direction = getDirection(d);
+                    utility_element.stop(true);
+                    utility_element.animate({
+                        opacity: scroll_top > 20 ? 1 : 0,
+                        top: scroll_bottom + 'px'
+                    }, 400);
+                }
 
-					if (event_type == 'mouseenter') {
-						if (caption.hasClass('over')) {
-							return false;
-						}
-
-						element.removeClass('detail');
-
-						caption.attr('class', [
-							'caption',
-							direction + '-enter',
-							'over'
-						].join(' ')).hide();
-
-						caption.show(0, function () {
-							caption.addClass(direction + '-hover');
-						});
-					} else {
-						caption.attr('class', [
-							'caption',
-							direction + '-enter',
-							'out'
-						].join(' '));
-
-						caption.removeClass(direction + '-hover');
-					}
-				});
-			}
-		};
-	});
-angular.module('CareyHinoki').
-	directive('workView', function () {
-		return {
-			link: function (scope, element, attrs) {
-				var element = $(element);
-
-				element.delegate('.work .view', 'click', function (event) {
-					var element = $(this),
-						work = element.closest('.work'),
-						caption = element.closest('.caption');
-
-					var caption_content = caption.html();
-					caption.html($('<div>').html(caption_content));
-
-					caption.find('div').fadeOut(300, function () {
-						work.addClass('detail');
-
-						$(this).fadeIn(300, function () {
-							caption.html($(this).html());
-						});
-					});
-
-			        event.preventDefault();
-				});
-			}
-		};
-	});
-angular.module('CareyHinoki').
-	directive('workViewToggle', function () {
-		return {
-			link: function (scope, element, attrs) {
-				var element = $(element);
-
-				element.on('click', function (event) {
-					var works = $('.works'),
-			            works_summary_view = works.hasClass('summary'),
-			            works_detail_view = works.hasClass('detail');
-
-			        if (!works_summary_view && !works_detail_view) {
-			            works.addClass('summary');
-			        } else if (works_summary_view) {
-			            works.toggleClass('summary detail');
-			        } else if (works_detail_view) {
-			            works.removeClass('detail');
-			        }
-
-			        works.find('.work .detail').removeClass('detail');
-
-		        	event.preventDefault();
-				})
-			}
-		};
-	});
+                $(window).on('scroll', throttle(onScroll, 100));
+            }
+        };
+    });
 angular.module('CareyHinoki')
-	.filter('join', function () {
-		return function (input) {
-			if (typeof input == 'object' && input.length) {
-				return input.join(', ');
-			}
+    .filter('join', function () {
+        return function (input) {
+            if (typeof input == 'object' && input.length) {
+                return input.join(', ');
+            }
 
-			return;
-		}
-	});
+            return;
+        }
+    });
 angular.module('CareyHinoki')
-	.filter('limit', function () {
-		return function (input, limit) {
-			if (typeof input == 'object' && input.length) {
-				return input.slice(0, limit);
-			}
-		}
-	});
+    .filter('limit', function () {
+        return function (input, limit) {
+            if (typeof input == 'object' && input.length) {
+                return input.slice(0, limit);
+            }
+        }
+    });
