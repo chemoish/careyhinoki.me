@@ -1,4 +1,4 @@
-/*! Carey Hinoki Portfolio - v0.1.0 - 2012-10-09
+/*! Carey Hinoki Portfolio - v0.1.0 - 2012-10-10
 * http://www.careyhinoki.me/
 * Copyright (c) 2012 Carey Hinoki; Licensed MIT */
 
@@ -2065,37 +2065,6 @@ angular.module('CareyHinoki').
         });
     }]);
 angular.module('CareyHinoki').
-    controller('SocialMediaListCtrl', ['$scope', function ($scope) {
-        $scope.social_medias = [{
-            name: 'Twitter',
-            url: '//www.twitter.com/chemoish'
-        }, {
-            name: 'Facebook',
-            url: '//www.facebook.com/carey.hinoki'
-        }, {
-            name: 'Google',
-            url: '//plus.google.com/118175933175383798803'
-        }, {
-            name: 'LinkedIn',
-            url: '//www.linkedin.com/pub/carey-hinoki/8/396/345'
-        }, {
-            name: 'GitHub',
-            url: '//www.github.com/chemoish'
-        }, {
-            name: 'Treehouse',
-            url: '//www.teamtreehouse.com/chemoish'
-        }, {
-            name: 'Stackoverflow',
-            url: '//www.stackoverflow.com/users/1438446/chemoish'
-        }, {
-            name: 'Code Academy',
-            url: '//www.codecademy.com/users/chemoish'
-        }, {
-            name: 'Yelp',
-            url: '//hinoki.yelp.com'
-        }];
-    }]);
-angular.module('CareyHinoki').
     controller('TechnologyCtrl', ['$scope', '$http', function ($scope, $http) {
         $http.get('data/technologies.json').success(function (data) {
             $scope.technologies = data;
@@ -2218,10 +2187,11 @@ angular.module('CareyHinoki').
                 element.delegate('a', 'click', function (event) {
                     var nav_element = $(this),
                         to_element = $(nav_element.attr('href')),
-                        scroll_top = to_element.offset().top - 50; // minus menu
+                        scroll_top = to_element.offset().top; // minus menu
 
                     $('body').animate({
-                        scrollTop: scroll_top
+                        // vcard indicates screen size max-width: 767px
+                        scrollTop: scroll_top + ($('#vcard').is(':visible') ? 0 : -50)
                     }, 800);
 
                     event.preventDefault();
@@ -2309,7 +2279,7 @@ angular.module('CareyHinoki').
                 function onScroll(event) {
                     var window_element = $(window),
                         scroll_top = window_element.scrollTop() + 20,
-                        scroll_bottom = window_element.scrollTop() + window_element.height() - 100,
+                        scroll_bottom = window_element.scrollTop() + window_element.height() - 60,
                         utility_element = $('#utility');
 
                     utility_element.stop(true);

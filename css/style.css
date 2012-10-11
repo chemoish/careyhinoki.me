@@ -8361,6 +8361,7 @@ body {
 
 .gallery {
   margin: 0;
+  list-style: none;
 }
 
 .gallery > li {
@@ -8852,49 +8853,50 @@ nav {
   background: url(../img/section-bg.png);
 }
 
-.contact-info-container {
-  width: 350px;
-  margin: 100px auto;
-}
-
-.contact-info-label,
-.contact-info {
-  float: left;
+#contact ul {
   margin: 0;
   list-style: none;
 }
 
-.contact-info-label li,
-.contact-info li {
-  line-height: 50px;
+#contact li {
+  margin-bottom: 20px;
+  line-height: 1;
 }
 
-.contact-info-label {
-  padding: 0;
-  text-align: right;
+#contact section h1 {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1;
   text-transform: uppercase;
 }
 
-.contact-info {
-  padding-left: 20px;
-  margin-left: 20px;
-  font-size: 14px;
-  border-left: 1px solid #333;
+#contact section a:hover {
+  color: pink;
+  text-decoration: none;
 }
 
-.contact-info .social-media {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+#contact section i {
+  color: #333;
 }
 
-.contact-info .social-media li {
-  display: inline;
+.contact-info h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
-.contact-photo-container {
-  margin: 75px 0;
-  text-align: center;
+.contact-info p {
+  margin-bottom: 20px;
+}
+
+.contact-info ul {
+  margin: 0 0 0 20px;
+}
+
+.contact-info a:hover {
+  color: pink;
+  text-decoration: none;
 }
 
 @media (max-width: 767px) {
@@ -8946,7 +8948,14 @@ nav {
  * Footer
  */
 
-footer a {
+footer {
+  height: 100px;
+  text-align: center;
+}
+
+footer .copyright {
+  margin-top: 50px;
+  font-size: 14px;
   color: #fff !important;
 }
 

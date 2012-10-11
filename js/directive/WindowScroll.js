@@ -19,7 +19,7 @@ angular.module('CareyHinoki').
                 function onScroll(event) {
                     var window_element = $(window),
                         scroll_top = window_element.scrollTop() + 20,
-                        scroll_bottom = window_element.scrollTop() + window_element.height() - 100,
+                        scroll_bottom = window_element.scrollTop() + window_element.height() - 60,
                         utility_element = $('#utility');
 
                     utility_element.stop(true);

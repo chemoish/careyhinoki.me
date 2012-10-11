@@ -7,58 +7,68 @@
     background: url(../img/section-bg.png);
 }
 
-.contact-info-container
+#contact
 {
-    margin: 100px auto;
-    width: 350px;
+    ul
+    {
+        list-style: none;
+        margin: 0;
+    }
+
+    li
+    {
+        line-height: 1;
+        margin-bottom: 20px;
+    }
+
+    section
+    {
+        h1
+        {
+            font-size: 15px;
+            line-height: 1;
+            margin: 0 0 10px;
+            text-transform: uppercase;
+        }
+
+        a:hover
+        {
+            color: pink;
+            text-decoration: none;
+        }
+
+        i
+        {
+            color: #333;
+        }
+    }
 }
 
-.contact-info-label,
 .contact-info
 {
-    float: left;
-    list-style: none;
-    margin: 0;
-}
+    h3
+    {
+        font-size: 15px;
+        line-height: 1;
+        margin: 0 0 10px;
+        text-transform: uppercase;
+    }
 
-.contact-info-label li,
-.contact-info li
-{
-    line-height: 50px;
-}
+    p
+    {
+        margin-bottom: 20px;
+    }
 
-.contact-info-label
-{
-    padding: 0;
-    text-align: right;
-    text-transform: uppercase;
-}
+    ul
+    {
+        margin: 0 0 0 20px;
+    }
 
-.contact-info
-{
-    border-left: 1px solid #333;
-    font-size: 14px;
-    margin-left: 20px;
-    padding-left: 20px;
-}
-
-.contact-info .social-media
-{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-
-.contact-info .social-media li
-{
-    display: inline;
-}
-
-.contact-photo-container
-{
-    margin: 75px 0;
-    text-align: center;
+    a:hover
+    {
+        color: pink;
+        text-decoration: none;
+    }
 }
 
 @media (max-width: 767px) {
