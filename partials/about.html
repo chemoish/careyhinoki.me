@@ -7,8 +7,8 @@
             </div>
 
             <div class="span12">
-                <section id="bio">
-                    <h1>The Introduction...</h1>
+                <div id="bio">
+                    <h3>The Introduction...</h3>
 
                     <p>
                         My name is Carey Hinoki.  I am a full stack web developer that focuses on non-functional requirements.  I strive for nothing less than pixel perfect applications that are backed by performant and maintainable architectures.  I have a keen eye, but I am not a designer!
@@ -19,12 +19,12 @@
                     <p>
                         I love what I do and I especially love working with people who are as passionate about their work as I am.
                     </p>
-                </section>
+                </div>
 
                 <div class="row">
                     <div class="span4">
-                        <section id="technology" ng-controller="TechnologyCtrl">
-                            <h1>Technologies used</h1>
+                        <div id="technology" ng-controller="TechnologyCtrl">
+                            <h3>Technologies used</h3>
                             
                             <ul class="technologies clearfix">
                                 <li ng-repeat="technology in technologies" class="technology">
@@ -33,25 +33,25 @@
                                     </span>
                                 </li>
                             </ul>
-                        </section>
+                        </div>
                     </div>
 
                     <div class="span4">
-                        <section id="skills">
+                        <div id="skills">
                             <img src="img/skills.jpg" />
-                        </section>
+                        </div>
                     </div>
 
                     <div class="span4">
-                        <section id="tidbits" ng-controller="CuriosityCtrl">
-                            <h1>Tiddlywinks & Curiosities</h1>
+                        <div id="tidbits" ng-controller="CuriosityCtrl">
+                            <h3>Tiddlywinks & Curiosities</h3>
 
                             <ul>
                                 <li ng-repeat="curiosity in curiosities" ng-bind-html-unsafe="curiosity">
                                     {{curiosity}}
                                 </li>
                             </ul>
-                        </section>
+                        </div>
                     </div>
                 </div>
             </div>
