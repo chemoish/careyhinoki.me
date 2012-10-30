@@ -7,4 +7,13 @@
         "Javascript"
     ],
     "website": "//codepen.io/chemoish/pen/GdlpE"
+}, {
+    "id": "tic-tac-toe",
+    "name": "Tic-tac-toe",
+    "img": "img/play/poker-clock.png",
+    "tags": [
+        "HTML & CSS",
+        "Javascript"
+    ],
+    "website": "//codepen.io/chemoish/pen/hDlEc"
 }]
