@@ -1,58 +1,52 @@
 <div class="about-wrapper">
     <div id="about" class="container section">
+        <h2>About Me</h2>
+        <h3>Carey Hinoki - Web Solutions Architect - Long Beach, CA</h3>
+        
+        <div id="bio">
+            <h4>The Introduction...</h4>
+
+            <p>
+                My name is Carey Hinoki.  I am a full stack web developer that focuses on non-functional requirements.  I strive for nothing less than pixel perfect applications that are backed by performant and maintainable architectures.  I have a keen eye, but I am not a designer!
+            </p>
+            <p>
+                I have extensive experience with backend/database driven development, but my passions lie in the front-end.  Usability and functionailty are the forefront of every one of my design decisions.  I do not specialize in any particular language, but rather architect solutions that can be solved by any language.  However, if I had to pick one language that I love most of all I would have to pick Javascript.
+            </p>
+            <p>
+                I love what I do and I especially love working with people who are as passionate about their work as I am.
+            </p>
+        </div>
+
         <div class="row">
-            <div class="span12">
-                <h2>About Me</h2>
-                <h3>Carey Hinoki - Web Solutions Architect - Long Beach, CA</h3>
+            <div class="span4">
+                <div id="technology" ng-controller="TechnologyCtrl">
+                    <h4>Technologies used</h4>
+                    
+                    <ul class="technologies clearfix">
+                        <li ng-repeat="technology in technologies" class="technology">
+                            <span class="label" ng-class="{'label-inverse': technology.primary}" data-original-title="{{technology.technology}}" technology-used-tooltip>
+                                {{technology.name}}
+                            </span>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="span12">
-                <div id="bio">
-                    <h3>The Introduction...</h3>
-
-                    <p>
-                        My name is Carey Hinoki.  I am a full stack web developer that focuses on non-functional requirements.  I strive for nothing less than pixel perfect applications that are backed by performant and maintainable architectures.  I have a keen eye, but I am not a designer!
-                    </p>
-                    <p>
-                        I have extensive experience with backend/database driven development, but my passions lie in the front-end.  Usability and functionailty are the forefront of every one of my design decisions.  I do not specialize in any particular language, but rather architect solutions that can be solved by any language.  However, if I had to pick one language that I love most of all I would have to pick Javascript.
-                    </p>
-                    <p>
-                        I love what I do and I especially love working with people who are as passionate about their work as I am.
-                    </p>
+            <div class="span4">
+                <div id="skills">
+                    <img src="img/skills.jpg" />
                 </div>
+            </div>
 
-                <div class="row">
-                    <div class="span4">
-                        <div id="technology" ng-controller="TechnologyCtrl">
-                            <h3>Technologies used</h3>
-                            
-                            <ul class="technologies clearfix">
-                                <li ng-repeat="technology in technologies" class="technology">
-                                    <span class="label" ng-class="{'label-inverse': technology.primary}" data-original-title="{{technology.technology}}" technology-used-tooltip>
-                                        {{technology.name}}
-                                    </span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+            <div class="span4">
+                <div id="tidbits" ng-controller="CuriosityCtrl">
+                    <h4>Tiddlywinks & Curiosities</h4>
 
-                    <div class="span4">
-                        <div id="skills">
-                            <img src="img/skills.jpg" />
-                        </div>
-                    </div>
-
-                    <div class="span4">
-                        <div id="tidbits" ng-controller="CuriosityCtrl">
-                            <h3>Tiddlywinks & Curiosities</h3>
-
-                            <ul>
-                                <li ng-repeat="curiosity in curiosities" ng-bind-html-unsafe="curiosity">
-                                    {{curiosity}}
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    <ul>
+                        <li ng-repeat="curiosity in curiosities" ng-bind-html-unsafe="curiosity">
+                            {{curiosity}}
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

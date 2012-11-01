@@ -1,4 +1,4 @@
-/*! Carey Hinoki Portfolio - v0.1.0 - 2012-10-10
+/*! Carey Hinoki Portfolio - v0.1.0 - 2012-10-31
 * http://www.careyhinoki.me/
 * Copyright (c) 2012 Carey Hinoki; Licensed MIT */
 

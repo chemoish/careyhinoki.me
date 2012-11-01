@@ -10,7 +10,7 @@
 }, {
     "id": "tic-tac-toe",
     "name": "Tic-tac-toe",
-    "img": "img/play/poker-clock.png",
+    "img": "img/play/tic-tac-toe.png",
     "tags": [
         "HTML & CSS",
         "Javascript"
