@@ -91,6 +91,7 @@ nav
 
     .nav-wrapper
     {
+        margin-bottom: -120px;
         padding: 30px 20px;
     }
 
@@ -130,6 +131,7 @@ nav
     nav
     {
         margin: 0;
+        position: relative;
     }
 
     .nav
@@ -165,6 +167,11 @@ nav
         &.first a
         {
             .border-radius(3px 3px 0 0);
+
+            &:hover
+            {
+                .box-shadow(none);
+            }
         }
 
         &.last a

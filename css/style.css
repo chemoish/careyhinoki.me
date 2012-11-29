@@ -8732,6 +8732,7 @@ nav {
   }
   .nav-wrapper {
     padding: 30px 20px;
+    margin-bottom: -120px;
   }
   #logo img {
     position: static;
@@ -8757,6 +8758,7 @@ nav {
     font-weight: normal;
   }
   nav {
+    position: relative;
     margin: 0;
   }
   .nav {
@@ -8792,6 +8794,11 @@ nav {
     -webkit-border-radius: 3px 3px 0 0;
        -moz-border-radius: 3px 3px 0 0;
             border-radius: 3px 3px 0 0;
+  }
+  .nav li.first a:hover {
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
   }
   .nav li.last a {
     -webkit-border-radius: 0 0 3px 3px;
@@ -8844,8 +8851,13 @@ nav {
     margin: 0 -20px;
   }
   #intro {
-    padding-right: 20px;
-    padding-left: 20px;
+    padding: 150px 20px 50px;
+  }
+  #intro > h2 {
+    font-size: 48px;
+  }
+  #intro > h3 {
+    font-size: 18px;
   }
 }
 
