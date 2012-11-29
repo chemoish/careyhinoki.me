@@ -50,6 +50,7 @@ module.exports = function(grunt) {
                 'css/vendor/bootstrap.css',
                 'css/vendor/bootstrap-responsive.css',
                 'css/vendor/font-awesome.css',
+                'css/vendor/google-font-julee.css',
                 'css/vendor/google-font-open-sans.css',
                 'less/style.less'
             ],

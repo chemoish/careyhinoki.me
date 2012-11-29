@@ -1,4 +1,4 @@
-/*! Carey Hinoki Portfolio - v0.1.0 - 2012-10-31
+/*! Carey Hinoki Portfolio - v0.1.0 - 2012-11-28
 * http://www.careyhinoki.me/
 * Copyright (c) 2012 Carey Hinoki; Licensed MIT */
 
@@ -2262,17 +2262,22 @@ angular.module('CareyHinoki').
     directive('windowScroll', function () {
         return {
             link: function (scope, element, attrs) {
-                function throttle(fn, delay) {
-                    var timer;
-
+                function debounce(func, threshold) {
+                    var timeout;
+                
                     return function () {
-                        if (!timer) {
-                            timer = setTimeout(function () {
-                                fn.apply(this, arguments);
-
-                                timer = null;
-                            }, delay);
+                        var context = this,
+                            args = arguments;
+                        
+                        if (timeout) {
+                            clearTimeout(timeout);
                         }
+                        
+                        timeout = setTimeout(function() {
+                            func.apply(context, args);
+                            
+                            timeout = null;
+                        }, threshold || 250);
                     };
                 }
 
@@ -2280,16 +2285,16 @@ angular.module('CareyHinoki').
                     var window_element = $(window),
                         scroll_top = window_element.scrollTop() + 20,
                         scroll_bottom = window_element.scrollTop() + window_element.height() - 60,
-                        utility_element = $('#utility');
+                        top_element = $('#top');
 
-                    utility_element.stop(true);
-                    utility_element.animate({
-                        opacity: scroll_top > 20 ? 1 : 0,
-                        top: scroll_bottom + 'px'
-                    }, 400);
+                    if (scroll_top > 20) {
+                        top_element.fadeIn(400);
+                    } else {
+                        top_element.fadeOut(400);
+                    }
                 }
 
-                $(window).on('scroll', throttle(onScroll, 100));
+                $(window).on('scroll', debounce(onScroll, 100));
             }
         };
     });
