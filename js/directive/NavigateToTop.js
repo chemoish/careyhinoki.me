@@ -5,11 +5,11 @@ angular.module('CareyHinoki').
                 var element = $(element);
 
                 element.on('click', function (event) {
-                    $('body').animate({
+                    $('html, body').animate({
                         scrollTop: 0
                     }, 800);
 
-                    event.preventDefault();
+                    return false;
                 });
             }
         }

@@ -8,7 +8,6 @@ header
     border-bottom: 1px solid #000;
     height: 50px;
     position: fixed;
-    text-align: center;
     top: 0;
     width: 100%;
     z-index: 9999;
@@ -29,16 +28,19 @@ header
 
 nav
 {
-    margin-bottom: 75px;
-    margin-top: -75px;
+    height: 51px;
+    text-align: center;
 }
 
 .nav
 {
-    list-style: none;
-    margin: 25px auto 0;
-    padding: 0 0 0 10px;
-    width: 407px;
+    display: inline-block;
+    margin: 0;
+}
+
+.lt-ie8 .nav
+{
+    display: inline;
 }
 
 .nav li
@@ -70,9 +72,10 @@ nav
 {
     display: none;
     font-size: 13px;
-    float: right;
     line-height: 51px;
     margin-right: 20px;
+    position: absolute;
+    right: 0;
     text-decoration: none;
 
     .icon-cloud
@@ -81,18 +84,23 @@ nav
     }
 }
 
+.lt-ie8 #top
+{
+    display: none !important;
+}
+
 @media (max-width: 767px) {
     header
     {
         height: auto;
         margin: 0 -20px;
         position: static;
+        text-align: center;
         width: auto;
     }
 
     .nav-wrapper
     {
-        margin-bottom: -120px;
         padding: 30px 20px;
     }
 

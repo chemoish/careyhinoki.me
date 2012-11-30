@@ -6,10 +6,18 @@ angular.module('CareyHinoki').
 
                 element.delegate('a', 'click', function (event) {
                     var nav_element = $(this),
-                        to_element = $(nav_element.attr('href')),
+                        nav_href = nav_element.attr('href'),
+                        hash_index = nav_href.lastIndexOf('#');
+
+                    if (hash_index == -1) {
+                        return false;
+                    }
+
+                    var hash = nav_href.substring(hash_index, nav_href.length),
+                        to_element = $(hash),
                         scroll_top = to_element.offset().top; // minus menu
 
-                    $('body').animate({
+                    $('html, body').animate({
                         // vcard indicates screen size max-width: 767px
                         scrollTop: scroll_top + ($('#vcard').is(':visible') ? 0 : -50)
                     }, 800);

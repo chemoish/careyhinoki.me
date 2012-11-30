@@ -1,4 +1,4 @@
-/*! Carey Hinoki Portfolio - v0.1.0 - 2012-11-29
+/*! Carey Hinoki Portfolio - v0.1.0 - 2012-11-30
 * http://www.careyhinoki.me/
 * Copyright (c) 2012 Carey Hinoki; Licensed MIT */
 
@@ -2086,11 +2086,12 @@ angular.module('CareyHinoki').
     directive('clouds', function () {
         return {
             link: function (scope, element, attrs) {
-                var clouds = $('.clouds');
+                var clouds = $('.clouds'),
+                    duration = 1000 * 60 * 60;
 
                 clouds.animate({
-                    'background-position-x': '10000px'
-                }, 300000, 'linear');
+                    'background-position-x': '50000px'
+                }, duration, 'linear');
             }
         };
     });
@@ -2198,10 +2199,18 @@ angular.module('CareyHinoki').
 
                 element.delegate('a', 'click', function (event) {
                     var nav_element = $(this),
-                        to_element = $(nav_element.attr('href')),
+                        nav_href = nav_element.attr('href'),
+                        hash_index = nav_href.lastIndexOf('#');
+
+                    if (hash_index == -1) {
+                        return false;
+                    }
+
+                    var hash = nav_href.substring(hash_index, nav_href.length),
+                        to_element = $(hash),
                         scroll_top = to_element.offset().top; // minus menu
 
-                    $('body').animate({
+                    $('html, body').animate({
                         // vcard indicates screen size max-width: 767px
                         scrollTop: scroll_top + ($('#vcard').is(':visible') ? 0 : -50)
                     }, 800);
@@ -2218,11 +2227,11 @@ angular.module('CareyHinoki').
                 var element = $(element);
 
                 element.on('click', function (event) {
-                    $('body').animate({
+                    $('html, body').animate({
                         scrollTop: 0
                     }, 800);
 
-                    event.preventDefault();
+                    return false;
                 });
             }
         }
