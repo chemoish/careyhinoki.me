@@ -1,4 +1,4 @@
-/*! Carey Hinoki Portfolio - v0.1.0 - 2012-11-28
+/*! Carey Hinoki Portfolio - v0.1.0 - 2012-11-29
 * http://www.careyhinoki.me/
 * Copyright (c) 2012 Carey Hinoki; Licensed MIT */
 
@@ -2082,6 +2082,18 @@ angular.module('CareyHinoki').
             $scope.limit = $scope.works.length;
         };
     }]);
+angular.module('CareyHinoki').
+    directive('clouds', function () {
+        return {
+            link: function (scope, element, attrs) {
+                var clouds = $('.clouds');
+
+                clouds.animate({
+                    'background-position-x': '10000px'
+                }, 300000, 'linear');
+            }
+        };
+    });
 angular.module('CareyHinoki').
     directive('galleryPreview', function () {
         return {
