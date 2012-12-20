@@ -19,6 +19,57 @@ skip_files:
 - ^(.*/)?tests$
 
 handlers:
+
+###
+# My stuff
+##
+
+- url: /css/(.*\.css)
+  mime_type: text/css
+  static_files: css/\1
+  upload: css/(.*\.css)
+
+- url: /js/(.*\.js)
+  mime_type: text/javascript
+  static_files: js/\1
+  upload: js/(.*\.js)
+
+- url: /partials/(.*\.html)
+  mime_type: text/html
+  static_files: partials/\1
+  upload: partials/(.*\.html)
+  expiration: "1h"
+
+# image files
+- url: /img/(.*\.(bmp|gif|jpeg|jpg|png))
+  static_files: img/\1
+  upload: img/(.*\.(bmp|gif|jpeg|jpg|png))
+
+- url: /data/(.*\.json)
+  mime_type: application/json
+  static_files: data/\1
+  upload: data/(.*\.json)
+  expiration: "1h"
+
+- url: /css/font/(.*\.woff)
+  mime_type: application/x-font-woff
+  static_files: css/font/\1
+  upload: css/font/(.*\.woff)
+
+- url: /css/font/(.*\.(ttf|ttc))
+  mime_type: application/x-font-ttf
+  static_files: css/font/\1
+  upload: css/font/(.*\.(ttf|ttc))
+
+- url: /css/font/(.*\.(svg|svgz))
+  mime_type: images/svg+xml
+  static_files: css/font/\1
+  upload: css/font/(.*\.(svg|svgz))
+
+###
+# https://github.com/h5bp/server-configs
+##
+
 - url: /apple-touch-icon\.png
   mime_type: image/png
   static_files: static/apple-touch-icon.png
@@ -195,25 +246,9 @@ handlers:
   static_files: static/\1
   upload: static/(.*\.(bz2|gz|rar|tar|tgz|zip))
 
-
 ###
-# Custom stuff
+# My stuff
 ##
-
-- url: /css
-  static_dir: css
-
-- url: /data
-  static_dir: data
-
-- url: /img
-  static_dir: img
-
-- url: /js
-  static_dir: js
-
-- url: /partials
-  static_dir: partials
 
 - url: .*
   script: main.app
