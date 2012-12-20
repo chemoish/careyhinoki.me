@@ -3,13 +3,17 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Carey Hinoki -- Curator -- @chemoish
 
 # THANKS
 
-    <name>
+    Everyone's contribute to the technologies that made this site possible!
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
     jQuery, Modernizr
+
+    ...
+
+    Highlighted in the website.
