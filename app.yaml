@@ -24,6 +24,10 @@ handlers:
 # My stuff
 ##
 
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
 - url: /css/(.*\.css)
   mime_type: text/css
   static_files: css/\1
