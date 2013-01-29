@@ -225,6 +225,31 @@
     ],
     "website": "//www.picsorganizer.com"
 }, {
+    "id": "pics-org-dynamic-report",
+    "name": "Dynamic Reporting",
+    "img": "img/work/pics-org-dynamic-report.png",
+    "description": "Architected and developed a reporting tool in Javascript that manages data from over 100 tables and 40 views.",
+    "alt": "extjs 4",
+    "tags": [
+        "Javascript",
+        "Java",
+        "Struts 2"
+    ],
+    "website": null
+}, {
+    "id": "pics-org-frontend-guide",
+    "name": "Frontend Development Guide",
+    "img": "img/work/pics-org-frontend-guide.png",
+    "description": "Architected and developed a centralized technology tool that encompasses explanations and examples of system architecture, conventions, widgets, etc.",
+    "alt": "integrated twitter bootstrap, compass, modernizer, documentated architecture that i created, established standards across html/css/javascript/files",
+    "tags": [
+        "HTML & CSS",
+        "Javascript",
+        "Java",
+        "Struts 2"
+    ],
+    "website": null
+}, {
     "id": "popasmoke",
     "name": "Popasmoke",
     "img": "img/work/popasmoke.png",
