@@ -1,6 +1,6 @@
-/*! Carey Hinoki Portfolio - v0.1.0 - 2012-11-30
+/*! Carey Hinoki Portfolio - v0.1.0 - 2013-02-03
 * http://www.careyhinoki.me/
-* Copyright (c) 2012 Carey Hinoki; Licensed MIT */
+* Copyright (c) 2013 Carey Hinoki; Licensed MIT */
 
 /* ===================================================
  * bootstrap-transition.js v2.1.1
