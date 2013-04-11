@@ -45,9 +45,14 @@ handlers:
   expiration: "1h"
 
 # image files
-- url: /img/(.*\.(bmp|gif|jpeg|jpg|png))
+- url: /img/(.*\.(bmp|gif|jpeg|jpg))
   static_files: img/\1
-  upload: img/(.*\.(bmp|gif|jpeg|jpg|png))
+  upload: img/(.*\.(bmp|gif|jpeg|jpg))
+
+- url: /img/(.*\.(png))
+  mime_type: image/png
+  static_files: img/\1
+  upload: img/(.*\.(png))
 
 - url: /data/(.*\.json)
   mime_type: application/json
