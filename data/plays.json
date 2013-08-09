@@ -18,7 +18,7 @@
     "website": "//codepen.io/chemoish/full/hDlEc"
 }, {
     "id": "form-validation",
-    "name": "Twitter Bootstrap 2.3.2 - Validate",
+    "name": "Bootstrap 2.3.2 - Validate",
     "img": "img/play/form-validation.png",
     "tags": [
         "HTML & CSS",
@@ -28,12 +28,12 @@
     "website": "//codepen.io/chemoish/full/sEdAl"
 }, {
     "id": "pics-hackathon-2013",
-    "name": "",
-    "img": "vod/Voltron Presentation.mov",
+    "name": "PICS Hackathon 2013",
+    "img": "img/play/pics-hackathon-2013.png",
     "tags": [
         "HTML & CSS",
         "Javascript",
         "Twitter Bootstrap 2.3.2"
     ],
-    "website": "vod/Voltron Presentation.mov"
+    "website": "//s3.amazonaws.com/uploads.hipchat.com/22795/129200/2r27uzl5scws580/Voltron.m4v"
 }]
