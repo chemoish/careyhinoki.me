@@ -4,89 +4,99 @@
 
 header
 {
-    background: #111;
-    border-bottom: 1px solid #000;
-    height: 50px;
+    background: #000;
+    height: 52px;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 9999;
 }
 
-#logo img
-{
-    height: 50px;
-    left: 50%;
-    margin-left: -28px;
-    position: absolute;
-}
-
 #vcard
 {
     display: none;
+
+    h1
+    {
+        font-weight: 200;
+    }
+}
+
+#top
+{
+    background: url(../img/top.png);
+    display: none;
+    height: 30px;
+    margin: 10px 20px 0 0;
+    position: absolute;
+    right: 0;
+    width: 40px;
+}
+
+#logo img
+{
+    left: 50%;
+    margin-left: -46px;
+    position: absolute;
 }
 
 nav
 {
-    height: 51px;
     text-align: center;
 }
 
 .nav
 {
     display: inline-block;
-    margin: 0;
-}
 
-.lt-ie8 .nav
-{
-    display: inline;
-}
-
-.nav li
-{
-    float: left;
-    line-height: 50px;
-    padding: 0 20px;
-}
-
-.nav a
-{
-    color: #fff;
-    font-size: 12px;
-    text-transform: uppercase;
-}
-
-.nav > li > a:hover
-{
-    background: transparent;
-    color: pink;
-}
-
-.nav .about
-{
-    padding-right: 108px;
-}
-
-#top
-{
-    display: none;
-    font-size: 13px;
-    line-height: 51px;
-    margin-right: 20px;
-    position: absolute;
-    right: 0;
-    text-decoration: none;
-
-    .icon-cloud
+    li
     {
-        margin-right: 5px;
+        float: left;
+    }
+
+    a
+    {
+        color: #fff;
+        font-family: 'Raleway', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 52px;
+        padding: 0 20px;
+        text-transform: uppercase;
+    }
+
+    > li > a
+    {
+        &:hover
+        {
+            background: transparent;
+            color: pink;
+        }
+    }
+
+    .about
+    {
+        margin-right: 40px;
+    }
+
+    .play
+    {
+        margin-left: 40px;
     }
 }
 
-.lt-ie8 #top
+.lt-ie8
 {
-    display: none !important;
+    nav
+    {
+        display: inline;
+        zoom: 1;
+    }
+
+    #top
+    {
+        display: none !important;
+    }
 }
 
 @media (max-width: 767px) {
@@ -114,27 +124,32 @@ nav
     #vcard
     {
         display: block;
+
+        h1,
+        h2
+        {
+            color: #fff;
+            line-height: 1.2;
+        }
+
+        h1
+        {
+            font-size: 62px;
+            margin: 0 0 10px;
+            text-transform: uppercase;
+        }
+
+        h2
+        {
+            font-size: 18px;
+            font-weight: normal;
+            margin-bottom: 50px;
+        }
     }
 
-    #vcard h1,
-    #vcard h2
+    #top
     {
-        color: #fff;
-        line-height: 1.2;
-    }
-
-    #vcard h1
-    {
-        font-size: 62px;
-        margin: 0 0 10px;
-        text-transform: uppercase;
-    }
-
-    #vcard h2
-    {
-        font-size: 18px;
-        font-weight: normal;
-        margin-bottom: 50px;
+        display: none !important;
     }
 
     nav
@@ -150,65 +165,63 @@ nav
         margin: 0 auto;
         padding: 0;
         width: 150px;
-    }
 
-    .nav li
-    {
-        float: none;
-        padding: 0;
-
-        a
+        li
         {
-            background-color: #e9573f;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            border-top: 1px solid #d44a34;
-            line-height: 40px;
-        }
+            float: none;
+            padding: 0;
 
-        a:hover
-        {
-            background-color: #e9573f;
-            .box-shadow(0 -2px 0 #c6412b);
-            position: relative;
-            top: 2px;
-        }
-
-        &.first a
-        {
-            .border-radius(3px 3px 0 0);
-
-            &:hover
+            a
             {
-                .box-shadow(none);
+                background-color: #e9573f;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                border-top: 1px solid #d44a34;
+                line-height: 40px;
+            }
+
+            a:hover
+            {
+                background-color: #e9573f;
+                .box-shadow(0 -2px 0 #c6412b);
+                position: relative;
+                top: 2px;
+            }
+
+            &.first a
+            {
+                .border-radius(3px 3px 0 0);
+
+                &:hover
+                {
+                    .box-shadow(none);
+                }
+            }
+
+            &.last a
+            {
+                .border-radius(0 0 3px 3px);
             }
         }
 
-        &.last a
+        .about,
+        .play
         {
-            .border-radius(0 0 3px 3px);
+            margin: 0;
         }
-    }
-
-    .nav .about
-    {
-        padding: 0;
-    }
-
-    #top
-    {
-        display: none !important;
     }
 }
 
 @media (max-width: 480px) {
-    #vcard h1
+    #vcard 
     {
-        font-size: 32px;
-    }
+        h1
+        {
+            font-size: 32px;
+        }
 
-    #vcard h2
-    {
-        font-size: 16px;
-
+        h2
+        {
+            font-size: 16px;
+        }
     }
 }

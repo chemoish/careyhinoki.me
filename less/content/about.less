@@ -4,62 +4,253 @@
 
 .about-wrapper
 {
-    background: url(../img/section-bg.png);
+    background: url(../img/bg.jpg) no-repeat center center;
 }
 
 #about
 {
-    h4
+    h2
     {
-        font-size: 15px;
-        line-height: 1;
-        margin: 0 0 10px;
-        text-transform: uppercase;
+        color: #fff;
+    }
+
+    h3
+    {
+        color: #0093b0;
     }
 }
 
-#bio,
-#tidbits,
-#skills,
+#bio
+{
+    background-color: #404348;
+    background-color: rgba(64, 67, 72, 0.3);
+    padding: 80px;
+
+    h4
+    {
+        color: #666870;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    p
+    {
+        color: #fff;
+
+        &:last-child
+        {
+            margin: 0;
+        }
+    }
+}
+
+.technology-wrapper
+{
+    background-color: #0093b0;
+}
+
+#technology,
+#skill
+{
+    padding-bottom: 0;
+
+    ul
+    {
+        li
+        {
+            margin-bottom: 10px;
+        }
+    }
+
+    .label
+    {
+        background-color: #686a72;
+        .border-radius(0);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 29px;
+        padding: 4px 10px;
+
+        &.on-site,
+        &.role
+        {
+            background-color: #ed6400;
+        }
+    }
+}
+
 #technology
 {
-    margin-bottom: 20px;
+    h2
+    {
+        color: #fff;
+        font-size: 72px;
+        font-weight: 200;
+        line-height: normal;
+        margin: 0;
+    }
+
+    .categories
+    {
+        width: 160px;
+
+        .label
+        {
+            display: block;
+        }
+    }
+
+    .technologies
+    {
+        li
+        {
+            float: left;
+            margin-right: 10px;
+        }
+    }
 }
 
-#bio p,
-#tidbits li,
-#technology li
+#skill
 {
-    line-height: 1.5;
+    .chart
+    {
+        position: relative;
+        text-align: center;
+    }
+
+    .skills,
+    .roles
+    {
+        width: 250px;
+
+        .label
+        {
+            display: block;
+        }
+    }
+
+    .skills
+    {
+        margin: 10px 0 30px;
+    }
 }
 
-#technology .technologies
+#role_chart
 {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    left: 50%;
+    margin-left: -140px;
+    margin-top: -140px;
+    position: absolute;
+    top: 50%;
 }
 
-#technology .technology
+#tidbit
 {
-    float: left;
-    margin-right: 5px;
+    text-align: center;
+
+    h2
+    {
+        color: #fff;
+        font-size: 72px;
+        font-weight: 200;
+        line-height: normal;
+        margin: 0;
+        text-align: left;
+    }
+
+    .tidbits
+    {
+        display: inline-block;
+        margin: 40px 0 0;
+
+        li
+        {
+            color: #fff;
+            float: left;
+            font-size: 12px;
+            margin: 0 20px;
+            width: 140px;
+
+            i
+            {
+                font-size: 72px;
+            }
+        }
+
+        a
+        {
+            color: #fff;
+            text-decoration: underline;
+        }
+    }
 }
 
-#skills img
+.lt-ie8
 {
-    width: 100%;
+    #tidbit ul
+    {
+        display: inline;
+        zoom: 1;
+    }
 }
 
 @media (max-width: 767px) {
-    .about-wrapper
+    .about-wrapper,
+    .technology-wrapper
     {
         margin: 0 -20px;
     }
 
-    #about
+    #about,
+    #technology,
+    #skill,
+    #tidbit
     {
         padding-left: 20px;
         padding-right: 20px;
+    }
+
+    #technology
+    {
+        .categories
+        {
+            margin-bottom: 40px;
+        }
+    }
+
+    #skill
+    {
+        padding-bottom: 40px;
+        padding-top: 40px;
+
+        .chart
+        {
+            margin-bottom: 40px;
+        }
+
+        .skills,
+        .roles
+        {
+            width: auto;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    #skill
+    {
+        padding-bottom: 20px;
+        padding-top: 20px;
+
+        .chart
+        {
+            display: none;
+        }
+
+        .skills
+        {
+            margin-top: 0;
+        }
     }
 }

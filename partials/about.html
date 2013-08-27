@@ -4,7 +4,7 @@
         <h3>Carey Hinoki - Web Solutions Architect - Long Beach, CA</h3>
         
         <div id="bio">
-            <h4>The Introduction...</h4>
+            <h4>The Introduction&hellip;</h4>
 
             <p>
                 My name is Carey Hinoki.  I am a full stack web developer that focuses on non-functional requirements.  I strive for nothing less than pixel perfect applications that are backed by performant and maintainable architectures.  I have a keen eye, but I am not a designer!
@@ -16,39 +16,70 @@
                 I love what I do and I especially love working with people who are as passionate about their work as I am.
             </p>
         </div>
+    </div>
+</div>
 
+<div class="technology-wrapper">
+    <div id="technology" class="container section">
         <div class="row">
-            <div class="span4">
-                <div id="technology" ng-controller="TechnologyCtrl">
-                    <h4>Technologies used</h4>
-                    
-                    <ul class="technologies clearfix">
-                        <li ng-repeat="technology in technologies" class="technology">
-                            <span class="label" ng-class="{'label-inverse': technology.primary}" data-original-title="{{technology.technology}}" technology-used-tooltip>
-                                {{technology.name}}
-                            </span>
-                        </li>
-                    </ul>
-                </div>
+            <div class="span6">
+                <h2>Technologies</h2>
+
+                <ul class="categories">
+                    <li>
+                        <span class="label">Used before</span>
+                    </li>
+                    <li>
+                        <span class="label on-site">Used on this site</span>
+                    </li>
+                </ul>
             </div>
 
-            <div class="span4">
-                <div id="skills">
-                    <img src="img/skills.jpg" />
-                </div>
-            </div>
-
-            <div class="span4">
-                <div id="tidbits" ng-controller="CuriosityCtrl">
-                    <h4>Tiddlywinks & Curiosities</h4>
-
-                    <ul>
-                        <li ng-repeat="curiosity in curiosities" ng-bind-html-unsafe="curiosity">
-                            {{curiosity}}
-                        </li>
-                    </ul>
-                </div>
+            <div class="span6" ng-controller="TechnologyCtrl">
+                <ul class="technologies clearfix">
+                    <li ng-repeat="technology in technologies" class="technology"
+                        ><span class="label" ng-class="{'on-site': technology.primary}" data-original-title="{{technology.technology}}" technology-used-tooltip>
+                            {{technology.name}}
+                        </span
+                    ></li>
+                </ul>
             </div>
         </div>
+    </div>
+
+    <div id="skill" class="container section">
+        <div class="row">
+            <div class="span6 chart">
+                <canvas id="skill_chart" height="400" width="400" skill-chart></canvas>
+                <canvas id="role_chart" height="280" width="280" role-chart></canvas>
+            </div>
+
+            <div class="span6">
+                <ul class="skills">
+                    <li><span class="label">HTML5 / CSS3</span></li>
+                    <li><span class="label">Javascript</span></li>
+                    <li><span class="label">PHP</span></li>
+                    <li><span class="label">Java</span></li>
+                    <li><span class="label">MySQL</span></li>
+                    <li><span class="label">Symfony</span></li>
+                </ul>
+
+                <ul class="roles">
+                    <li><span class="label role">Architect + Developer</span></li>
+                    <li><span class="label role">Designer</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="tidbit" class="container section" ng-controller="CuriosityCtrl">
+        <h2>Tiddlywinks &amp; Curiosities</h2>
+
+        <ul class="tidbits">
+            <li ng-repeat="curiosity in curiosities">
+                <i class="icon-{{curiosity.icon}}"></i>
+                <p ng-bind-html-unsafe="curiosity.description">{{curiosity.description}}</p>
+            </li>
+        </ul>
     </div>
 </div>

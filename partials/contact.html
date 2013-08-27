@@ -1,158 +1,78 @@
 <div class="contact-wrapper">
-    <div id="contact" class="container section">
+    <div id="contact" class="container section" ng-controller="PersonalInfoCtrl">
         <h2>Contact</h2>
         <h3>I can fly</h3>
             
         <div class="row">
-            <div id="contact_info" class="span4">
-                <h4>3 Ways to Contact a Ninja</h4>
-                
-                <p>
-                    I am currently unavailable for freelance work, but I am more than happy to provide a helping hand, consultation, or just a beeming smile.
-                </p>
-                <p>
-                    Unfortunately, I am a ninja you will have to contact me in the following ways...
-                </p>
+            <div class="span6">
+                <div class="contact-info">
+                    <h4>How to reach a ninja&hellip;</h4>
+                    
+                    <p>
+                        I am currently unavailable for freelance work, but I am more than happy to provide a helping hand, consultation, or just a beeming smile.
+                    </p>
+                    <p>
+                        Unfortunately, I am a ninja you will have to contact me in the following ways&hellip;
+                    </p>
 
-                <ul>
-                    <li>
-                        <i class="icon-envelope icon-large"></i> <a href="mailto:carey.hinoki@gmail.com">carey.hinoki@gmail.com</a>
-                    </li>
-                    <li>
-                        <i class="icon-envelope-alt icon-large"></i> 562-556-4694 (text)
-                    </li>
-                    <li>
-                        <i class="icon-phone icon-large"></i> I do not like to talk on the phone
+                    <ul>
+                        <li>
+                            <i class="icon-envelope"></i>
+                            <div>
+                                <h5>Email</h5>
+                                <a href="mailto:carey.hinoki@gmail.com">carey.hinoki@gmail.com</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="icon-mobile-phone"></i>
+                            <div>
+                                <h5>Text</h5>
+                                562.556.4694
+                            </div>
+                        </li>
+                        <li>
+                            <i class="icon-phone"></i>
+                            <div>
+                                <h5>Phone</h5>
+                                I do not like to talk on the phone
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="span3">
+                <ul class="personal-info">
+                    <li ng-repeat="info in personal_infos | limitTo:8">
+                        <h4>{{info.title}}</h4>
+                        <i class="icon-{{info.icon}}"></i>
+
+                        <span ng-switch on="!!info.url">
+                            <span ng-switch-when="true">
+                                <a href="{{info.url}}" target="_blank">{{info.description}}</a>
+                            </span>
+                            <span ng-switch-default>
+                                </i> {{info.description}}
+                            </span>
+                        </span>
                     </li>
                 </ul>
             </div>
-            <div class="span4">
-                <ul class="contact-info-s1">
-                    <li>
-                        <section>
-                            <h1>Name</h1>
-                            <i class="icon-user"></i> Carey Russell Hinoki
-                        </section>
-                    </li>
-                    <li>
-                        <section>
-                            <h1>Residence</h1>
-                            <i class="icon-home"></i> Long Beach, CA
-                        </section>
-                    </li>
-                    <li>
-                        <section>
-                            <h1>Interested in</h1>
-                            <i class="icon-briefcase"></i> Networking
-                        </section>
-                    </li>
-                    <li>
-                        <section>
-                            <h1>Nomming</h1>
-                            <a href="//hinoki.yelp.com" target="_blank">
-                                <i class="icon-food"></i> Yelp
-                            </a>
-                        </section>
-                    </li>
-                    <li>
-                        <section>
-                            <h1>Ear heaven</h1>
-                            <a href="//www.di.fm/vocaltrance" target="_blank">
-                                <i class="icon-headphones"></i> Vocal Trance
-                            </a>
-                        </section>
-                    </li>
-                    <li>
-                        <section>
-                            <h1>Animated</h1>
-                            <a href="//myanimelist.net/animelist/chemoish" target="_blank">
-                                <i class="icon-heart"></i> MyAnimeList
-                            </a>
-                        </section>
-                    </li>
-                    <li>
-                        <section>
-                            <h1>Gaming</h1>
-                            <a href="//us.battle.net/sc2/en/profile/924566/1/chemoish/" target="_blank">
-                                <i class="icon-trophy"></i> Starcraft
-                            </a>
-                        </section>
-                    </li>
-                    <li>
-                        <section>
-                            <h1>Trolling</h1>
-                            <a href="//plus.google.com/118175933175383798803" target="_blank">
-                                <i class="icon-google-plus"></i> Google
-                            </a>
-                        </section>
-                    </li>
-                </ul>
-            </div>
-            <div class="span4">
-                <ul class="contact-info-s2">
-                    <li>
-                        <section>
-                            <h1>Musing</h1>
-                            <a href="//www.twitter.com/chemoish" target="_blank">
-                                <i class="icon-twitter"></i>  Twitter
-                            </a>
-                        </section>
-                    </li>
-                    <li>
-                        <section>
-                            <h1>Professionally</h1>
-                            <a href="//www.linkedin.com/pub/carey-hinoki/8/396/345" target="_blank">
-                                <i class="icon-linkedin"></i> LinkedIn
-                            </a>
-                        </section>
-                    </li>
-                    <li>
-                        <section>
-                            <h1>Unprofessionally</h1>
-                            <a href="//www.facebook.com/carey.hinoki" target="_blank">
-                                <i class="icon-facebook"></i> Facebook
-                            </a>
-                        </section>
-                    </li>
-                    <li>
-                        <section>
-                            <h1>Showcasing</h1>
-                            <a href="//www.github.com/chemoish" target="_blank">
-                                <i class="icon-github-alt"></i> GitHub
-                            </a>
-                        </section>
-                    </li>
-                    <li>
-                        <section>
-                            <h1>Questioning</h1>
-                            <a href="//www.stackoverflow.com/users/1438446/chemoish" target="_blank">
-                                <i class="icon-reorder"></i> Stackoverflow
-                            </a>
-                        </section>
-                    </li>
-                    <li>
-                        <section>
-                            <h1>Sliding</h1>
-                            <a href="//www.slideshare.net/chemoish" target="_blank">
-                                <i class="icon-facetime-video"></i> Slideshare
-                            </a>
-                        </section>
-                    </li>
-                    <li>
-                        <section>
-                            <h1>Climbing</h1>
-                            <a href="//www.teamtreehouse.com/chemoish" target="_blank">
-                                <i class="icon-leaf"></i> Treehouse
-                            </a>
-                        </section>
-                    </li>
-                    <li>
-                        <section>
-                            <h1>Data entry</h1>
-                            <a href="//www.codecademy.com/users/chemoish" target="_blank">
-                                <i class="icon-pencil"></i> Code Academy
-                            </a>
-                        </section>
+
+            <div class="span3">
+                <ul class="personal-info">
+                    <li ng-repeat="info in personal_infos | limitTo:-8">
+                        <h4>{{info.title}}</h4>
+                        <i class="icon-{{info.icon}}"></i>
+
+                        <span ng-switch on="!!info.url">
+                            <span ng-switch-when="true">
+                                <a href="{{info.url}}" target="_blank">{{info.description}}</a>
+                            </span>
+                            <span ng-switch-default>
+                                </i> {{info.description}}
+                            </span>
+                        </span>
                     </li>
                 </ul>
             </div>

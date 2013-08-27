@@ -15,6 +15,7 @@ module.exports = function(grunt) {
     lint: {
         files: [
             'js/vendor/bootstrap.js',
+            'js/vendor/Chart.js',
             'js/plugins.js',
             'js/app.js',
             'js/controller/*.js',
@@ -50,8 +51,7 @@ module.exports = function(grunt) {
                 'css/vendor/bootstrap.css',
                 'css/vendor/bootstrap-responsive.css',
                 'css/vendor/font-awesome.css',
-                'css/vendor/google-font-julee.css',
-                'css/vendor/google-font-open-sans.css',
+                'css/vendor/google-font-raleway.css',
                 'less/style.less'
             ],
             dest: 'css/style.css',

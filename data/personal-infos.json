@@ -1,0 +1,78 @@
+[{
+    "title": "Name",
+    "description": "Carey Russell Hinoki",
+    "icon": "user"
+}, {
+    "title": "Residence",
+    "description": "Long Beach, CA",
+    "icon": "home"
+}, {
+    "title": "Interested In",
+    "description": "Networking",
+    "icon": "briefcase"
+}, {
+    "title": "Nomming",
+    "description": "Yelp",
+    "icon": "food",
+    "url": "//hinoki.yelp.com"
+}, {
+    "title": "Ear Heaven",
+    "description": "Vocal Trance",
+    "icon": "headphones",
+    "url": "//www.di.fm/vocaltrance"
+}, {
+    "title": "Animated",
+    "description": "MyAnimeList",
+    "icon": "heart",
+    "url": "//myanimelist.net/animelist/chemoish"
+}, {
+    "title": "Gaming",
+    "description": "Starcraft",
+    "icon": "trophy",
+    "url": "//us.battle.net/sc2/en/profile/924566/1/chemoish/"
+}, {
+    "title": "Trolling",
+    "description": "Google",
+    "icon": "google-plus",
+    "url": "//plus.google.com/118175933175383798803/posts"
+}, {
+    "title": "Musing",
+    "description": "Twitter",
+    "icon": "twitter",
+    "url": "//www.twitter.com/chemoish"
+}, {
+    "title": "Professionally",
+    "description": "LinkedIn",
+    "icon": "linkedin",
+    "url": "//www.linkedin.com/in/careyhinoki"
+}, {
+    "title": "Unprofessionally",
+    "description": "Facebook",
+    "icon": "facebook",
+    "url": "//www.facebook.com/carey.hinoki"
+}, {
+    "title": "Showcasing",
+    "description": "GitHub",
+    "icon": "github-alt",
+    "url": "//www.github.com/chemoish"
+}, {
+    "title": "Questioning",
+    "description": "Stackoverflow",
+    "icon": "reorder",
+    "url": "//stackoverflow.com/users/1438446/chemoish"
+}, {
+    "title": "Sliding",
+    "description": "Slideshare",
+    "icon": "facetime-video",
+    "url": "//www.slideshare.net/chemoish"
+}, {
+    "title": "Climbing",
+    "description": "Treehouse",
+    "icon": "leaf",
+    "url": "//www.teamtreehouse.com/chemoish"
+}, {
+    "title": "Data Entry",
+    "description": "Code Academy",
+    "icon": "pencil",
+    "url": "//www.codecademy.com/users/chemoish"
+}]
