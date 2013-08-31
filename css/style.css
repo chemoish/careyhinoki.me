@@ -9410,15 +9410,16 @@ a:hover {
 }
 
 .gallery-item .caption h3 {
-  padding: 0 10%;
-  margin: 10% 0 5px;
+  padding: 20px;
+  margin: 0;
   font-weight: 700;
   line-height: 30px;
   color: #fff;
 }
 
 .gallery-item .caption h4 {
-  padding: 0 15%;
+  padding: 0 20px;
+  margin: 0 0 20px;
   font-weight: normal;
   color: #000;
 }
@@ -9431,13 +9432,14 @@ a:hover {
 
 .gallery-item .caption .view,
 .gallery-item .caption .website {
-  font-size: 18px;
+  margin: 0 10px;
+  font-size: 22px;
   color: #fff;
 }
 
 .gallery-item .caption .view:hover,
 .gallery-item .caption .website:hover {
-  color: #333;
+  color: #ed6400;
   text-decoration: none;
 }
 
@@ -9480,21 +9482,20 @@ a:hover {
 }
 
 .gallery-item.detail .caption h3 {
-  padding: 0 10px;
-  margin: 10px 0;
+  padding: 20px;
+  margin: 0;
   line-height: 1;
   text-align: left;
 }
 
 .gallery-item.detail .caption h4 {
-  padding: 0 10px;
-  margin: 0 0 10px;
-  text-align: left;
+  display: none;
 }
 
 .gallery-item.detail .caption p {
   display: block;
-  padding: 0 10px;
+  padding: 0 20px;
+  margin-bottom: 20px;
   line-height: 1.5;
   text-align: left;
 }
@@ -9512,7 +9513,7 @@ a:hover {
 }
 
 .gallery-item.detail .caption .website:hover {
-  color: #333;
+  color: #ed6400;
   text-decoration: none;
 }
 
@@ -9526,24 +9527,22 @@ a:hover {
 
 @media (max-width: 1200px) and (min-width: 980px) {
   .gallery-item .caption h3 {
-    margin: 10% 0 5px;
+    padding: 20px 20px 10px;
     font-size: 20px;
   }
   .gallery-item .caption h4 {
-    font-size: 14px;
+    margin: 0 0 10px;
+    font-size: 16px;
   }
-  .gallery-item.detail .caption h3,
-  .gallery-item.detail .caption h4,
-  .gallery-item.detail .caption p {
-    margin-bottom: 5px;
+  .gallery-item .caption .view,
+  .gallery-item .caption .website {
+    font-size: 18px;
   }
   .gallery-item.detail .caption h3 {
     font-size: 16px;
   }
-  .gallery-item.detail .caption h4 {
-    font-size: 12px;
-  }
   .gallery-item.detail .caption p {
+    margin-bottom: 10px;
     font-size: 11px;
   }
   .gallery-item.detail .caption .website {
@@ -9560,6 +9559,9 @@ a:hover {
   }
   .gallery > .second {
     margin-right: 0;
+  }
+  .gallery-item .caption h3 {
+    margin-top: 20px;
   }
   .gallery-item.detail .caption h3 {
     font-size: 20px;
@@ -9582,7 +9584,7 @@ a:hover {
   }
   .gallery > li {
     width: 100%;
-    margin: 0 0 10%;
+    margin: 0 0 60px;
   }
   .gallery-item {
     border: 0;
@@ -9608,13 +9610,14 @@ a:hover {
   }
   .gallery-item .caption h3 {
     padding: 0;
-    margin: 10px 0;
+    margin: 20px 0 10px;
     color: #fff;
     text-align: left;
   }
   .gallery-item .caption h4 {
     padding: 0;
-    color: #dedede;
+    margin: 0 0 10px;
+    color: #999;
     text-align: left;
   }
   .gallery-item .caption p {
@@ -9624,11 +9627,12 @@ a:hover {
     display: none;
   }
   .gallery-item .caption .website {
+    margin: 0;
     font-size: 14px;
-    color: #dedede;
+    color: #999;
   }
   .gallery-item .caption .website:hover {
-    color: #fff;
+    color: #ed6400;
   }
   .gallery-item .caption .website i {
     display: none;
@@ -9698,7 +9702,7 @@ nav {
 }
 
 .nav > li > a:hover {
-  color: pink;
+  color: #0093b0;
   background: transparent;
 }
 
@@ -10018,6 +10022,13 @@ nav {
   zoom: 1;
 }
 
+@media (max-width: 979px) and (min-width: 768px) {
+  #technology h2,
+  #tidbit h2 {
+    font-size: 48px;
+  }
+}
+
 @media (max-width: 767px) {
   .about-wrapper,
   .technology-wrapper {
@@ -10029,6 +10040,9 @@ nav {
   #tidbit {
     padding-right: 20px;
     padding-left: 20px;
+  }
+  #bio {
+    padding: 40px;
   }
   #technology .categories {
     margin-bottom: 40px;
@@ -10047,6 +10061,10 @@ nav {
 }
 
 @media (max-width: 480px) {
+  #technology h2,
+  #tidbit h2 {
+    font-size: 32px;
+  }
   #skill {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -10081,12 +10099,10 @@ nav {
 
 .contact-info {
   padding: 40px;
-  color: #fff;
+  color: #404348;
   background-color: #0093b0;
 }
 
-.contact-info h4,
-.contact-info h5,
 .contact-info a {
   color: #404348;
 }
@@ -10096,6 +10112,11 @@ nav {
   font-size: 24px;
   font-weight: 700;
   line-height: 1;
+}
+
+.contact-info p,
+.contact-info i {
+  color: #fff;
 }
 
 .contact-info p {
@@ -10120,7 +10141,7 @@ nav {
 .contact-info h5 {
   margin: 0;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .contact-info a {
@@ -10128,7 +10149,7 @@ nav {
 }
 
 .contact-info a:hover {
-  color: pink;
+  color: #ed6400;
 }
 
 .personal-info h4,
@@ -10138,7 +10159,7 @@ nav {
 
 .personal-info h4 {
   margin: 0;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .personal-info li {
@@ -10155,6 +10176,10 @@ nav {
   color: #ed6400;
 }
 
+.personal-info a:hover {
+  color: #ff8f32;
+}
+
 @media (max-width: 767px) {
   .contact-wrapper {
     margin: 0 -20px;
@@ -10163,6 +10188,12 @@ nav {
     padding-right: 20px;
     padding-left: 20px;
     background: url(../img/ninja.png) no-repeat 20px 101.5%;
+  }
+  .contact-info {
+    margin-bottom: 40px;
+  }
+  .personal-info {
+    margin-left: 40px;
   }
 }
 
