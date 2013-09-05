@@ -79,6 +79,9 @@
     "technology": "CSS3",
     "primary": true
 }, {
+    "name": "Lucene",
+    "technology": "PHP"
+}, {
     "name": "Mochi Media API",
     "technology": "PHP"
 }, {
@@ -106,6 +109,9 @@
 }, {
     "name": "Smarty",
     "technology": "PHP"
+}, {
+    "name": "SOLR",
+    "technology": "Java"
 }, {
     "name": "Struts 2",
     "technology": "Java"
