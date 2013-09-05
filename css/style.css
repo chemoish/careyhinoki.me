@@ -9354,6 +9354,9 @@ a:hover {
   body {
     padding-top: 0;
   }
+  .container > h2 {
+    font-size: 48px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -10027,6 +10030,28 @@ nav {
   #tidbit h2 {
     font-size: 48px;
   }
+  #technology .span6 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 979px) {
+  #technology .categories {
+    width: auto;
+    margin: 10px 0 20px;
+    overflow: hidden;
+  }
+  #technology .categories li {
+    float: left;
+    margin-right: 10px;
+  }
+  #technology .categories .label {
+    display: inline;
+  }
+  #technology .label {
+    padding: 4px 8px;
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -10040,6 +10065,10 @@ nav {
   #tidbit {
     padding-right: 20px;
     padding-left: 20px;
+  }
+  #technology h2,
+  #tidbit h2 {
+    font-size: 48px;
   }
   #bio {
     padding: 40px;
