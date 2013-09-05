@@ -10100,6 +10100,9 @@ nav {
   #skill .skills {
     margin-top: 0;
   }
+  #tidbit .tidbits li {
+    float: none;
+  }
 }
 
 /*
